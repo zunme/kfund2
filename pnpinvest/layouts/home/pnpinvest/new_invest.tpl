@@ -251,186 +251,10 @@ margin-top:15px;
 
   </h2>
 	<!-- 금일 상품 -->
-	<div class="invest_top">
-		<h3 class="skip">금일 상품</h3>
-		<div class="container">
-			<!-- slider -->
-			<div class="invest_slider owl-carousel owl-theme navbarbox">
-<?php foreach ( $z_loaninfo_slide as $idx=>$row ){?>
-				<!-- loop start -->
-				<div class="item">
-					<p class="timeout  <?php echo (in_array($row['i_look'], array('N'))) ? 'item_time':''; ?>" data-loan_id="<?php echo $row['i_id']?>" data-loan_look="<?php echo $row['i_look']?>" style="display:none" <?php echo (!in_array($row['i_look'], array('N'))) ? 'style="display:none"':''; ?>>
-						<i class="clock"></i>
-						<span class="txt">이 상품의 투자시작 시간이 <span>....</span></span>
-					</p>
-					<div class="item_wrap">
 
-						<div class="item_info info1 fl">
-                <?php
-                  //N 대기, Y 진행중, C 마감, D 이자, F 완료
-                    switch( $row['i_look']){
-                      case ('N') :
-                  ?>
-                      <span class="item_con end">투자대기</span>
-                  <?php
-                      break;
-                      case ('Y') :
-                  ?>
-                      <span class="item_con ing">투자모집</span>
-                  <?php
-                      break;
-                      case ('C') :
-                  ?>
-                      <span class="item_con end">투자마감</span>
-                  <?php
-                      break;
-                      case ('D') :
-                  ?>
-                      <span class="item_con end">이자상환</span>
-                  <?php
-                      break;
-                      default:
-                  ?>
-                      <span class="item_con end">상환완료</span>
-                  <?php
-                      break;
-                    }
-                  ?>
-							<p class="img_wrap" width="428" height="282"><span class="img img_w"><a href="/pnpinvest/?mode=invest_view&loan_id=<?php echo $row['i_id']?>" target="_self"><img src="/pnpinvest/data/photoreviewers/<?php echo $row['i_id']?>/<?php echo $row['mainpost']?>" alt></a></span></p>
-							<p class="txt"><span class="date fl"><?php echo $row['i_mainimg_txt1']?></span><span class="time fr"><?php echo $row['i_mainimg_txt2']?></span></p>
-						</div>
-						<div class="item_info info2 fr">
-							<h4>
-                <a href="/pnpinvest/?mode=invest_view&loan_id=<?php echo $row['i_id']?>" target="_self">
-								<span><?php echo $row['i_subject']?></span>
-								</a>
-							</h4>
-							<ul class="summary fl">
-								<li class="sm_1">
-									<dl>
-										<dt>상품분류</dt>
-										<dd><?php echo $row['type']?></dd>
-									</dl>
-								</li>
-								<li class="sm_2">
-									<dl>
-										<dt>수익률</dt>
-										<dd><?php echo $row['i_year_plus']?>%</dd>
-									</dl>
-								</li>
-								<li class="sm_3">
-									<dl>
-										<dt>투자기간</dt>
-										<dd><?php echo $row['i_loan_day']?>개월</dd>
-									</dl>
-								</li>
-								<li class="sm_5">
-									<dl>
-										<dt>모집금액</dt>
-										<dd><?php echo change_pay($row['payed'])?>/<?php echo change_pay($row['i_loan_pay'])?></dd>
-									</dl>
-								</li>
-							</ul>
-							<div class="donut fr">
-								<p class="donut_progress">
-									<span class="ib fill" style="height:<?php echo $row['percent']?>%;"></span>
-								</p>
-								<p class="donut_txt center">
-									<span>모집률</span>
-									<strong><?php echo $row['percent']?>%</strong>
-								</p>
-							</div>
-							<p class="event fr">
-								<span class="ib center event1"><?php echo $row['i_mainimg_txt3']?> <?php echo $row['i_mainimg_txt4']?></span>
-								<span class="ib center event2"><?php echo $row['i_mainimg_txt5']?><?php echo ($row['i_mainimg_txt6']!='')?'/'.$row['i_mainimg_txt6']:''?></span>
-							</p>
-						</div>
-					</div>
-				</div>
-				<!-- loop end -->
-<?php } ?>
-			</div>
-			<script>
-      //$('.invest_slider').bxSlider({
-      //	auto: false,
-      //	autoControls: true,
-      //	stopAutoOnClick: false,
-      //	pager: true,
-      //	speed: 1000
-      //});
-			</script>
-      <style>
-      button:focus {outline:0;}
-      .owl-carousel.navbarbox .owl-nav button.owl-next, .owl-carousel.navbarbox .owl-nav button.owl-prev, .owl-carousel.navbarbox  button.owl-dot {
-          width: 38px;
-      }
-      .owl-carousel.navbarbox .owl-nav button:hover{
-        box-shadow:none;
-      }
-      .owl-carousel.navbarbox .owl-prev {
-          width: 15px;
-          height: 100px;
-          position: absolute;
-          top: 35%;
-          margin-left: -10px;
-          display: block!IMPORTANT;
-          border:0px solid black;
-      }
-
-      .owl-carousel.navbarbox .owl-next {
-          width: 15px;
-          height: 100px;
-          position: absolute;
-          top: 35%;
-          right: 0px;
-          display: block!IMPORTANT;
-          border:0px solid black;
-          margin-right: -10px;
-      }
-      .owl-carousel.navbarbox .owl-prev i, .owl-carousel.navbarbox .owl-next i {transform : scale(1,6); color: #ccc;}
-      .owl-carousel.navbarbox .owl-dots{
-        position: absolute;
-            bottom: 7px;
-            width: 100%;
-        }
-        .owl-carousel.navbarbox .owl-dots .owl-dot span {background-color:#999 }
-        .owl-carousel.navbarbox .owl-dots .owl-dot.active span {background-color:#00656a }
-        .detail_con.product_info .viewarea {
-            min-height: 220px;
-          }
-        .owl-carousel .single{ transform: translate3d(0px,0px, 0px) !important; }
-      </style>
-      <script>
-      function callbackOwl(event) {
-        if (parseInt($(event.target).find('div.item').length) <= 1) {
-          ;
-          event.relatedTarget.options.loop = false;
-        }
-      }
-
-      $(document).ready(function(){
-        $(".owl-carousel").owlCarousel({
-          items:1,
-          margin:10,
-          autoHeight:true,
-          loop : true,
-          autoplay:true,
-          autoplayTimeout:7000,
-          autoplayHoverPause:true,
-          center:true,
-          itemsScaleUp:true,
-          nav: true,
-          navText: ["<img src='js/owl/assets/left2.png' style='width: 38px;'>","<img src='js/owl/assets/right2.png' style='width: 38px;'>"],
-          onInitialize: callbackOwl,
-        });
-      });
-      </script>
-		</div>
-	</div>
 	<!-- search -->
 	<div class="search">
 		<div class="container">
-			<span class="allitem">지난상품 전체보기</span>
 			<form action="/pnpinvest/" method="get" name="form1">
   <input type="hidden" name="mode" value="invest">
 				<h3 class="skip">검색창</h3>
@@ -442,15 +266,9 @@ margin-top:15px;
 		</div>
 	</div>
 	<!-- 지난상품 리스트 -->
-	<div class="invest_all <?php echo ($search !='' || $nowpage > 1)?'':'close'?>">
+	<div class="invest_all">
 		<div class="container">
-			<h3 class="skip">지난상품 리스트</h3>
-			<span class="folditem">지난상품 접어두기</span>
-			<p class="list_type">
-				<span class="list on">리스트형</span>
-				<span class="gallery">갤러리형</span>
-			</p>
-			<ul class="product">
+			<ul class="product gallery">
 <?php for ($i=0; $row=sql_fetch_array($result); $i++) {
 
   if( $row != false ) {
