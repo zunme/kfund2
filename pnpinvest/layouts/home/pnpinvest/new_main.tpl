@@ -55,7 +55,7 @@ select
 from mari_loan a
 join mari_invest_progress b on a.i_id = b.loan_id
 where a.i_view='Y'
-order by field( b.i_look, 'Y','N','C','D','F') , b.i_invest_sday desc limit 1;
+order by field( b.i_look, 'Y','N','C','D','F') , b.i_invest_sday desc limit 3;
 ";
 //and (a.i_look = 'Y' or a.i_look = 'N' or a.i_look='C')
 $result = sql_query($sql, false);
