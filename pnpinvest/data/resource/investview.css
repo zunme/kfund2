@@ -1,0 +1,79 @@
+#chart_detail {
+	margin-top: 30px;
+	left: 4%;
+	width: 90%;
+	border-top: 3px solid #00656a;
+	border-bottom: 3px solid #00656a
+}
+
+.c_d_c1:before {
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	content: "\f058";
+	margin-right: 5px;
+}
+
+#chart_detail .c_d_row .c_d_c2, #chart_detail .c_d_row2 .c_d_c2{
+	text-align: right;
+	padding-right: 15px
+}
+
+@media (min-width:768px) {
+	#chart_container {
+		width: 100%
+	}
+}
+
+@media (min-width:780px) {
+	#chart_detail {
+		margin-top: 10px;
+		padding: 0 15px;
+		left: 5%;
+		width: 45%
+	}
+	#chart_container {
+		width: 50%
+	}
+	#chart_detail .c_d_row , #chart_detail .c_d_row2 {
+		margin-right: 0
+	}
+	#chart_detail .c_d_row .c_d_c2, #chart_detail .c_d_row2 .c_d_c2 {
+		padding-right: 0
+	}
+}
+
+@media (min-width:800px) {
+	.c_d_row , .c_d_row2{
+		margin-top: 20px;
+		margin-bottom: 20px
+	}
+}
+
+@media (min-width:920px) {
+	#chart_container {
+		width: 43%
+	}
+	#chart_detail {
+		left: 4%;
+		width: 53%
+	}
+}
+
+.c_d_row.row , .c_d_row2.row{
+	margin-left: 0;
+	margin-right: 0
+}
+
+.c_d_c1.col-xs-6,
+.c_d_c2.col-xs-6 {
+	padding-left: 5px;
+	padding-right: 5px
+}
+
+.newtable_01 table tr th span.chk_number {margin-right: 14px;}
+.newtable_01 table tr th {padding-bottom: 20px;}
