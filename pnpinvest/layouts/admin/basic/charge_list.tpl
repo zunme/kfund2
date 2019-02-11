@@ -17,7 +17,7 @@ include(MARI_VIEW_PATH.'/Common_select_class.php');
 			{# lnb}<!--메인메뉴-->
 		</div><!-- /lnb_wrap -->
 	</div><!-- /left_container -->
-    
+
 	<div id="container">
 		<div class="title02">충전내역</div>
 		 <div class="local_ov01 local_ov">
@@ -79,6 +79,9 @@ include(MARI_VIEW_PATH.'/Common_select_class.php');
 			</table>
 		</div>
 		<div class="paging">
+			<?php
+			$qstr = "&sfl=".( isset($sfl)? $sfl :'' )."&stx=".( isset($stx)? $stx :'' );
+			?>
 <!--패이징--><?php echo get_paging($config['c_write_pages'], $page, $total_page, '?cms='.$cms.''.$qstr.'&amp;page='); ?>
 		</div><!-- /paging -->
     </div><!-- /contaner -->
