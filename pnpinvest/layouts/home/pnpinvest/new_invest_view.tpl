@@ -1,5 +1,6 @@
+
 <?php
-var_dump($loa);
+include(MARI_VIEW_PATH.'/Common_select_class.php');
 if ($loa['i_look']=='F'){
   ?>
   <script>
@@ -9,9 +10,7 @@ if ($loa['i_look']=='F'){
   <?
   exit;
 }
-?>
-<?php
-include(MARI_VIEW_PATH.'/Common_select_class.php');
+
 $startidx = 0; //신규로 보여줄 IDX시작
 /*
 error_reporting(E_ALL);
