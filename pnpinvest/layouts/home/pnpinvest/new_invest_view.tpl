@@ -1,6 +1,13 @@
 <?php
-if ($loa['i_look']=='F'){ return;}
-
+if ($loa['i_look']=='F'){
+  ?>
+  <script>
+  alert("상환 완료된 상품입니다.");
+  history.back();
+  </script>
+  <?
+  return;
+}
 ?>
 <?php
 include(MARI_VIEW_PATH.'/Common_select_class.php');
