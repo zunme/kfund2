@@ -1,4 +1,5 @@
 <?php
+var_dump($loa);
 if ($loa['i_look']=='F'){
   ?>
   <script>
