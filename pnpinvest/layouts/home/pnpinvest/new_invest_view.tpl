@@ -6,7 +6,7 @@ if ($loa['i_look']=='F'){
   history.back();
   </script>
   <?
-  return;
+  exit;
 }
 ?>
 <?php
