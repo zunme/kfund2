@@ -75,7 +75,7 @@ if($search != ''){
   $searchsql = " and a.i_subject like '%".$search."%' ";
 }
 $nowpage = ($_GET['page'] > 1 ) ? $_GET['page']: 1;
-$sql = "select count(1) as total from mari_loan a where a.i_view='Y' and a.i_look not in('N','Y') $searchsql";
+$sql = "select count(1) as total from mari_loan a where a.i_view='Y' $searchsql";
 $totaltmp =  sql_fetch($sql);
 
 $totalnum = ( isset( $totaltmp['total']) ) ? (int)$totaltmp['total'] : 0;
