@@ -75,7 +75,7 @@ if($search != ''){
   $searchsql = " and a.i_subject like '%".$search."%' ";
 }
 $nowpage = ($_GET['page'] > 1 ) ? $_GET['page']: 1;
-$sql = "select count(1) as total from mari_loan a where a.i_view='Y' and a.i_look not in('N','Y') $searchsql";
+$sql = "select count(1) as total from mari_loan a where a.i_view='Y'  $searchsql";
 $totaltmp =  sql_fetch($sql);
 
 $totalnum = ( isset( $totaltmp['total']) ) ? (int)$totaltmp['total'] : 0;
@@ -97,7 +97,7 @@ select
 
 from mari_loan a
 join mari_invest_progress b on a.i_id = b.loan_id
-where a.i_view='Y' and a.i_look not in('N','Y')
+where a.i_view='Y' 
 $searchsql
 order by  b.i_invest_sday desc
 limit $start , $perpage;
