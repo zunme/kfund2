@@ -165,7 +165,7 @@ box-shadow: 0 2px 2px 0 rgba(153, 153, 153, 0.14), 0 3px 1px -2px rgba(153, 153,
 .subtitle {font-size: 24px;margin-top:-10px;padding-bottom:20px;}
 #container h2.subtitle {margin-top: 0;padding: 100px 0 100px 0;}
 .subtitle {overflow: none;}
-.subtitle.invest_list {margin-bottom:-110px;}
+.subtitle.invest_list {margin-bottom:0px;}
 .triggeriziModal{position: relative;margin-left: 290px;margin-right:290px;margin-top:15px;padding: 7px 8px;margin-bottom:15px;}
 }
 @media all and (max-width:800px) {
