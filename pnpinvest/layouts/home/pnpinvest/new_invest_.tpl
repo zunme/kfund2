@@ -97,7 +97,7 @@ select
 
 from mari_loan a
 join mari_invest_progress b on a.i_id = b.loan_id
-where a.i_view='Y' and a.i_look not in('N','Y')
+where a.i_view='Y'
 $searchsql
 order by  b.i_invest_sday desc
 limit $start , $perpage;
@@ -136,7 +136,7 @@ $result = sql_query($sql, false);
 						<span class="txt">이 상품의 투자시작 시간이 <span>....</span></span>
 					</p>-->
 					<div class="item_wrap">
-					
+
 						<div class="item_info info1 fl">
                 <?php
                   //N 대기, Y 진행중, C 마감, D 이자, F 완료
