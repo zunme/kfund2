@@ -6,6 +6,11 @@ class Timer extends CI_Controller {
 
       $sql = "set time_zone = '+9:00'";
       $this->db->query($sql);
+      $sq="
+      update mari_loan set i_look = 'Y'
+      WHERE i_id IN (SELECT loan_id from mari_invest_progress  where   i_look ='N'  and i_view ='Y'  and i_invest_sday <= NOW() )
+      ";
+      $this->db->query($sql);
       $sql = "update mari_invest_progress set i_look = 'Y' where   i_look ='N'  and i_view='Y'  and i_invest_sday <= now()";
       $this->db->query($sql);
       /*자동마감 block
