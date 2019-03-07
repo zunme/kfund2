@@ -688,15 +688,33 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#996e8fa0', e
             </li>
 
 
-
-
-
-
-            <li>
-              <a href="/api/cast">
+            <li class="dropdown">
+              <a href="javascript:" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="material-icons">ballot</i> 캐스트
+                <b class="caret"></b>
               </a>
+              <ul class="dropdown-menu dropdown-with-icons">
+                <li>
+                  <a href="/api/cast">
+                    <i class="material-icons">ballot</i> 캐스트
+                  </a>
+                </li>
+                <li>
+                  <a href="/pnpinvest/?mode=bbs_list&table=bond">
+                    <i class="material-icons">view_headline</i> 채권관리현황
+                  </a>
+                </li>
+                <li>
+                  <a href="/pnpinvest/?mode=bbs_list&table=overdue">
+                    <i class="material-icons">view_headline</i> 연체관리현황
+                  </a>
+                </li>
+              </ul>
             </li>
+
+
+
+
 
             <li class="dropdown">
               <a href="javascript:" class="dropdown-toggle" data-toggle="dropdown">
