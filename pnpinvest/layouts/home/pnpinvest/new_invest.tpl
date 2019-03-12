@@ -490,7 +490,9 @@ margin-top:15px;
               ?>
 							<div class="img_wrap">
 								<p class="img">
-									<img src="/pnpinvest/data/photoreviewers/<?php echo $row['i_id']?>/<?php echo $row['mainpost']?>" alt>
+                  <a class="item_name" href="/pnpinvest/?mode=invest_view&loan_id=<?php echo $row['i_id']?>">
+									   <img src="/pnpinvest/data/photoreviewers/<?php echo $row['i_id']?>/<?php echo $row['mainpost']?>" alt>
+                  </a>
 								</p>
 							</div>
 							<p class="txt"><span class="date fl"><?php echo $row['i_mainimg_txt1']?></span><span class="time fr"><?php echo $row['i_mainimg_txt2']?></span></p>
