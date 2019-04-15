@@ -28,7 +28,7 @@ class Welcome extends CI_Controller{
 //================================================================
 	public function alim(){
 		$loginpassw = "guest:guest";
-		$url = "http://128.134.106.210/api/exchanges/%2f/amq.default/publish";
+		$url = "http://61.74.110.184/api/exchanges/%2f/amq.default/publish";
 		$msg = array(
 			"code"=>"J0001"
 			, "tel"=>"01025376460"
@@ -71,7 +71,7 @@ class Welcome extends CI_Controller{
 		$connection->close();
 */
 		$loginpassw = "guest:guest";
-		$url = "http://128.134.106.210/api/exchanges/%2f/amq.default/publish";
+		$url = "http://61.74.110.184/api/exchanges/%2f/amq.default/publish";
 		/*
 		array('toid'=>array('e9550dba-2b7c-43ce-bb88-64ee3f6ad5c9'))
 		array('filter'=>array( 'key'=>'userId', 'value'=>'zunme@nate.com'))
@@ -169,7 +169,7 @@ sendrabbit($msg);return;
 }
 function sendrabbit($msg){
 	$loginpassw = "guest:guest";
-	$url = "http://128.134.106.210/api/exchanges/%2f/amq.default/publish";
+	$url = "http://61.74.110.184/api/exchanges/%2f/amq.default/publish";
 
 	$msg = addslashes(json_encode($msg));
 	$data = array(

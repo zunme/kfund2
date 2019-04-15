@@ -18,7 +18,7 @@ class kakaoreport extends CI_Controller{
   /*
   function sendkakao($msgarr) {
 		$loginpassw = "guest:guest";
-		$url = "http://128.134.106.210/api/exchanges/%2f/amq.default/publish";
+		$url = "http://61.74.110.184/api/exchanges/%2f/amq.default/publish";
     if( !is_array($msgarr)) return false;
 		$msg = addslashes(json_encode($msgarr));
 		$data = array(

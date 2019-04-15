@@ -1,7 +1,7 @@
 <?php
 function sendrabbit($msg){
   $loginpassw = "guest:guest";
-  	$url = "http://128.134.106.210:15672/api/exchanges/%2f/amq.default/publish";
+  	$url = "http://61.74.110.184:15672/api/exchanges/%2f/amq.default/publish";
 
   	$msg = addslashes(json_encode($msg));
   	$data = array(
