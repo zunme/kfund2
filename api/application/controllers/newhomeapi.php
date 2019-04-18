@@ -228,7 +228,12 @@ class Newhomeapi extends CI_Controller {
       return;
 
   }
-
+  function test() {
+    require "../pnpinvest/module/sendkakao.php";
+    $msg = array("code"=>"Enter0001", "m_id"=>"zunme11@nate.com");
+    sendkakao($msg);
+    return;
+  }
   function joinfileupload($name, $path='../pnpinvest/data/file/member/')
 	{
 
