@@ -263,7 +263,7 @@ SELECT '소득적격대부' AS tname , i_maximum_incomeloan AS maximum from mari
       ";
       $rows = $this->db->query($sql)->result_array();
 
-      require_once dirname(__FILE__) . './phpxl/Classes/PHPExcel.php';
+      require_once '/home/user01/www/api/phpxl/Classes/PHPExcel.php';
 // Create new PHPExcel object
 $objPHPExcel = new PHPExcel();
 // Set document properties
@@ -320,7 +320,7 @@ header ('Pragma: public'); // HTTP/1.0
 $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
 $objWriter->save('php://output');
     }
-    
+
     function userlist() {
       $where =' where 1';
       $where2 ='';
