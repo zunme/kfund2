@@ -168,11 +168,27 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/css/iziModal.min.css" >
 <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
 
 <script>
 var count = 0;
 var remain = 0;
 var jungsanajaxstatus = true;
+function jfunscan(i_id){
+  $.dialog({
+      title: title,
+      boxWidth:"698px",
+      content: 'url:/api/funscan?i_id='+i_id,
+      animation: 'scale',
+      animationSpeed: 100,
+      columnClass: 'medium',
+      closeAnimation: 'scale',
+      backgroundDismiss: false,
+      //closeIconClass: 'fa fa-close'
+      columnClass: 'colsmall'
+  });
+}
 function jungsan_remain_call(){
   if(jungsanajaxstatus == false ) return;
   $("#jungsan_btn_div").children('span').toggle();

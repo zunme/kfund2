@@ -334,7 +334,7 @@ $(document).ready(function() {
       },
       "columns": [
           { "data": "i_id" ,"className":      'details-control',"render": function (){return '';}},
-          { "data": "i_subject","render": function (data, type, row, meta){ return '<span class="fa rightpadding '+row.sameowner+' triggerModal"  href="/api/index.php/cmsloanlist/getsameowner?lid='+row.i_id+'" onClick="izimodalopen(event)"></span>'+data +'<a href="javascript:;" title="첫투자/재투자" onclick="analfirst( '+row.i_id+' )" style="padding-left:6px;"><i class="fa fa-bar-chart"></i></a><i class="fa fa-stack-overflow" aria-hidden="true" style="padding-left:10px" onclick="viewOver('+row.i_id+')"></i>'} },
+          { "data": "i_subject","render": function (data, type, row, meta){ return '<span class="fa rightpadding '+row.sameowner+' triggerModal"  href="/api/index.php/cmsloanlist/getsameowner?lid='+row.i_id+'" onClick="izimodalopen(event)"></span>'+data +'<a href="javascript:;" title="첫투자/재투자" onclick="analfirst( '+row.i_id+' )" style="padding-left:6px;"><i class="fa fa-bar-chart"></i></a><i class="fa fa-stack-overflow" aria-hidden="true" style="padding-left:10px" onclick="viewOver('+row.i_id+')"></i> <i onClick="jfunscan('+row.i_id+')">펀스캔</i>'} },
           { "data": "i_repay" ,"render": function (data, type, row, meta){ if(data=='일만기일시상환') return '<span class="viewinterest" data-id="'+row.i_id+'">일만기일시</span>';else return data}},
           { "data": "i_look", "render": function (data, type, row, meta){return '<span class="details-inv" data-id="'+row.i_id+'" onClick="viewinv('+row.i_id+')">'+data+'</span>'} },
           { "data": "i_loanexecutiondate2" },
