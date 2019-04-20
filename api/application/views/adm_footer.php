@@ -177,7 +177,7 @@ var remain = 0;
 var jungsanajaxstatus = true;
 function jfunscan(i_id){
   $.dialog({
-      title: title,
+      title: "펀스캔",
       boxWidth:"698px",
       content: 'url:/api/funscan?i_id='+i_id,
       animation: 'scale',
