@@ -14,7 +14,7 @@ span.pendingsf_use{text-align: center;color:#337ab7;cursor:pointer;}
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Userlist <small>회원목록</small>
+                    <h2>Userlist <a href="/api/index.php/adm/xls">[엑셀다운]</a><small>회원목록</small>
                       <div style="display:inline">
                       </div>
                     </h2>

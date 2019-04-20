@@ -275,6 +275,7 @@ $objPHPExcel->getProperties()->setCreator("member")
 							 ->setKeywords("member")
 							 ->setCategory("member");
 // Add some data
+$i = 1;
 $objPHPExcel->setActiveSheetIndex(0)
             ->setCellValue('A'.$i, '회원등급')
             ->setCellValue('B'.$i, '이름')
