@@ -205,6 +205,122 @@ public function ilmangitable() {
       $ret['data'] = $list;
       echo json_encode($ret);
     }
+    function xls() {
+      $sql = "
+      SELECT
+ 회원등급, 이름, 아이디, 번호, 유효자금, (ifnull(mxt.maximum,0) - 유효자금) 남은한도
+, 누적, 이머니, 가입, 최종접속일
+FROM (
+select
+     a.m_no
+     ,case
+        when (a.m_level> 3) then '관리자'
+        when (a.m_level> 2 and a.m_signpurpose = 'L') then '법인대출'
+        when (a.m_level> 2) then '법인'
+        when (a.m_signpurpose = 'I' ) then '소득적격'
+        when (a.m_signpurpose = 'P' ) then '전문'
+        when (a.m_signpurpose = 'L2' ) then '개인대부'
+        when (a.m_signpurpose = 'C2' ) then '법인대부'
+        when (a.m_signpurpose = 'I2' ) then '소득적격대부'
+        when (a.m_signpurpose = 'L' ) then '대출'
+        else '일반'
+      end AS 회원등급
+      ,  a.m_name 이름,a.m_id 아이디,a.m_hp 번호
+      , ifnull(remainmoney,0) 유효자금
+      ,( SELECT  ifnull(sum(i_pay),0) as total from mari_invest where mari_invest.m_id = a.m_id)as 누적
+      ,a.m_emoney 이머니
+      ,a.m_datetime 가입
+      ,a.m_today_login 최종접속일
+
+     FROM  mari_member a
+     LEFT JOIN
+     (
+     SELECT sale_id, ifnull(SUM( remainm),0) AS remainmoney
+   FROM (
+     SELECT sale_id, (i_pay - SUM(wongum) ) AS  remainm FROM z_invest_sunap_detail a
+     GROUP BY sale_id, loan_id
+   ) remaint
+   GROUP BY sale_id
+   ) remaingrp ON a.m_id = remaingrp.sale_id
+) temp1
+LEFT JOIN (
+SELECT '일반' AS tname , i_maximum AS maximum from mari_inset a
+UNION
+SELECT '법인' AS tname , i_maximum_v AS maximum from mari_inset a
+UNION
+SELECT '관리자' AS tname , i_maximum_v AS maximum from mari_inset a
+UNION
+SELECT '전문' AS tname , i_maximum_pro AS maximum from mari_inset a
+UNION
+SELECT '소득적격' AS tname , i_maximum_in AS maximum from mari_inset a
+UNION
+SELECT '개인대부' AS tname , i_maximum_personalloan AS maximum from mari_inset a
+UNION
+SELECT '법인대부' AS tname , i_maximum_corporateloan AS maximum from mari_inset a
+UNION
+SELECT '소득적격대부' AS tname , i_maximum_incomeloan AS maximum from mari_inset a
+) mxt ON temp1.회원등급 = mxt.tname
+      ";
+      $rows = $this->db->query($sql)->result_array();
+
+      require_once dirname(__FILE__) . './phpxl/Classes/PHPExcel.php';
+// Create new PHPExcel object
+$objPHPExcel = new PHPExcel();
+// Set document properties
+$objPHPExcel->getProperties()->setCreator("member")
+							 ->setLastModifiedBy("member")
+							 ->setTitle("member")
+							 ->setSubject("member")
+							 ->setDescription("member")
+							 ->setKeywords("member")
+							 ->setCategory("member");
+// Add some data
+$objPHPExcel->setActiveSheetIndex(0)
+            ->setCellValue('A'.$i, '회원등급')
+            ->setCellValue('B'.$i, '이름')
+            ->setCellValue('C'.$i, '아이디')
+            ->setCellValue('D'.$i, '번호')
+            ->setCellValue('E'.$i, '유효자금')
+            ->setCellValue('F'.$i, '남은한도')
+            ->setCellValue('G'.$i, '누적')
+            ->setCellValue('H'.$i, '이머니')
+            ->setCellValue('I'.$i, '가입')
+            ->setCellValue('J'.$i, '최종접속일')
+            ;
+foreach($rows as $idx=>$row) {
+$i = $idx+2;
+$objPHPExcel->setActiveSheetIndex(0)
+            ->setCellValue('A'.$i, $row['회원등급'])
+            ->setCellValue('B'.$i, $row['이름'])
+            ->setCellValue('C'.$i, $row['아이디'])
+            ->setCellValue('D'.$i, $row['번호'])
+            ->setCellValue('E'.$i, $row['유효자금'])
+            ->setCellValue('F'.$i, $row['남은한도'])
+            ->setCellValue('G'.$i, $row['누적'])
+            ->setCellValue('H'.$i, $row['이머니'])
+            ->setCellValue('I'.$i, $row['가입'])
+            ->setCellValue('J'.$i, $row['최종접속일'])
+            ;
+}
+// Rename worksheet
+$objPHPExcel->getActiveSheet()->setTitle('member');
+// Set active sheet index to the first sheet, so Excel opens this as the first sheet
+$objPHPExcel->setActiveSheetIndex(0);
+// Redirect output to a client’s web browser (Excel5)
+header('Content-Type: application/vnd.ms-excel');
+header('Content-Disposition: attachment;filename="member.xls"');
+header('Cache-Control: max-age=0');
+// If you're serving to IE 9, then the following may be needed
+header('Cache-Control: max-age=1');
+// If you're serving to IE over SSL, then the following may be needed
+header ('Expires: Mon, 26 Jul 1997 05:00:00 GMT'); // Date in the past
+header ('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT'); // always modified
+header ('Cache-Control: cache, must-revalidate'); // HTTP/1.1
+header ('Pragma: public'); // HTTP/1.0
+$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
+$objWriter->save('php://output');
+    }
+    
     function userlist() {
       $where =' where 1';
       $where2 ='';
