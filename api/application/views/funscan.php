@@ -1,3 +1,5 @@
+
+<form id="form01">
 <table>
   <tr>
     <th>서비스명</th>
@@ -79,12 +81,21 @@
     </td>
   </tr>
 </table>
+</form>
 <span class="btn" onClick="regdata()">등록<span>
 <script>
  function regdata(){
-
+   $.ajax({
+     type : 'POST',
+     url : 'http://dev.funscan.co.kr/api/api_product.php',
+     dataType : 'html',
+     data : $("#form01").serialize(),
+     success : function(result) {
+       console.log( result )
+     }
+   });
  }
  function result() {
-   
+
  }
 </script>
