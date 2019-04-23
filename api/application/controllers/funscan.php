@@ -55,7 +55,7 @@ class funscan extends CI_Controller {
       unset($data['productcode']);unset($data['apikey']);
       $this->db->where('productcode', $idx )->update('funscan', $data);
       echo json_encode(array("code"=>200));
-    }else json_encode(array("code"=>500, "msg"=>$result));
+    }else echo json_encode(array("code"=>500, "msg"=>$result));
   }
   function callAPI($url,$method="GET", $data=""){
     $curl = curl_init();

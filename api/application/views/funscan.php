@@ -5,7 +5,15 @@
     <th>서비스명</th>
     <td><input type="text" name="servicename" value="케이펀딩">
       <input type="hidden" name="apikey" value="c5b75d0592da369ccf6131169aff22cdfb7d1838d1e48cbb7f088dea34ed1344">
-      <input type="hidden" name="mode" value="<?php echo $data['mode']?>">
+    </td>
+  </tr>
+  <tr>
+    <th>등록/수정</th>
+    <td>
+      <select name="mode">
+          <option value="regist" <?php echo (isset($data['mode']) && $data['mode']=='regist' ? "selected":"")?>>등록</option>
+          <option value="modify" <?php echo (isset($data['mode']) && $data['mode']=='modify' ? "selected":"")?>>수정</option>
+      </select>
     </td>
   </tr>
   <tr>
