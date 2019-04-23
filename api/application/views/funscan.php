@@ -1,7 +1,10 @@
 <table>
   <tr>
     <th>서비스명</th>
-    <td><input type="text" name="servicename" value="케이펀딩"></td>
+    <td><input type="text" name="servicename" value="케이펀딩">
+      <input type="hidden" name="apikey" value="c5b75d0592da369ccf6131169aff22cdfb7d1838d1e48cbb7f088dea34ed1344">
+      <input type="hidden" name="mode" value="<?php echo $data['mode']?>">
+    </td>
   </tr>
   <tr>
     <th>상품명</th>
@@ -62,7 +65,7 @@
           <option value="7" <?php echo (isset($data['productstep']) && $data['productstep']=='7' ? "selected":"")?>>만기상환완료</option>
           <option value="8" <?php echo (isset($data['productstep']) && $data['productstep']=='8' ? "selected":"")?>>투자취소</option>
           <option value="9" <?php echo (isset($data['productstep']) && $data['productstep']=='9' ? "selected":"")?>>부실</option>
-          <option value="99" <?php echo (!isset($data['productstep']) || !in_array($data['productstep'], array("1","2","3","4","5","6","7","8","9") ? "selected":"")?>>알수없음</option>
+          <option value="99" <?php echo (!isset($data['productstep']) || !in_array($data['productstep'], array("1","2","3","4","5","6","7","8","9")) ? "selected":"")?>>알수없음</option>
       </select>
     </td>
   </tr>
@@ -76,3 +79,12 @@
     </td>
   </tr>
 </table>
+<span class="btn" onClick="regdata()">등록<span>
+<script>
+ function regdata(){
+
+ }
+ function result() {
+   
+ }
+</script>
