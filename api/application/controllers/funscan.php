@@ -44,6 +44,7 @@ class funscan extends CI_Controller {
   }
   function fncall()
   {
+    $url="https://www.funscan.co.kr/api/api_product.php";
     $url = "http://dev.funscan.co.kr/api/api_product.php";
     $result = $this->callAPI($url,"GET", $_POST);
     $result = preg_replace('/\r\n|\r|\n/','',$result);
