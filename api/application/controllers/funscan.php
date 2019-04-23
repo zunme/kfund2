@@ -46,12 +46,13 @@ class funscan extends CI_Controller {
   {
     $url = "http://dev.funscan.co.kr/api/api_product.php";
     $result = $this->callAPI($url,"GET", $_POST);
+    $result = preg_replace('/\r\n|\r|\n/','',$result);
     $temp = explode(":", $result);
     if( $temp[0]=="SUCCESS"){
       $data = $_POST;
       $data['mode']="regist";
       $idx = (int)$data['productcode'];
-      unset($data['productcode']);
+      unset($data['productcode']);unset($data['apikey']);
       $this->db->where('productcode', $idx )->update('funscan', $data);
       echo json_encode(array("code"=>200));
     }else json_encode(array("code"=>500, "msg"=>$result));
