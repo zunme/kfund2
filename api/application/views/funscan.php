@@ -87,8 +87,8 @@
  function regdata(){
    $.ajax({
      type : 'POST',
-     url : 'http://dev.funscan.co.kr/api/api_product.php',
-     dataType : 'html',
+     url : '/api/funscan/fncall',
+     dataType : 'json',
      data : $("#form01").serialize(),
      success : function(result) {
        console.log( result )
