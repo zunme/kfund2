@@ -53,16 +53,16 @@
     <th>진행상태</th>
     <td>
       <select name="productstep">
-          <option value="1" <?php echo (isset($data['repaymenttype']) && $data['repaymenttype']=='1' ? "selected":"")?>>모집대기중</option>
-          <option value="2" <?php echo (isset($data['repaymenttype']) && $data['repaymenttype']=='2' ? "selected":"")?>>펀딩진행중</option>
-          <option value="3" <?php echo (isset($data['repaymenttype']) && $data['repaymenttype']=='3' ? "selected":"")?>>상환대기중</option>
-          <option value="4" <?php echo (isset($data['repaymenttype']) && $data['repaymenttype']=='4' ? "selected":"")?>>이자상환중</option>
-          <option value="5" <?php echo (isset($data['repaymenttype']) && $data['repaymenttype']=='5' ? "selected":"")?>>연체중</option>
-          <option value="6" <?php echo (isset($data['repaymenttype']) && $data['repaymenttype']=='6' ? "selected":"")?>>중도상환완료</option>
-          <option value="7" <?php echo (isset($data['repaymenttype']) && $data['repaymenttype']=='7' ? "selected":"")?>>만기상환완료</option>
-          <option value="8" <?php echo (isset($data['repaymenttype']) && $data['repaymenttype']=='8' ? "selected":"")?>>투자취소</option>
-          <option value="9" <?php echo (isset($data['repaymenttype']) && $data['repaymenttype']=='9' ? "selected":"")?>>부실</option>
-          <option value="99" <?php echo (isset($data['repaymenttype']) && $data['repaymenttype']=='99' ? "selected":"")?>>알수없음</option>
+          <option value="1" <?php echo (isset($data['productstep']) && $data['productstep']=='1' ? "selected":"")?>>모집대기중</option>
+          <option value="2" <?php echo (isset($data['productstep']) && $data['productstep']=='2' ? "selected":"")?>>펀딩진행중</option>
+          <option value="3" <?php echo (isset($data['productstep']) && $data['productstep']=='3' ? "selected":"")?>>상환대기중</option>
+          <option value="4" <?php echo (isset($data['productstep']) && $data['productstep']=='4' ? "selected":"")?>>이자상환중</option>
+          <option value="5" <?php echo (isset($data['productstep']) && $data['productstep']=='5' ? "selected":"")?>>연체중</option>
+          <option value="6" <?php echo (isset($data['productstep']) && $data['productstep']=='6' ? "selected":"")?>>중도상환완료</option>
+          <option value="7" <?php echo (isset($data['productstep']) && $data['productstep']=='7' ? "selected":"")?>>만기상환완료</option>
+          <option value="8" <?php echo (isset($data['productstep']) && $data['productstep']=='8' ? "selected":"")?>>투자취소</option>
+          <option value="9" <?php echo (isset($data['productstep']) && $data['productstep']=='9' ? "selected":"")?>>부실</option>
+          <option value="99" <?php echo (!isset($data['productstep']) || !in_array($data['productstep'], array("1","2","3","4","5","6","7","8","9") ? "selected":"")?>>알수없음</option>
       </select>
     </td>
   </tr>
