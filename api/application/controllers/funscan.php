@@ -6,8 +6,8 @@ class funscan extends CI_Controller {
     SELECT
      a.i_subject AS productname
      , a.i_id AS productcode
-     , CONCAT('https://www.kfunding.co.kr/pnpinvest/?mode=invest_view&loan_id=',a.i_id) AS url
-     , CONCAT('https://www.kfunding.co.kr/pnpinvest/data/photoreviewers/',a.i_id,'/', b.i_creditratingviews) AS image
+     , CONCAT(\"https://www.kfunding.co.kr/pnpinvest/?mode=invest_view&loan_id=\",a.i_id) AS url
+     , CONCAT(\"https://www.kfunding.co.kr/pnpinvest/data/photoreviewers/\",a.i_id,'/', b.i_creditratingviews) AS image
      , a.i_year_plus as returnrate
      , b.i_invest_sday AS startat
      , a.i_loan_day AS period
@@ -26,7 +26,7 @@ class funscan extends CI_Controller {
     WHERE a.i_id = ?
     LIMIT 1
     ";
-    $data = $this->db->query($sql, array($idx ) )->row_array()
+    $data = $this->db->query($sql, array($idx) )->row_array();
     $this->load->view('funscan', array("data"=>$data));
   }
 }
