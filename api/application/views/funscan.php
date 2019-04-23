@@ -91,7 +91,8 @@
      dataType : 'json',
      data : $("#form01").serialize(),
      success : function(result) {
-       console.log( result )
+       if( result.code==200) alert("등록하였습니다.");
+       else alert( result.msg );
      }
    });
  }
