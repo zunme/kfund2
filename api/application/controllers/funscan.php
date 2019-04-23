@@ -23,10 +23,10 @@ class funscan extends CI_Controller {
      , b.i_view AS publish
     FROM mari_loan a
     JOIN mari_invest_progress b ON a.i_id = b.loan_id
-    WHERE a.i_id = ?
+    WHERE a.i_id = ".(int)$idx."
     LIMIT 1
     ";
-    $data = $this->db->query($sql, array($idx) )->row_array();
+    $data = $this->db->query($sql )->row_array();
     $this->load->view('funscan', array("data"=>$data));
   }
 }
