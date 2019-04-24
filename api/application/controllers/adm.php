@@ -210,6 +210,9 @@ public function ilmangitable() {
       SELECT
  회원등급, 이름, 아이디, 번호, 유효자금, (ifnull(mxt.maximum,0) - 유효자금) 남은한도
 , 누적, 이머니, 가입, 최종접속일
+,(SELECT s_date from mari_seyfert_order WHERE m_id = 아이디  and trnsctnTp='SEYFERT_PAYIN_VACCNT' AND trnsctnSt='SFRT_PAYIN_VACCNT_FINISHED' ORDER BY s_id LIMIT 1) 최초입금일
+,(SELECT CONCAT('[',s_bnkCd,'] ', s_accntNo) FROM mari_seyfert a WHERE a.m_id = 아이디 AND a.s_memuse='Y' LIMIT 1) 가상계좌
+, CONCAT('[',m_my_bankcode,']', ' ', m_my_bankacc) 출금계좌
 FROM (
 select
      a.m_no
@@ -231,16 +234,29 @@ select
       ,a.m_emoney 이머니
       ,a.m_datetime 가입
       ,a.m_today_login 최종접속일
-
+     ,if( a.m_verifyaccountuse ='Y' , a.m_my_bankcode , '') AS 	m_my_bankcode
+	, if( a.m_verifyaccountuse ='Y' , a.m_my_bankacc , '') as  m_my_bankacc
      FROM  mari_member a
      LEFT JOIN
      (
-     SELECT sale_id, ifnull(SUM( remainm),0) AS remainmoney
-   FROM (
-     SELECT sale_id, (i_pay - SUM(wongum) ) AS  remainm FROM z_invest_sunap_detail a
-     GROUP BY sale_id, loan_id
-   ) remaint
-   GROUP BY sale_id
+     SELECT
+	tmprem.m_id AS sale_id, (invpayed - IFNULL(wongumpayed,0) ) AS remainmoney
+	FROM
+	(
+	SELECT inva.m_id, sum(inva.i_pay) invpayed
+	from mari_invest_progress t
+	JOIN mari_invest inva ON t.loan_id = inva.loan_id
+	where t.i_look in('Y','C','D')
+	GROUP BY inva.m_id
+	)tmprem
+	LEFT JOIN(
+	  SELECT
+	    sale_id,SUM(wongum)  AS  wongumpayed
+	  FROM z_invest_sunap_detail a
+	  JOIN mari_invest_progress t2 ON a.loan_id = t2.loan_id
+	  WHERE t2.i_look in('Y','C','D')
+     GROUP BY sale_id
+	) remtmp ON tmprem.m_id = remtmp.sale_id
    ) remaingrp ON a.m_id = remaingrp.sale_id
 ) temp1
 LEFT JOIN (
@@ -260,6 +276,7 @@ SELECT '법인대부' AS tname , i_maximum_corporateloan AS maximum from mari_in
 UNION
 SELECT '소득적격대부' AS tname , i_maximum_incomeloan AS maximum from mari_inset a
 ) mxt ON temp1.회원등급 = mxt.tname
+
       ";
       $rows = $this->db->query($sql)->result_array();
 
