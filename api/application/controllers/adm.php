@@ -304,6 +304,9 @@ $objPHPExcel->setActiveSheetIndex(0)
             ->setCellValue('H'.$i, '이머니')
             ->setCellValue('I'.$i, '가입')
             ->setCellValue('J'.$i, '최종접속일')
+            ->setCellValue('K'.$i, '최초입금일')
+            ->setCellValue('L'.$i, '가상계좌')
+            ->setCellValue('M'.$i, '출금계좌')
             ;
 foreach($rows as $idx=>$row) {
 $i = $idx+2;
@@ -318,6 +321,9 @@ $objPHPExcel->setActiveSheetIndex(0)
             ->setCellValue('H'.$i, $row['이머니'])
             ->setCellValue('I'.$i, $row['가입'])
             ->setCellValue('J'.$i, $row['최종접속일'])
+            ->setCellValue('K'.$i, $row['최초입금일'])
+            ->setCellValue('L'.$i, $row['가상계좌'])
+            ->setCellValue('M'.$i, $row['출금계좌'])
             ;
 }
 // Rename worksheet
@@ -326,7 +332,7 @@ $objPHPExcel->getActiveSheet()->setTitle('member');
 $objPHPExcel->setActiveSheetIndex(0);
 // Redirect output to a client’s web browser (Excel5)
 header('Content-Type: application/vnd.ms-excel');
-header('Content-Disposition: attachment;filename="member.xls"');
+header('Content-Disposition: attachment;filename="member_'.date('YmdHis').'.xls"');
 header('Cache-Control: max-age=0');
 // If you're serving to IE 9, then the following may be needed
 header('Cache-Control: max-age=1');
