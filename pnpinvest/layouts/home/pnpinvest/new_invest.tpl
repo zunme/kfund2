@@ -74,6 +74,9 @@ else $search = mysql_real_escape_string($_GET['search']);
 if($search != ''){
   $searchsql = " and a.i_subject like '%".$search."%' ";
 }
+if ( $_GET['prc'] !=''){
+  $searchsql = " and a.i_look like '".$_GET['prc']."' ";
+}
 $nowpage = ($_GET['page'] > 1 ) ? $_GET['page']: 1;
 $sql = "select count(1) as total from mari_loan a where a.i_view='Y'  $searchsql";
 $totaltmp =  sql_fetch($sql);
@@ -553,7 +556,7 @@ margin-top:15px;
 
 			</ul>
 			<!-- paging -->
-      <?php echo paginate($perpage, $nowpage, $totalnum, $totalpage, '/pnpinvest/?mode=invest&search='.$_GET['search']) ?>
+      <?php echo paginate($perpage, $nowpage, $totalnum, $totalpage, '/pnpinvest/?mode=invest&search='.$_GET['search'].'&prc='.$_GET['prc']) ?>
 
 		</div>
 	</div>
