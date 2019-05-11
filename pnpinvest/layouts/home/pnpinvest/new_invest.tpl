@@ -436,7 +436,7 @@ margin-top:15px;
 			<form action="/pnpinvest/" method="get" name="form1">
   <input type="hidden" name="mode" value="invest">
 				<h3 class="skip">검색창</h3>
-        <div style="position: absolute;top: 0;right: 220px;display: inline-block">
+        <div style="position: absolute;top: 0;right: 400px;display: inline-block">
           <select name="prc">
             <option value="">전체</option>
             <option value="N">투자대기</option>
@@ -446,7 +446,7 @@ margin-top:15px;
           </select>
         </div>
 				<div class="sch_wrap">
-					<span class="sch_box"><input type="text" name="search" id="" title="검색어 입력" value="<?php echo ($_GET['search']!='')? $_GET['search'] : "투자상품 검색"?>" onfocus="if(this.value=='투자상품 검색')this.value=''" onblur="if(this.value=='')this.value='투자상품 검색'"></span>
+					<span class="sch_box"><input type="text" name="search" id="" title="검색어 입력" value="<?php echo ($_GET['search']!='')? $_GET['search'] : ""?>" ></span>
 					<button type="submit" name="" id="" class="btn_sch"><img src="img/btn_sch.png" alt="검색"></button>
 				</div>
 			</form>
