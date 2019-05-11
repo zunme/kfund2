@@ -41,7 +41,7 @@ class Cast extends CI_Controller {
     $config['use_page_numbers'] = TRUE;
 
     $page = !$this->uri->segment($config['uri_segment']) ? 0 : $this->uri->segment($config['uri_segment']);
-
+    if( $page < 3) $config['num_links'] = 5 - $page ;
     $top = $this->db->query("select * from z_cast where isview='Y' and notice='Y' limit 1")->row_array();
     if(!isset($top['cast_idx'] )){
       $top = $this->db->query("select * from z_cast where isview='Y' order by cast_idx desc limit 1")->row_array();
