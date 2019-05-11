@@ -23,7 +23,7 @@ class boardapi extends CI_Controller {
 
     if( $this->input->get('noti')=='Y'){
       $sql2 = "select w_id, w_subject,w_hit, date_format( w_datetime,'%Y.%m.%d') as w_datetime,'Y' as w_notice   from mari_write
-            where w_table = '".$this->input->get('table')."' and w_main_exposure ='Y' and w_notice='Y' order by w_datetime desc;";
+            where w_table = '".$this->input->get('table')."' and w_main_exposure ='Y' and w_notice='Y' order by w_subject asc;";
       $list2 = $this->db->query($sql2)->result_array();
       if( count($list2)>0 ){
         if(count($list) >0) $list = array_merge($list2,$list);

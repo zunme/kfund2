@@ -20,6 +20,11 @@ include (getcwd().'/module/mode_bbs_list.php');
         <input type="hidden" name="mode" value="bbs_list">
         <input type="hidden" name="table" value="<?php echo $table?>">
 				<input type="hidden" name="search" value="<?php echo htmlspecialchars ($_GET['searchtxt'],ENT_QUOTES )?>">
+				<div>
+					<select>
+						<option>제목으로 정렬</option>
+					</select>
+				</div>
 				<div class="board_sch">
 					<p class="txt_sch"><input type="text" placeholder="<?php echo $bbs_config["bo_subject"]?> 검색" name="searchtxt" value="<?php echo htmlspecialchars ($_GET['searchtxt'],ENT_QUOTES )?>"></p>
 					<button class="btn_sch" type="submit">검색</button>
