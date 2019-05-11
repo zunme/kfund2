@@ -336,11 +336,13 @@ $("document").ready( function() {
 });
 </script>
 
-<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+<script type="text/javascript" src="//wcs.naver.net/wcslog.js"> </script>
 <script type="text/javascript">
-if(!wcs_add) var wcs_add = {};
-wcs_add["wa"] = "9d1c0cd58e8b30";
-wcs_do();
+if (!wcs_add) var wcs_add={};
+wcs_add["wa"] = "s_150f5d751728";
+if (!_nasa) var _nasa={};
+wcs.inflow();
+wcs_do(_nasa);
 </script>
 
 </body>
