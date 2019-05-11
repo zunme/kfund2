@@ -257,6 +257,8 @@ margin-top: -150px
 
 
 <link href="https://fonts.googleapis.com/css?family=Black+Ops+One|Pacifico" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPKQSFP"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -1286,9 +1288,9 @@ $("document").ready(function() {
 	<!-- 현재 투자 건수 -->
 	<div class="number">
 		<div class="container">
-			<h3 class="motion" data-animation="fadeInUp" data-animation-delay="300">현재까지 <strong><span class="counter"><?php echo $allpay['nujuk']['cnt']?></span>건</strong>의 투자가 이루어졌습니다.</h3>
-			<span class="date"><?php echo date('Y년 m월 d일 H:i')?> 기준</span>
-			<table class="number_con">
+			<h3 class="motion" data-animation="fadeInUp" data-animation-delay="300" style="font-size:22px; letter-spacing:-1px; font-family: 'Noto Sans KR', sans-serif; word-break:keep-all;">현재까지 <strong><span class="counter"><?php echo $allpay['nujuk']['cnt']?></span>건</strong>의 투자가 이루어졌습니다.</h3>
+			<span class="date"><i class="material-icons" style="vertical-align:-5px; font-size:22px;">alarm_on</i>&nbsp;&nbsp;<?php echo date('Y년 m월 d일 H:i')?> 기준</span>
+			<table class="number_con" style=" font-family: 'Noto Sans KR', sans-serif; letter-spacing:-1px;">
 				<caption>투자 현황</caption>
 				<colgroup>
 					<col style="width:40%;">
@@ -1296,7 +1298,7 @@ $("document").ready(function() {
 				</colgroup>
 				<tbody>
 					<tr>
-						<th scope="row">누적 투자금</th>
+						<th scope="row" >누적 투자금</th>
 						<td><span class="counter"><?php echo number_format($allpay['total2']) ?></span>원</td>
 					</tr>
 					<tr>
@@ -1332,8 +1334,8 @@ $("document").ready(function() {
     -->
 		</div>
     <div style="clear:both"></div>
-    <div class="container" style="text-align:right;width:350px;display:inline-block;padding-top :10px;padding-right:5px;font-size:16px;">
-      <div style="width:350px">
+    <div class="container2" style="width:380px;display:inline-block;padding-top :20px;font-size:16px; font-family: 'Noto Sans KR', sans-serif;">
+      <div>
         <span>연체율</span>
          <i class="far fa-question-circle" data-toggle="hide_tooltip" data-placement="bottom" title="<b>연체율이란</b><br>현재 미상환된 대출 잔액 중 연체중인 건의 잔여원금의 비중<br>(연체:상환일로 부터 30일 이상 상환이  지연되는 현상)"></i>
          <span style="padding-left:20px;"><?php echo (isset($allpay['yeonchaeyul'])&& $allpay['yeonchaeyul']!='') ? $allpay['yeonchaeyul'] : 0 ?>%</span>
@@ -1407,7 +1409,7 @@ $("document").ready(function() {
         font-weight: 300;
         text-align: center;
         letter-spacing: 2px;
-        padding: 0px 14px;
+        padding: 8px 14px;
     margin-bottom: 20px;
     border: 1px solid #006691;
     color: #006691;
@@ -1646,7 +1648,8 @@ $("document").ready(function() {
       color: #006691;
       text-align: center;
       font-size: 20px;
-      font-weight: 200;
+      font-weight: 400;
+      /*background: url(/pnpinvest/img/mainbg_07058.png)no-repeat fixed;*/
   }
   .btn.t2 {
       border-color: #006691;
@@ -1658,8 +1661,12 @@ $("document").ready(function() {
 		<div class="container">
 			<p>빠르게 마감되는 케이펀딩의 투자 상품,<br>
                			놓치지 않으려면?</p>
-			<a class="btn t2 w200 f1" href="/pnpinvest/?mode=mypage_modify">SNS 알림받기</a>
-			<a class="btn t2 w200 f1" href="http://pf.kakao.com/_FcJxcC"  target="_blank">카카오톡 친구추가</a>
+			<a class="btn t2 w200 f1" href="/pnpinvest/?mode=mypage_modify"><i class="material-icons">
+mail
+</i>&nbsp;SNS 알림받기</a>
+			<a class="btn t2 w200 f1" href="http://pf.kakao.com/_FcJxcC"  target="_blank"><i class="material-icons">
+chat_bubble
+</i>&nbsp;카카오톡 친구추가</a>
 		</div>
 	</div>
   <!-- guide -->
@@ -1671,6 +1678,9 @@ $("document").ready(function() {
   $rand2 = 1;
   ?>
   <style>
+  .main_join .btn{font-size: 17px; line-height: 22px;  margin-right:5px; padding:8px 10px;}
+  .btn .material-icons{top:0.5px;     margin-right: 5px; font-size: 20px;}
+  /*.number{background: url(/pnpinvest/img/mainbg_07058.png)no-repeat fixed;}*/
   .z_box_wrap{height:600px; width:780px; position: relative;margin: 10px auto;}
 
 
@@ -2161,8 +2171,9 @@ select.form-control2 {
 background-color: #f5f5f5;
 margin-bottom: 60px;
 color: #006691;
-font-weight: 200;
+font-weight: 400;
     font-size: 20px;
+  /*  background: url(/pnpinvest/img/mainbg_07058.png)no-repeat fixed;*/
 }
 .barWrapper .graphtitle{
   padding-right:10px;
@@ -2875,6 +2886,7 @@ function graphdraw() {
 .main_product .summary > li {padding-left:50px;background-position:left center;background-repeat:no-repeat;line-height: 22px;margin-bottom:30px;}
 .main_product .donut {width:44%;margin-top:6px;margin-right:5%;max-width:210px;overflow:hidden;position: relative;}
 .main_product .item .item_con {position:absolute;z-index: 10;top:8px;right:8px;border-radius: 5px;font-size: 18px;width:140px;height:40px;line-height: 36px;text-align: center;}
+.number .container2{text-align:right;}
 
 @media all and (max-width:880px) {
   .main_product .info1 .img_wrap {width:100%;height:100%;}
@@ -2950,6 +2962,7 @@ function graphdraw() {
 .main_product .donut_txt span {margin-top:24%;}
   .main_product .donut_txt strong {font-size: 32px;}
 .main_product .event {width:100%;max-width:inherit;margin-top:5px;}
+
 }
 @media all and (max-width:750px) {
   .main_product h4 {margin:10px 0;}
@@ -2968,6 +2981,8 @@ function graphdraw() {
 .main_product .donut {width:30%;margin-top:-40px;}
 .main_product .donut_txt span {margin-top:22%;}
 .main_product .event {width:100%;max-width:inherit;margin-top:5px;}
+  .number .container2{text-align:center; padding-right:5px;}
+  .number .date{width:240px; margin-left:-120px;}
 }
 @media all and (max-width:600px) {
 .main_product .item {padding:20px 20px 30px;}
@@ -2977,6 +2992,7 @@ function graphdraw() {
 .main_product .donut_txt span {margin-top:20%;}
 .main_product .summary {min-width:64%;margin:-3% 0;}
 .main_product .summary > li {float:left;width:50%;}
+
 }
 @media all and (max-width:570px) {
 	.main_product .info1 .img_wrap {width:100%;height:100%;}
@@ -3002,6 +3018,10 @@ function graphdraw() {
 .main_product .event {width:50%;margin-top:-60px;}
 	.main_product .donut_txt span {margin-top:22%;}
   .main_product .donut_txt strong {font-size: 32px;}
+.number{background: #f5f5f5;}
+.main_join{background: #f5f5f5;}
+.graphheader{background: #f5f5f5;}
+.main_join .btn{margin: 10px auto;}
 }
 
 @media all and (max-width:465px) {

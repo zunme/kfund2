@@ -733,18 +733,18 @@ function paginate($item_per_page, $current_page, $total_records, $total_pages, $
 .product .item .item_con {position:absolute;z-index: 10;top:8px;right:8px;border-radius: 5px;font-size: 16px;width:120px;height:36px;line-height: 32px;text-align: center;}
 .product .item h4 {margin-top:8px;}
 .product .summary {width:98%; line-height: 30px; margin: 30px auto 31px; text-align: left;}
-.product .summary .sm_1 {margin-bottom:22px;}
-
+.product .summary .sm_1 {margin-bottom:22px; min-width: 39%;}
+.product .summary .sm_3 { min-width: 39%;}
 .product .item_progress .ib {width:12%;}
 .product .item_progress > div {width:87%;}
 .progress {margin-bottom:0px;}
 
 
-.product.gallery > li {padding:0 0 10px;}
+.product.gallery > li {padding:0 0 30px;}
 .product.gallery .info1 .img_wrap {height:100%; width:100%; transition: .3 ease-out;}
 .product.gallery .item .item_con {position:absolute;z-index: 10;top:5px;right:5px;border-radius: 5px;font-size: 14px;width:90px;height:30px;line-height: 10px;text-align: center;}
-.product.gallery .summary {width:98%; line-height: 30px; margin: 0 auto 20px; text-align: left;}
-.product.gallery .summary > li {display:inline-block;min-width:45%;padding-left: 40px;background-position:left center;background-repeat: no-repeat;line-height: 22px;}
+.product.gallery .summary {width:130%;overflow: hidden;line-height: 30px; margin: 0 auto 20px; text-align: left;}
+.product.gallery .summary > li {display:inline-block;padding-left: 40px;background-position:left center;background-repeat: no-repeat;line-height: 22px;}
 .product.gallery .item_progress .ib {width:16%;}
 .product.gallery .item_progress > div {display:inline-inline-block;width:82%;}
 
@@ -860,7 +860,7 @@ function paginate($item_per_page, $current_page, $total_records, $total_pages, $
 .product .summary {width:98%; line-height: 30px; margin: 5px auto 5px; text-align: left;}
 }
 @media all and (max-width:720px) {
-.product .summary .sm_1 {margin-bottom:8px;}
+.product .summary .sm_1 {margin-bottom:8px;    min-width: 39%;}
 .product .summary {width:98%; line-height: 30px; margin: 4px auto 5px; text-align: left;}
 }
 @media all and (max-width:710px) {

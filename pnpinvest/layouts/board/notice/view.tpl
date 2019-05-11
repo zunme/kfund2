@@ -49,5 +49,14 @@ include(MARI_VIEW_PATH.'/Common_select_class.php');
 		</div>
 	</div>
 </div>
+<style>
+.board table{width:700px; margin:0 auto;}
+.board table tbody tr{border:0;}
+.board table tbody tr td{border:0; style:none;}
+
+@media all and (max-width:1000px) {
+	.board table{width:100%; margin:0 auto; border:0;}
+}
+</style>
 <!-- /////////////////////////////// 본문 끝 /////////////////////////////// -->
 {# new_footer}<!--하단-->

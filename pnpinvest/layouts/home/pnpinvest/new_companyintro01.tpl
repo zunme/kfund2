@@ -2,7 +2,10 @@
 <!-- /////////////////////////////// 본문 시작 /////////////////////////////// -->
 <div id="container" class="sub center">
 	<div class="company_01">
-		<p class="txt"><span class="typing"></span></p>
+		<p class="txt">
+			<img src="img/kfunding_info.png" class="kfunding_info">
+			<img src="img/kfunding_info_mobile.png" class="kfunding_info_mobile">
+			<span class="typing"></span></p>
 	</div>
 	<script>
 		var hdHeight = $('#hd').height();
@@ -12,6 +15,21 @@
 
 
 <style>
+#container .company_01 p .kfunding_info{
+			display:block;
+			margin:0 auto;
+
+}
+#container .company_01 p{
+			top:220px;
+
+}
+#container .company_01 p .kfunding_info_mobile{
+			display:none;
+
+}
+
+
 *, .card_company_body span {
 	font-family: 'Noto Sans KR',sans-serif;
 }
@@ -457,6 +475,16 @@
       </div>
     </div>
 		<div class="col-sm-4 colimgbox">
+		<div class="box">
+<img src="img/pp13.png" alt="김봉선">
+			<div class="box-title">Chief Operating Officer <br>
+Kim Bong Sun<br>
+<p style="font-size:15px;line-height:27px;color:#89afb7">
+- 삼성중공업/삼성카드</p></div>
+		</div>
+	</div>
+
+		<div class="col-sm-4 colimgbox">
       <div class="box">
 	<img src="img/pp06.jpg" alt="박영태">
         <div class="box-title">Head of Risk <br>
@@ -465,6 +493,26 @@
 	- 저축은행/새마을금고 중앙회</p></div>
       </div>
     </div>
+
+		<div class="col-sm-4 colimgbox">
+			<div class="box">
+	<img src="img/pp15.png" alt="이승호">
+				<div class="box-title">Head of Business Investment <br>
+	Lee Seung Ho<br>
+	<p style="font-size:15px;line-height:26px;color:#89afb7">
+	- 경기은행/2금융권수탁업체 신용분석사</p></div>
+			</div>
+		</div>
+
+		<div class="col-sm-4 colimgbox">
+			<div class="box">
+	<img src="img/pp16.png" alt="이정우">
+				<div class="box-title">Head of Marketing <br>
+	Lee Jung Woo<br>
+	<p style="font-size:15px;line-height:26px;color:#89afb7">
+	- 더블유마크/아이배냇 온라인마케팅</p></div>
+			</div>
+		</div>
       <!--<div class="col-sm-4 colimgbox">
       <div class="box">
 	<img src="img/pp03.jpg" alt="임용환">
@@ -474,15 +522,7 @@
 	- 종합광고대행사 운영</p></div>
       </div>
     </div>-->
-      <div class="col-sm-4 colimgbox">
-      <div class="box">
-	<img src="img/pp04.jpg" alt="최봉용">
-        <div class="box-title">Head of Business Development <br>
-	Choi Bong Yong<br>
-	<p style="font-size:15px;line-height:27px;color:#89afb7">
-	- 신협 대부계</p></div>
-      </div>
-    </div>
+
 <!--<div class="col-sm-4 colimgbox">
       <div class="box">
 	<img src="img/pp05.jpg" alt="정진식">
@@ -493,19 +533,6 @@
       </div>
     </div>-->
 
-
-
-
-
-		<div class="col-sm-4 colimgbox">
-			<div class="box">
-	<img src="img/pp12.jpg" alt="장현익">
-				<div class="box-title">Head of Alternative Investment <br>
-			Jang Hyun Ik<br>
-		<p style="font-size:15px;line-height:26px;color:#89afb7">
-	- KB국민은행 대출상담사</p></div>
-			</div>
-		</div>
 
     <div class="col-sm-4 colimgbox">
 			      <div class="box">
@@ -559,7 +586,7 @@
 			<dt>대표전화</dt>
 			<dd>02-552-1772</dd>
 			<dt>이메일 문의</dt>
-			<dd>help@kfinding.co.kr</dd>
+			<dd>help@kfunding.co.kr</dd>
 			<dt>카카오톡 문의</dt>
 			<dd><img src="img/com_plusf.png" alt="Plus친구">&nbsp;<span>@케이펀딩&nbsp;</span></dd>
 		</dl>
@@ -666,6 +693,22 @@
 @media (max-width: 992px){
 	.newcol.desc2{
 		margin-left: 204px;
+	}
+	#container .company_01 p .kfunding_info_mobile{
+				display: block;
+				width:80%;
+				margin:0 auto;
+
+
+	}
+	#container .company_01 p {
+				display: block;
+				top:110px;
+
+	}
+	#container .company_01 p .kfunding_info{
+				display:none;
+
 	}
 }
 @media (max-width: 780px){
