@@ -188,7 +188,7 @@ if(!$isauthed) { ?>
 					<li><strong class="title">최소 투자금액</strong><?php echo change_pay($iv['i_invest_mini'])?>원</li>
 					<li><strong class="title">펀딩진행률</strong><?php echo $order_pay?>%</li>
 				</ul>
-				<a class="btn t1 f1" href="javascript:;" onClick="viewCalc()">이자계산기</a>
+				<a class="btn t1 f1" href="#calctab" onClick="viewCalc()">이자계산기</a>
 				<!--a class="btn t5 f1" href="javascript:;" onClick="investment()">투자하기</a-->
 
         <?php if($iv[i_look]=="C"){?>
@@ -1714,7 +1714,7 @@ table.product_table tbody tr td:first-child{
 				</div>
 
 				<!-- 이자계산기 탭 -->
-				<h3 class="title inverest"><i class="bg"></i><span class="txt">이자계산기</span></h3>
+				<h3 class="title inverest" id="calctab"><i class="bg"></i><span class="txt">이자계산기</span></h3>
 				<div class="detail_con inverest">
 					<div class="container">
             <form name="calcform">
