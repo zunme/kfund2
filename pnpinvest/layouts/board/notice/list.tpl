@@ -20,9 +20,9 @@ include (getcwd().'/module/mode_bbs_list.php');
         <input type="hidden" name="mode" value="bbs_list">
         <input type="hidden" name="table" value="<?php echo $table?>">
 				<input type="hidden" name="search" value="<?php echo htmlspecialchars ($_GET['searchtxt'],ENT_QUOTES )?>">
-				<div>
+				<div style="vertical-align: top;position: absolute;top: 0;right: 400px;text-align: right;">
 					<select>
-						<option>제목으로 정렬</option>
+						<option>제목순</option>
 					</select>
 				</div>
 				<div class="board_sch">
