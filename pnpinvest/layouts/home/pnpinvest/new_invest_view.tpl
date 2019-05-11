@@ -146,7 +146,7 @@ if(!$isauthed) { ?>
 					</li>
 				</ul>
 				<p class="progress"><span class="p_bar" style="width:<?php echo $order_pay?>%;"><span></p>
-				<p class="guide"><?php echo (isset($extinfo['descript']) ? nl2br($extinfo['descript']) :'')?></p>
+				<p class="guide" id="calctab"><?php echo (isset($extinfo['descript']) ? nl2br($extinfo['descript']) :'')?></p>
         <?php if ($loa['i_id'] == '18') { ?>
           <!--
           <p class="guide"style="border-top:1px solid #b7b7b7;">해당상품은 총 3.2억원중 케이펀딩(1.6억)과 펀디드(1.6억)가 공동으로 모집하는 컨소시엄 상품으로 각 회사에서 동일한 상품에 투자가 가능 합니다.<br>
@@ -1714,7 +1714,7 @@ table.product_table tbody tr td:first-child{
 				</div>
 
 				<!-- 이자계산기 탭 -->
-				<h3 class="title inverest" id="calctab"><i class="bg"></i><span class="txt">이자계산기</span></h3>
+				<h3 class="title inverest"><i class="bg"></i><span class="txt">이자계산기</span></h3>
 				<div class="detail_con inverest">
 					<div class="container">
             <form name="calcform">
