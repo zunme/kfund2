@@ -439,7 +439,7 @@ margin-top:15px;
 			<form action="/pnpinvest/" method="get" name="form1">
   <input type="hidden" name="mode" value="invest">
 				<h3 class="skip">검색창</h3>
-        <div style="position: absolute;top: 0;right: 400px;display: inline-block">
+        <div>
           <select name="prc">
             <option value="">전체</option>
             <option value="N">투자대기</option>
@@ -449,7 +449,7 @@ margin-top:15px;
           </select>
         </div>
 				<div class="sch_wrap">
-					<span class="sch_box"><input type="text" name="search" id="" title="검색어 입력" value="<?php echo ($_GET['search']!='')? $_GET['search'] : ""?>" ></span>
+					<span class="sch_box"><input type="text" name="search" id="" title="검색어 입력" placeholder="투자상품 검색" value="<?php echo ($_GET['search']!='')? $_GET['search'] : ""?>" ></span>
 					<button type="submit" name="" id="" class="btn_sch"><img src="img/btn_sch.png" alt="검색"></button>
 				</div>
 			</form>
@@ -459,8 +459,9 @@ margin-top:15px;
 	<div class="invest_all">
 		<div class="container">
 			<ul class="product gallery">
-<?php for ($i=0; $row=sql_fetch_array($result); $i++) {
-
+<?php
+$i=0;
+for ($i=0; $row=sql_fetch_array($result); $i++) {
   if( $row != false ) {
     $row['percent'] = ($row['payed'] == 0 ) ? '0' : floor($row['payed'] / $row['i_loan_pay']*100);
     $row['type'] = ($row['i_payment']=="cate02"||$row['i_payment']=="cate04") ? "부동산":"비부동산";
@@ -557,7 +558,11 @@ margin-top:15px;
 			</ul>
 			<!-- paging -->
       <?php echo paginate($perpage, $nowpage, $totalnum, $totalpage, '/pnpinvest/?mode=invest&search='.$_GET['search'].'&prc='.$_GET['prc']) ?>
-
+<?php if($i == 0){?>
+  <div>
+    검색 결과가 없습니다.
+  </div>
+<?php  }?>
 		</div>
 	</div>
 </div>
