@@ -35,7 +35,8 @@ class boardapi extends CI_Controller {
     $config['base_url'] = '/api/index.php/boardapi/boardlist?table='.$this->input->get('table').'&per='.$perpage.'&cate='.$this->input->get('cate').'&target='.$target.'&search='.$this->input->get('search');
     $config['total_rows'] = isset($count['cnt']) && $count['cnt']>0 ? $count['cnt'] : 0;
     $config['per_page'] = $perpage;
-    $config['num_links'] = ($this->input->get('per_page')<1)? 5 : 2;
+    $temppage = ($start == 0 ) ? 1 : ( $start%$per);
+    $config['num_links'] = ($temppage<3)? 5-$temppage : 2;
     $config['page_query_string'] = true;
 
   $config['first_link'] =false;
