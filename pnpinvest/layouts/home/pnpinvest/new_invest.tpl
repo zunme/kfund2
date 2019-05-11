@@ -663,7 +663,7 @@ function paginate($item_per_page, $current_page, $total_records, $total_pages, $
           $pagination .= "
           ";
 
-        $right_links    = $current_page + 3;
+        $right_links    = ($current_page < 3) ? 6 : $current_page + 3;
         $previous       = $current_page - 3; //previous link
         $next           = $current_page + 1; //next link
         $first_link     = true; //boolean var to decide our first link
