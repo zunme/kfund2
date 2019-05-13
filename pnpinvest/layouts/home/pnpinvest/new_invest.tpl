@@ -439,8 +439,8 @@ margin-top:15px;
 			<form action="/pnpinvest/" method="get" name="form1">
   <input type="hidden" name="mode" value="invest">
 				<h3 class="skip">검색창</h3>
-        <div>
-          <select name="prc">
+        <div class="sort1">
+          <select name="prc" class="prc1">
             <option value="">전체</option>
             <option value="N">투자대기</option>
             <option value="Y">투자중</option>
@@ -766,7 +766,7 @@ function paginate($item_per_page, $current_page, $total_records, $total_pages, $
 .product.gallery .item_progress > div {display:inline-inline-block;width:82%;}
 
 
-
+.prc1{font-size:16px; width:100px; height:40px; margin-left:150px; padding-left:3px; }
 
 
 
@@ -914,6 +914,10 @@ function paginate($item_per_page, $current_page, $total_records, $total_pages, $
 
 	.invest_top .donut_txt span {margin-top:22%;}
 	.invest_top .donut_txt strong {font-size: 32px;}
+
+  .search .container{text-align: left;}
+  .prc1{margin-left:0;}
+  .sort1{float:left;}
 }
 
 
