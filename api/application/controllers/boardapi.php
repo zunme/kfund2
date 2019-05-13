@@ -19,8 +19,8 @@ class boardapi extends CI_Controller {
       $sql .=" and w_subject like'%".$this->db->escape_str($this->input->get('search')) ."%' ";
     }
 
-      $neworder = ($this->input->get('table')=='notice') ? "w_subject asc" : "w_datetime desc";
-
+      //$neworder = ($this->input->get('table')=='notice') ? "w_subject asc" : "w_datetime desc";
+    $neworder ="w_datetime desc";
     $count = $this->db->query('select count(1) as cnt '.$sql)->row_array();
     $list =  $this->db->query('select w_id, w_subject,w_hit, date_format( w_datetime,"%Y.%m.%d") as w_datetime,"" as w_notice '.$sql.' order by '.$neworder.' limit '.$start .','.$perpage)->result_array();
     if( $this->input->get('noti')=='Y'){
