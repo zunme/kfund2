@@ -1,6 +1,34 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Timer extends CI_Controller {
+  function check() {
+    $sql = "set time_zone = '+9:00'";
+    $this->db->query($sql);
+    $sql = "
+    SELECT
+    ifnull(group_CONCAT(a.loan_id),'') as loanid FROM mari_invest_progress a
+    WHERE a.i_invest_sday <= date_format(NOW(), '%Y-%m-%d %H:%i:%s')
+    AND a.i_view='Y' AND a.i_look='N'
+    ";
+    $qry = $this->db->query($sql);
+    if( $qry->num_rows() > 0 ){
+      $row = $qry->row_array();
+      if( $row['loanid'] !='' ){
+        $sql ="
+        update mari_loan set i_look = 'Y'
+        WHERE i_id IN ( ".$row['loanid']." )
+        ";
+        $this->db->query($sql);
+        $sql ="
+        update mari_invest_progress set i_look = 'Y'
+        WHERE loan_id IN ( ".$row['loanid']." )
+        ";
+        $this->db->query($sql);
+        echo "on_";
+      }
+    }
+    echo "done";
+  }
   function now() {
       $loan_id = $this->uri->segment(3, 0);
 
@@ -10,9 +38,9 @@ class Timer extends CI_Controller {
       update mari_loan set i_look = 'Y'
       WHERE i_id IN (SELECT loan_id from mari_invest_progress  where   i_look ='N'  and i_view ='Y'  and i_invest_sday <= NOW() )
       ";
-      $this->db->query($sql);
-      $sql = "update mari_invest_progress set i_look = 'Y' where   i_look ='N'  and i_view='Y'  and i_invest_sday <= now()";
-      $this->db->query($sql);
+      //$this->db->query($sql);
+      //$sql = "update mari_invest_progress set i_look = 'Y' where   i_look ='N'  and i_view='Y'  and i_invest_sday <= now()";
+      //$this->db->query($sql);
       /*자동마감 block
       $sql = "update mari_invest_progress set i_look = 'C' where  i_look ='Y' and i_view='Y' and i_invest_eday <= now()";
       $this->db->query($sql);
