@@ -18,7 +18,7 @@ include(MARI_VIEW_PATH.'/Common_select_class.php');
 			{# lnb}<!--메인메뉴-->
 		</div><!-- /lnb_wrap -->
 	</div><!-- /left_container -->
-    
+
 	<div id="container">
 		<div class="title02">출금신청</div>
 		 <div class="local_ov01 local_ov">
@@ -35,6 +35,18 @@ include(MARI_VIEW_PATH.'/Common_select_class.php');
 			<label for="" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label>
 			<input type="text"  name="stx" value="<?php echo $stx ?>" id="" required="" class="required frm_input">
 			<input type="submit" class="search_btn" value="">
+			<?php
+			$sql = "SELECT ifnull(SUM(a.s_amount),0) AS total FROM mari_seyfert_order a WHERE DATE_FORMAT(a.s_date,'%Y-%m-%d') =  DATE_FORMAT( DATE_SUB(NOW() , INTERVAL 1 DAY), '%Y-%m-%d') AND a.s_type=2;";
+			$t1 = sql_fetch($sql, false);
+			$sql = "SELECT ifnull(SUM(a.s_amount),0) AS total FROM mari_seyfert_order a WHERE DATE_FORMAT(a.s_date,'%Y-%m') =  DATE_FORMAT(now(), '%Y-%m') AND a.s_type=2;";
+			$t1 = sql_fetch($sql, false);
+			?>
+			<span style="float:right;padding-right:20px;">
+				이번달 : number_format($t2['total'])
+			</span>		
+<span style="float:right;padding-right:20px;">
+	어제 : number_format($t1['total'])
+</span>
 
 		</form>
 
@@ -131,4 +143,3 @@ function withdrawallist_submit(f)
 
 </script>
 {# s_footer}<!--하단-->
-
