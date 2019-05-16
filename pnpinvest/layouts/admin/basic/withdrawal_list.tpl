@@ -42,10 +42,10 @@ include(MARI_VIEW_PATH.'/Common_select_class.php');
 			$t1 = sql_fetch($sql, false);
 			?>
 			<span style="float:right;padding-right:20px;">
-				이번달 : number_format($t2['total'])
-			</span>		
+				이번달 : <?php echo number_format($t2['total'])?>
+			</span>
 <span style="float:right;padding-right:20px;">
-	어제 : number_format($t1['total'])
+	어제 : <?php echo number_format($t1['total'])?>
 </span>
 
 		</form>
