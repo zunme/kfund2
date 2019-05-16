@@ -38,6 +38,6 @@ include(MARI_VIEW_PATH.'/Common_select_class.php');
 <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
 <script type="text/javascript">
 var _nasa={};
-_nasa["cnv"] = wcs.cnv("1","10"); // 전환유형, 전환가치 설정해야함. 설치매뉴얼 참고
-</script> 
+_nasa["cnv"] = wcs.cnv("2","10"); // 전환유형, 전환가치 설정해야함. 설치매뉴얼 참고
+</script>
 {#new_footer}
