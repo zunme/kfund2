@@ -17,7 +17,7 @@ include(MARI_VIEW_PATH.'/Common_select_class.php');
 			{# lnb}<!--메인메뉴-->
 		</div><!-- /lnb_wrap -->
 	</div><!-- /left_container -->
-    
+
 	<div id="container">
 		<div class="title02">투자 현황</div>
 		 <div class="local_ov01 local_ov">
@@ -90,10 +90,10 @@ include(MARI_VIEW_PATH.'/Common_select_class.php');
 						<td><?php echo number_format($row['i_loan_pay']) ?> 원</td>
 						<td><?php echo $row['m_name']; ?></td>
 						<td><?php echo number_format($row['i_pay']) ?> 원</td>
-						<td><?php echo substr($row['i_regdatetime'],0,10); ?></td>
+						<td><?php echo substr($row['i_regdatetime'],0,16); ?></td>
 						<td><?php echo substr($row['i_invest_eday'],0,10); ?></td>
 						<td><a href="{MARI_HOME_URL}/?cms=invest_setup_form&type=w&loan_id=<?php echo $row['loan_id']; ?>"><img src="{MARI_ADMINSKIN_URL}/img/view2_btn.png" alt="보기" /></a></td>
-						 
+
 					</tr>
     <?php
     }
@@ -103,14 +103,14 @@ include(MARI_VIEW_PATH.'/Common_select_class.php');
 				</tbody>
 			</table>
 		</div>
-			 
+
 		<div class="btn_list01 btn_list">
 			<input type="submit" name="add_bt" value="선택취소" class="cancle_btn" style="font-size:0px;"  onclick="document.pressed=this.value" />
 		</div>
 		<div class="paging">
 <!--패이징--><?php echo get_paging($config['c_write_pages'], $page, $total_page, '?cms='.$cms.''.$qstr.'&amp;page='); ?>
 		</div><!-- /paging -->
-		</div> 
+		</div>
 
 		<!-- <div class="local_desc02">
 			<p>
