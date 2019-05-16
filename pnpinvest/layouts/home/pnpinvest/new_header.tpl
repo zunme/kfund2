@@ -653,13 +653,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#996e8fa0', e
           <ul class="nav navbar-nav navbar-right">
             <li>
               <a href="/pnpinvest/?mode=invest">
-                <i class="material-icons">trending_up</i> 투자하기
+                <!--<i class="material-icons">trending_up</i>--> 투자하기
               </a>
             </li>
 
             <li>
               <a class="<?php if(!$member_ck) echo "loan"?>" href="<?php echo (!$member_ck) ? "/pnpinvest/?mode=login" : "/pnpinvest/?mode=joinloan"?>" >
-                <i class="material-icons">store</i> 대출신청
+                <!--<i class="material-icons">store</i>--> 대출신청
               </a>
             </li>
             <!--li>
@@ -670,18 +670,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#996e8fa0', e
 
             <li class="dropdown">
               <a href="javascript:" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="material-icons">domain</i> 회사소개
+                <!--<i class="material-icons">domain</i>--> 회사소개
                 <b class="caret"></b>
               </a>
               <ul class="dropdown-menu dropdown-with-icons">
                 <li>
                   <a href="/pnpinvest/?mode=companyintro01">
-                    <i class="material-icons">domain</i> 회사소개
+                    <!--<i class="material-icons">domain</i>--> 회사소개
                   </a>
                 </li>
                 <li>
                   <a href="/pnpinvest/?mode=safetyguide">
-                    <i class="material-icons">verified_user</i> 안심케어
+                    <!--<i class="material-icons">verified_user</i>-->안심케어
                   </a>
                 </li>
               </ul>
@@ -690,23 +690,23 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#996e8fa0', e
 
             <li class="dropdown">
               <a href="javascript:" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="material-icons">ballot</i> 캐스트
+                <!--<i class="material-icons">ballot</i>--> 캐스트
                 <b class="caret"></b>
               </a>
               <ul class="dropdown-menu dropdown-with-icons">
                 <li>
                   <a href="/api/cast">
-                    <i class="material-icons">ballot</i> 캐스트
+                    <!--<i class="material-icons">ballot</i>--> 캐스트
                   </a>
                 </li>
                 <li>
                   <a href="/pnpinvest/?mode=bbs_list&table=bond">
-                    <i class="material-icons">event_available</i> 채권관리현황
+                    <!--<i class="material-icons">event_available</i>--> 채권관리현황
                   </a>
                 </li>
                 <li>
                   <a href="/pnpinvest/?mode=bbs_list&table=overdue">
-                    <i class="material-icons">warning</i> 연체관리현황
+                    <!--<i class="material-icons">warning</i>--> 연체관리현황
                   </a>
                 </li>
               </ul>
@@ -718,41 +718,41 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#996e8fa0', e
 
             <li class="dropdown">
               <a href="javascript:" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="material-icons">notifications</i> 공지사항
+                <!--<i class="material-icons">notifications</i>--> 공지사항
                 <b class="caret"></b>
               </a>
               <ul class="dropdown-menu dropdown-with-icons">
                 <li>
                   <a href="/pnpinvest/?mode=bbs_list&table=notice&subject=공지사항">
-                    <i class="material-icons">notifications</i> 공지사항
+                    <!--<i class="material-icons">notifications</i>--> 공지사항
                   </a>
                 </li>
                 <li>
                   <a href="/pnpinvest/?mode=bbs_list&table=media&subject=언론보도&인터뷰">
-                    <i class="material-icons">art_track</i> 언론보도
+                    <!--<i class="material-icons">art_track</i>--> 언론보도
                   </a>
                 </li>
                 <li>
                   <a href="/pnpinvest/?mode=bbs_list&table=qna&subject=질문과답변">
-                    <i class="material-icons">live_help</i> 문의하기
+                    <!--<i class="material-icons">live_help</i>--> 문의하기
                   </a>
                 </li>
               </ul>
             </li>
             <li>
               <a href="/pnpinvest/?mode=guide">
-                <i class="material-icons">question_answer</i> 고객지원
+                <!--<i class="material-icons">question_answer</i>--> 고객지원
               </a>
             </li>
 <?php if(!$member_ck){?>
             <li class="nav_split_margin">
               <a href="/pnpinvest/?mode=login" onClick="displaylogin()"><!-- /pnpinvest/?mode=login -->
-                <i class="material-icons">how_to_reg</i> 로그인
+                <!--<i class="material-icons">how_to_reg</i>--> 로그인
               </a>
             </li>
             <li>
               <a href="/pnpinvest/?mode=join01" class="menu_member_join">
-                <i class="material-icons">person_add</i> 회원가입
+                <!--<i class="material-icons">person_add</i>--> 회원가입
               </a>
             </li>
 <?php } else { ?>

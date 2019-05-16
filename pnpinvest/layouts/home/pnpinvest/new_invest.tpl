@@ -436,7 +436,7 @@ margin-top:15px;
 	<!-- search -->
 	<div class="search">
 		<div class="container">
-			<form action="/pnpinvest/" method="get" name="form1">
+			<form action="/pnpinvest/" method="get" name="form1" class="form1">
   <input type="hidden" name="mode" value="invest">
 				<h3 class="skip">검색창</h3>
         <div class="sort1">
@@ -767,7 +767,9 @@ function paginate($item_per_page, $current_page, $total_records, $total_pages, $
 
 
 .prc1{font-size:16px; width:100px; height:40px; margin-left:150px; padding-left:3px; }
-
+.sort1{float:left; margin-right: 5px;}
+.search{padding:0 0;}
+.form1{display:inline-block;}
 
 
 
@@ -894,6 +896,7 @@ function paginate($item_per_page, $current_page, $total_records, $total_pages, $
 .product .item_progress > div {width:89%;}
 .product.gallery .item_progress .ib {width:10%;}
 .product.gallery .item_progress > div {width:89%;}
+.form1{display:block;}
 }
 
 @media all and (max-width:635px) {
@@ -915,9 +918,13 @@ function paginate($item_per_page, $current_page, $total_records, $total_pages, $
 	.invest_top .donut_txt span {margin-top:22%;}
 	.invest_top .donut_txt strong {font-size: 32px;}
 
-  .search .container{text-align: left;}
-  .prc1{margin-left:0;}
-  .sort1{float:left;}
+  .search .container{text-align: right;}
+  .prc1{margin-left:0; width:80px; height:30px; font-size:14px;}
+  .search .sch_box{width:160px; height:30px; padding:0 8px; }
+  .search .sch_box input[type="text"]{font-size: 14px;}
+  .search .btn_sch{width:35px; height:30px;}
+  .search .container{margin:30px auto 0;}
+  .form1{display:block;}
 }
 
 
