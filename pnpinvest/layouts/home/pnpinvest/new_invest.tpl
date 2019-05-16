@@ -476,12 +476,12 @@ for ($i=0; $row=sql_fetch_array($result); $i++) {
                 switch( $row['i_look']){
                   case ('N') :
               ?>
-                  <span class="item_con end">투자대기</span>
+                  <span class="item_con end" style="background-color: #8ad4eb;border:none">투자대기</span>
               <?php
                   break;
                   case ('Y') :
               ?>
-                  <span class="item_con ing">투자모집</span>
+                  <span class="item_con ing" style="background-color: #fd625e;border:none">투자모집</span>
               <?php
                   break;
                   case ('C') :
@@ -491,12 +491,12 @@ for ($i=0; $row=sql_fetch_array($result); $i++) {
                   break;
                   case ('D') :
               ?>
-                  <span class="item_con end">이자상환</span>
+                  <span class="item_con end" style="background-color: #f2c80f;border:none">이자상환</span>
               <?php
                   break;
                   default:
               ?>
-                  <span class="item_con end">상환완료</span>
+                  <span class="item_con end" style="background-color: #a66999;border:none">상환완료</span>
               <?php
                   break;
                 }
