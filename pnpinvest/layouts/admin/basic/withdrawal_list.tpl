@@ -39,7 +39,7 @@ include(MARI_VIEW_PATH.'/Common_select_class.php');
 			$sql = "SELECT ifnull(SUM(a.s_amount),0) AS total FROM mari_seyfert_order a WHERE DATE_FORMAT(a.s_date,'%Y-%m-%d') =  DATE_FORMAT( DATE_SUB(NOW() , INTERVAL 1 DAY), '%Y-%m-%d') AND a.s_type=2;";
 			$t1 = sql_fetch($sql, false);
 			$sql = "SELECT ifnull(SUM(a.s_amount),0) AS total FROM mari_seyfert_order a WHERE DATE_FORMAT(a.s_date,'%Y-%m') =  DATE_FORMAT(now(), '%Y-%m') AND a.s_type=2;";
-			$t1 = sql_fetch($sql, false);
+			$t2 = sql_fetch($sql, false);
 			?>
 			<span style="float:right;padding-right:20px;">
 				이번달 : <?php echo number_format($t2['total'])?>
