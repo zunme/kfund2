@@ -1,21 +1,14 @@
 <?php
 include(MARI_VIEW_PATH.'/Common_select_class.php');
 ?>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MPKQSFP');</script>
-<!-- End Google Tag Manager -->
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-125059785-1"></script>
+<!-- Global site tag (gtag.js) - Google Ads: 790299923 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-790299923"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-125059785-1');
+  gtag('config', 'AW-790299923');
 </script>
 <!-- CSS style -->
 <link rel="stylesheet" href="/pnpinvest/css/reset.css" type="text/css">
