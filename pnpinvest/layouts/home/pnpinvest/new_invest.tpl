@@ -455,14 +455,6 @@ margin-top:15px;
 			</form>
 		</div>
 	</div>
-  <script>
-  function fnviewalert ( al1, al2 ){
-    if (al1 != 'true'){
-      alert("모집된 상품은 투자에 참여하신 고객님만 열람하실 수 있습니다.\n로그인 후 이용해주세요")
-    }
-    else alert("모집된 상품은 투자에 참여하신 고객님만 열람하실 수 있습니다.")
-  }
-  </script>
 	<!-- 지난상품 리스트 -->
 	<div class="invest_all">
 		<div class="container">
@@ -480,40 +472,29 @@ for ($i=0; $row=sql_fetch_array($result); $i++) {
 
 						<div class="item_info info1 fl">
               <?php
-              $availview = isset($user['m_id']) ? true:false ;
-              if ( $availview ){
-                $sql = "select ifnull(count(1),0) as cnt from  mari_invest where loanid='".$row['i_id']."' and m_id='".$user['m_id']."' and i_payment='Y' limit 1";
-                $availview2qry = sql_fetch($sql, false);
-                $availview2 = ( $availview2qry['cnt'] > 0) ? true; false;
-              }else $availview2 = false;
               //N 대기, Y 진행중, C 마감, D 이자, F 완료
                 switch( $row['i_look']){
                   case ('N') :
-                  $availviewcheck = $availview;
               ?>
                   <span class="item_con end" style="background-color: #5f5f5f;border:none">투자대기</span>
               <?php
                   break;
                   case ('Y') :
-                  $availviewcheck = $availview;
               ?>
                   <span class="item_con ing" style="background-color: #0b1c79; color:#fff; border:none">투자모집</span>
               <?php
                   break;
                   case ('C') :
-                  $availviewcheck = $availview;
               ?>
                   <span class="item_con end">투자마감</span>
               <?php
                   break;
                   case ('D') :
-                  $availviewcheck = $availview2;
               ?>
                   <span class="item_con end" style="background-color: #c3ae01;border:none">이자상환</span>
               <?php
                   break;
                   default:
-                  $availviewcheck = $availview2;
               ?>
                   <span class="item_con end" style="background-color: #5f006f;border:none">상환완료</span>
               <?php
@@ -522,26 +503,16 @@ for ($i=0; $row=sql_fetch_array($result); $i++) {
               ?>
 							<div class="img_wrap">
 								<p class="img">
-                  <?php if( $availviewcheck ){ ?>
                   <a class="item_name" href="/pnpinvest/?mode=invest_view&loan_id=<?php echo $row['i_id']?>">
-                  <?php } else { ?>
-                    <a class="item_name" href="javascript:;" onClick="fnviewalert('<?php echo $availview?>','<?php echo $availview?')">
-                  <?php } ?>
 									   <img src="/pnpinvest/data/photoreviewers/<?php echo $row['i_id']?>/<?php echo $row['mainpost']?>" alt>
                   </a>
 								</p>
 							</div>
-							<p class="txt"><span class="date fl"><?php echo $row['i_mainimg_txt1']?></span>
-                <span class="time fr"><?php echo $row['i_mainimg_txt2']?></span>
-              </p>
+							<p class="txt"><span class="date fl"><?php echo $row['i_mainimg_txt1']?></span><span class="time fr"><?php echo $row['i_mainimg_txt2']?></span></p>
 						</div>
 						<div class="item_info info2 fr">
 							<h4>
-                <?php if( $availviewcheck ){ ?>
-                <a class="item_name" href="/pnpinvest/?mode=invest_view&loan_id=<?php echo $row['i_id']?>">
-                <?php } else { ?>
-                  <a class="item_name" href="javascript:;" onClick="fnviewalert('<?php echo $availview?>','<?php echo $availview?')">
-                <?php } ?>
+								<a class="item_name" href="/pnpinvest/?mode=invest_view&loan_id=<?php echo $row['i_id']?>">
 									<span class="subject"><?php echo $row['i_subject']?></span>
 								</a>
 							</h4>
