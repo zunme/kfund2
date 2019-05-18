@@ -1,14 +1,28 @@
 
 <?php
 include(MARI_VIEW_PATH.'/Common_select_class.php');
-if ($loa['i_look']=='F'){
-  ?>
-  <script>
-  alert("상환 완료된 상품입니다.");
-  history.back();
-  </script>
-  <?
-  exit;
+$availview = isset($user['m_id']) ? "true":"false" ;
+if ( $availview ){
+  $sql = "select ifnull(count(1),0) as cnt from  mari_invest where loan_id='".$row['i_id']."' and m_id='".$user['m_id']."' and i_pay_ment='Y' limit 1";
+  $availview2qry = sql_fetch($sql, false);
+  $availview2 = ( $availview2qry['cnt'] > 0) ? "true": "false";
+}else $availview2 = "false";
+if( !in_array( $loa['i_look'], array('N','Y','C') ) ){
+  if ( $availview != 'true'){
+    <script>
+        alert("모집된 상품은 투자에 참여하신 고객님만 열람하실 수 있습니다.\n로그인 후 이용해주세요")
+        window.location.href = "https://www.kfunding.co.kr/pnpinvest/?mode=login"
+    </script>
+    exit;
+  }else if ( $availview2 != 'true' ){
+    <script>
+    function fnviewalert ( al1, al2 ){
+      alert("모집된 상품은 투자에 참여하신 고객님만 열람하실 수 있습니다.")
+      window.location.href = "https://www.kfunding.co.kr/"
+    }
+    </script>
+    exit;
+  }
 }
 
 $startidx = 0; //신규로 보여줄 IDX시작
