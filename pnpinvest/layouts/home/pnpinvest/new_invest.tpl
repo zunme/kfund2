@@ -459,6 +459,7 @@ margin-top:15px;
   function fnviewalert ( al1, al2 ){
     if (al1 != 'true'){
       alert("모집된 상품은 투자에 참여하신 고객님만 열람하실 수 있습니다.\n로그인 후 이용해주세요")
+      self.location.href("https://www.kfunding.co.kr/pnpinvest/?mode=login")
     }
     else alert("모집된 상품은 투자에 참여하신 고객님만 열람하실 수 있습니다.")
   }
