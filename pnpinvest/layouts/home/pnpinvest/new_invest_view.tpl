@@ -9,18 +9,20 @@ if ( $availview ){
 }else $availview2 = "false";
 if( !in_array( $loa['i_look'], array('N','Y','C') ) ){
   if ( $availview != 'true'){
+    ?>
     <script>
         alert("모집된 상품은 투자에 참여하신 고객님만 열람하실 수 있습니다.\n로그인 후 이용해주세요")
         window.location.href = "https://www.kfunding.co.kr/pnpinvest/?mode=login"
     </script>
+    <?php
     exit;
   }else if ( $availview2 != 'true' ){
+    ?>
     <script>
-    function fnviewalert ( al1, al2 ){
       alert("모집된 상품은 투자에 참여하신 고객님만 열람하실 수 있습니다.")
       window.location.href = "https://www.kfunding.co.kr/"
-    }
     </script>
+    <?php
     exit;
   }
 }
