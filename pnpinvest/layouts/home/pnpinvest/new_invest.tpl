@@ -489,19 +489,19 @@ for ($i=0; $row=sql_fetch_array($result); $i++) {
               //N 대기, Y 진행중, C 마감, D 이자, F 완료
                 switch( $row['i_look']){
                   case ('N') :
-                  $availviewcheck = $availview;
+                  $availviewcheck = "true";
               ?>
                   <span class="item_con end" style="background-color: #5f5f5f;border:none">투자대기</span>
               <?php
                   break;
                   case ('Y') :
-                  $availviewcheck = $availview;
+                  $availviewcheck = "true";
               ?>
                   <span class="item_con ing" style="background-color: #0b1c79; color:#fff; border:none">투자모집</span>
               <?php
                   break;
                   case ('C') :
-                  $availviewcheck = $availview;
+                  $availviewcheck = "true";
               ?>
                   <span class="item_con end">투자마감</span>
               <?php
