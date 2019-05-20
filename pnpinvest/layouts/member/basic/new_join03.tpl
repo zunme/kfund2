@@ -90,7 +90,7 @@ if( $baseinfo['mobileno'] !='') {
 	<div class="join">
 		<div class="container">
 			<!-- 컨텐츠 본문 -->
-			<p class="join_txt"><span>간편한 절차로 엔젤펀딩의 다양한 서비스를 제공받으세요.</span></p>
+			<p class="join_txt"><span>간편한 절차로 케이펀딩의 다양한 서비스를 제공받으세요.</span></p>
 			<ul class="join_process clearfix">
 				<li>01 약관 동의</li>
 				<li>02 개인/기업</li>
