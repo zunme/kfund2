@@ -10,6 +10,15 @@ include(MARI_VIEW_PATH.'/Common_select_class.php');
 
   gtag('config', 'AW-790299923');
 </script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-125059785-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-125059785-1');
+</script>
 <!-- CSS style -->
 <link rel="stylesheet" href="/pnpinvest/css/reset.css" type="text/css">
 <link rel="stylesheet" href="/pnpinvest/css/animate.min.css" type="text/css">

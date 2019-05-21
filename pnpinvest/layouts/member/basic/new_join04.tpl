@@ -35,6 +35,9 @@ include(MARI_VIEW_PATH.'/Common_select_class.php');
 	</div>
 </div>
 <!-- /////////////////////////////// 본문 끝 /////////////////////////////// -->
+<script>
+  gtag('event', 'conversion', {'send_to': 'AW-790299923/3K6eCPfwkJ8BEJOK7PgC'});
+</script>
 <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
 <script type="text/javascript">
 var _nasa={};
