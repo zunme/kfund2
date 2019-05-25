@@ -582,15 +582,21 @@ border-color:#ccc;
                 $("#resontxt").hide();
                 $("#drawmembtn").addClass("disablebtn");
                 return;
-              } else $("#drawmembtn").removeClass("disablebtn")
+              } else if( !$('#withdraw_agree').is(':checked') ){
+                $("#drawmembtn").addClass("disablebtn");
+                return;
+              }
+              else $("#drawmembtn").removeClass("disablebtn")
 
               if( val=="etc") $("#resontxt").show();
               else  $("#resontxt").hide();
             }
             function drawmem2() {
+              //if(!$('#withdraw_agree').is(':checked')){alert('동의란에 체크를 해주시기 바립니다.'); return false;}
               var val = $("#reson option:selected").val();
 
               if( val=="") return;
+              else if(!$('#withdraw_agree').is(':checked')) return;
               else if ( val=="etc" &&  $("#resontxt").val()==''){
                 alert("기타사유를 입력해주세요");return;
               }
@@ -731,7 +737,7 @@ function checkauth() {
   console.log("a");
 }
 function drawmem() {
-  if(!$('#withdraw_agree').is(':checked')){alert('동의란에 체크를 해주시기 바립니다.'); return false;}
+  //if(!$('#withdraw_agree').is(':checked')){alert('동의란에 체크를 해주시기 바립니다.'); return false;}
   drawmem2();
   return;
   if(confirm("정말 탈퇴처리 하시겠습니까? 탈퇴 후에는 해당 회원의 모든 정보가 삭제되오니 주의하시기 바랍니다.")){
