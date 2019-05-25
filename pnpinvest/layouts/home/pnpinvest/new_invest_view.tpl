@@ -1730,7 +1730,7 @@ table.product_table tbody tr td:first-child{
 				</div>
 <script>
 function resetbt() {
-  addnum(5000000);
+  defaultnum(5000000);
   $("input[name=won]").focus();
 }
 </script>
@@ -2183,6 +2183,9 @@ function setComma(inNum){
 }
 function addnum(num){
    $("input[name=won]").val( setComma( (parseInt( $("input[name=won]").val().replace(/[^0-9]/g,"")) + num) +'' ) );
+}
+function defaultnum(num){
+  $("input[name=won]").val( setComma(num+'') ) );
 }
 function calc(){
   if( $("form[name=calcform] input[name=won]").val() < limit ){
