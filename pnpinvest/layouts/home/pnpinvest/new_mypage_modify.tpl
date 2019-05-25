@@ -169,15 +169,15 @@ if (ereg('^[[:digit:]]{6}[1-6][[:digit:]]{6}$', $user['m_reginum'])) {
 			<div class="my_content">
 				<div class="my_modify clearfix">
 					<div class="title clearfix">
-						<h3 class="fl">회원정보수정</h3>
+						<h3 class="fl" id="my_tab_title">회원정보수정</h3>
 						<p class="btn_mytab_wrap">
 							<label for="mytab01" class="btn_mytab active">정보 변경&middot;수정</label>
 							<label for="mytab02" class="btn_mytab">회원탈퇴</label>
 						</p>
 					</div>
 					<div class="mytab">
-						<input id="mytab01" type="radio" class="blind" name="mytab" title="정보 변경 및 수정 내용 보기" checked>
-						<input id="mytab02" type="radio" class="blind" name="mytab" title="회원탈퇴 내용 보기">
+						<input id="mytab01" type="radio" class="blind" name="mytab" title="정보 변경 및 수정 내용 보기" onClick="$('#my_tab_title').title('회원정보수정')" checked>
+						<input id="mytab02" type="radio" class="blind" name="mytab" title="회원탈퇴 내용 보기"  onClick="$('#my_tab_title').title('회원탈퇴')">
 						<!-- 입출금 관리 start -->
 						<div class="mytab_con">
 							<div class="my_left">
