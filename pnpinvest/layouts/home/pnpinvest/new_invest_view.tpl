@@ -1728,7 +1728,12 @@ table.product_table tbody tr td:first-child{
 
 
 				</div>
-
+<script>
+function resetbt() {
+  addnum(5000000);
+  $("input[name=won]").focus();
+}
+</script>
 				<!-- 이자계산기 탭 -->
 				<h3 class="title inverest"><i class="bg"></i><span class="txt">이자계산기</span></h3>
 				<div class="detail_con inverest">
@@ -1749,6 +1754,7 @@ table.product_table tbody tr td:first-child{
   							</p>
   							<p class="sum3"><a class="btn t5" href="javascript:;" onclick="calc()">이자 수익 계산기</a></p>
   							<p class="sum4">최소 <?php echo change_pay($iv['i_invest_mini'])?>원부터 투자하실 수 있습니다.</p>
+                <a href="javascript:;" onClick="resetbt()" class="btn">reset</a>
   						</div>
             </form>
 					</div>
