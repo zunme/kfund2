@@ -588,6 +588,22 @@ if (ereg('^[[:digit:]]{6}[1-6][[:digit:]]{6}$', $user['m_reginum'])) {
                 alert("기타사유를 입력해주세요");return;
               }
               console.log("ok");
+              $.ajax({
+                   type : "POST",
+                   dataType : "json",
+                   url : "/api/index.php/newhomeapi/memdraw",
+                   data : $("form[name=member_out]").serialize(),
+                   success : function(result) {
+                     if(result.code==200){
+                      alert ( result.msg );
+                     }else {
+                       alert ( result.msg );
+                     }
+                   },
+                   error : function(e) {
+                          alert('서버 연결 도중 에러가 났습니다. 다시 시도해 주십시오.');
+                   }
+            });
               /*
               if(confirm("정말 탈퇴처리 하시겠습니까? 탈퇴 후에는 해당 회원의 모든 정보가 삭제되오니 주의하시기 바랍니다.")){
                 var f = document.member_out;

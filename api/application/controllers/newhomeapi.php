@@ -31,7 +31,9 @@ class Newhomeapi extends CI_Controller {
   function index(){
 
   }
-
+  function memdraw() {
+    
+  }
   // ============================
   function checkmemid() {
     header("Pragma: no-cache");
