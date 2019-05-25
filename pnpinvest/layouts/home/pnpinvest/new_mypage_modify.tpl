@@ -568,6 +568,11 @@ if (ereg('^[[:digit:]]{6}[1-6][[:digit:]]{6}$', $user['m_reginum'])) {
 						</div>
 						<!-- // 입출금 관리 end -->
 						<!-- 입출금 관리 start -->
+            <script>
+            function resonchange(){
+              console.log("change")
+            }
+            </script>
 						<div class="mytab_con my_breakdown">
 							<h4 class="blind">회원탈퇴</h4>
 
@@ -579,7 +584,7 @@ if (ereg('^[[:digit:]]{6}[1-6][[:digit:]]{6}$', $user['m_reginum'])) {
 							<fieldset>
 								<div class="withdraw">
                 <div>
-                <select name="reson" id="reson">
+                <select name="reson" id="reson" onChange="resonchange">
                   <option value="">선택해주세요</option>
                   <option value="투자/대출계획 없음">투자/대출계획 없음</option>
                   <option value="투자상품 수익률 불만족">투자상품 수익률 불만족</option>
