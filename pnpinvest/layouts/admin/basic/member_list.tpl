@@ -10,6 +10,14 @@ include (getcwd().'/module/cms_member_list.php');
 -->
 {# s_header}<!--상단-->
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<script>
+function selectchange(){
+	var val = $("#searchselect option:selected").val();
+	if (val=='m_hp'){
+		$("#searchinput").val("01012345678")
+	}else 	$("#searchinput").val('')
+}
+</script>
 <div id="wrapper">
 	<div id="left_container">
 		{# left_bar}
@@ -31,13 +39,13 @@ include (getcwd().'/module/cms_member_list.php');
 		<form  class="local_sch01 local_sch"  id="fsearch" name="fsearch"  method="get">
 		<input type="hidden" name="cms" value="member_list">
 			<label for="" class="sound_only">검색대상</label>
-			<select name="sfl">
+			<select name="sfl" onChange="selectchange()" id="searchselect">
 				<option value="m_name"<?php echo get_selected($_GET['sfl'], "m_name"); ?>>이름</option>
 				<option value="m_id"<?php echo get_selected($_GET['sfl'], "m_id"); ?>>회원아이디</option>
 				<option value="m_hp"<?php echo get_selected($_GET['sfl'], "m_hp"); ?>>전화번호</option>
 			</select>
 			<label for="" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label>
-			<input type="text"  name="stx" value="<?php echo $stx ?>" id="" required="" class="required frm_input">
+			<input type="text"  name="stx" value="<?php echo $stx ?>" id="searchinput" required="" class="required frm_input">
 			<input type="submit" class="search_btn" value="">
 
 		</form>
