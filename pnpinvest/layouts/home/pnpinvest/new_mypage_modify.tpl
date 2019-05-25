@@ -568,9 +568,40 @@ if (ereg('^[[:digit:]]{6}[1-6][[:digit:]]{6}$', $user['m_reginum'])) {
 						</div>
 						<!-- // 입출금 관리 end -->
 						<!-- 입출금 관리 start -->
+            <style>
+.disablebtn{
+  background: #ccc;
+border-color: #ccc;
+}
+            </style>
             <script>
             function resonchange(){
-              console.log("change")
+              var val = $("#reson option:selected").val();
+              if( val=="" ){
+                $("#resontxt").hide();
+                $("#drawmembtn").addClass("disablebtn");
+                return;
+              } else $("#drawmembtn").removeClass("disablebtn")
+
+              if( val=="etc") $("#resontxt").show();
+              else  $("#resontxt").hide();
+            }
+            function drawmem2() {
+              var val = $("#reson option:selected").val();
+
+              if( val=="") return;
+              else if ( val=="etc" &&  $("#resontxt")==''){
+                alert("기타사유를 입력해주세요");return;
+              }
+              console.log("ok");
+              /*
+              if(confirm("정말 탈퇴처리 하시겠습니까? 탈퇴 후에는 해당 회원의 모든 정보가 삭제되오니 주의하시기 바랍니다.")){
+                var f = document.member_out;
+                f.method = 'post';
+                f.action = '/pnpinvest/?up=leave';
+                f.submit();
+              }
+              */
             }
             </script>
 						<div class="mytab_con my_breakdown">
@@ -584,7 +615,7 @@ if (ereg('^[[:digit:]]{6}[1-6][[:digit:]]{6}$', $user['m_reginum'])) {
 							<fieldset>
 								<div class="withdraw">
                 <div>
-                <select name="reson" id="reson" onChange="resonchange">
+                <select name="reson" id="reson" onChange="resonchange()">
                   <option value="">선택해주세요</option>
                   <option value="투자/대출계획 없음">투자/대출계획 없음</option>
                   <option value="투자상품 수익률 불만족">투자상품 수익률 불만족</option>
@@ -611,7 +642,7 @@ if (ereg('^[[:digit:]]{6}[1-6][[:digit:]]{6}$', $user['m_reginum'])) {
 										<label for="withdraw_agree">위 사항을 모두 확인했으며, 이에 동의합니다.</label>
 
 									</p>
-									<p class="center last"><a href="javascript:;" onClick="drawmem() " class="btn my_gr">확인</a></p>
+									<p class="center last"><a href="javascript:;" id="drawmembtn" onClick="drawmem() " class="btn my_gr disablebtn">확인</a></p>
 								</div>
 							</fieldset>
 							</form>
@@ -682,7 +713,8 @@ function checkauth() {
 }
 function drawmem() {
   if(!$('#withdraw_agree').is(':checked')){alert('동의란에 체크를 해주시기 바립니다.'); return false;}
-
+  drawmem2();
+  return;
   if(confirm("정말 탈퇴처리 하시겠습니까? 탈퇴 후에는 해당 회원의 모든 정보가 삭제되오니 주의하시기 바랍니다.")){
     var f = document.member_out;
     f.method = 'post';
