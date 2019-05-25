@@ -34,6 +34,7 @@ include (getcwd().'/module/cms_member_list.php');
 			<select name="sfl">
 				<option value="m_name"<?php echo get_selected($_GET['sfl'], "m_name"); ?>>이름</option>
 				<option value="m_id"<?php echo get_selected($_GET['sfl'], "m_id"); ?>>회원아이디</option>
+				<option value="m_hp"<?php echo get_selected($_GET['sfl'], "m_hp"); ?>>전화번호</option>
 			</select>
 			<label for="" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label>
 			<input type="text"  name="stx" value="<?php echo $stx ?>" id="" required="" class="required frm_input">
