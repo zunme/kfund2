@@ -11,11 +11,13 @@ include (getcwd().'/module/cms_member_list.php');
 {# s_header}<!--상단-->
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <script>
+var searchfield='';
 function selectchange(){
 	var val = $("#searchselect option:selected").val();
 	if (val=='m_hp'){
+		searchfield = $("#searchinput").val()
 		$("#searchinput").val("01012345678")
-	}else 	$("#searchinput").val('')
+	}else 	$("#searchinput").val(searchfield)
 }
 </script>
 <div id="wrapper">
