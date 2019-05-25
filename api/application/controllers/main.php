@@ -162,6 +162,7 @@ echo 'loginpage';
     foreach ($data as &$res){
       $res['ija'] = (int)($won*(float)$tmp['i_year_plus']/100/365*(int)$res['diff'] );
       $res['profit'] = (int)($won*$tmp['profit']);
+      if( $res['profit'] > 0 ) (int)($res['profit'] = $res['profit']/365*$res['diff']);
       $res['withholding'] = (int)($res['ija']*$tmp['withholding']/10)*10;
       $res['tot'] = $res['ija'] - $res['profit'] -   $res['withholding'];
 
