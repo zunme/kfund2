@@ -1754,7 +1754,7 @@ function resetbt() {
   							</p>
   							<p class="sum3"><a class="btn t5" href="javascript:;" onclick="calc()">이자 수익 계산기</a></p>
   							<p class="sum4">최소 <?php echo change_pay($iv['i_invest_mini'])?>원부터 투자하실 수 있습니다.</p>
-                <a href="javascript:;" onClick="resetbt()" class="btn">reset</a>
+                <p class="sum4"> <a href="javascript:;" onClick="resetbt()" class="btn">reset</a></p>
   						</div>
             </form>
 					</div>
