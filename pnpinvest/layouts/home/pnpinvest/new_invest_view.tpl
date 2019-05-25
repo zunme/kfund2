@@ -2185,7 +2185,7 @@ function addnum(num){
    $("input[name=won]").val( setComma( (parseInt( $("input[name=won]").val().replace(/[^0-9]/g,"")) + num) +'' ) );
 }
 function defaultnum(num){
-  $("input[name=won]").val( setComma(num+'') ) );
+  $("input[name=won]").val( setComma(num+'') );
 }
 function calc(){
   if( $("form[name=calcform] input[name=won]").val() < limit ){
