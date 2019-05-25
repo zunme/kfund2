@@ -147,6 +147,12 @@ if (ereg('^[[:digit:]]{6}[1-6][[:digit:]]{6}$', $user['m_reginum'])) {
 
 
 </style>
+<script>
+ function chagetabtitle(txt) {
+   console.log(txt)
+ }
+</script>
+
 <!-- /////////////////////////////// 본문 시작 /////////////////////////////// -->
 <div id="container" class="sub mypage">
 	<!-- Sub title -->
@@ -176,8 +182,8 @@ if (ereg('^[[:digit:]]{6}[1-6][[:digit:]]{6}$', $user['m_reginum'])) {
 						</p>
 					</div>
 					<div class="mytab">
-						<input id="mytab01" type="radio" class="blind" name="mytab" title="정보 변경 및 수정 내용 보기" onClick="$('#my_tab_title').title('회원정보수정')" checked>
-						<input id="mytab02" type="radio" class="blind" name="mytab" title="회원탈퇴 내용 보기"  onClick="$('#my_tab_title').title('회원탈퇴')">
+						<input id="mytab01" type="radio" class="blind" name="mytab" title="정보 변경 및 수정 내용 보기" onClick="chagetabtitle('회원정보수정')" checked>
+						<input id="mytab02" type="radio" class="blind" name="mytab" title="회원탈퇴 내용 보기"  onClick="chagetabtitle('회원탈퇴')">
 						<!-- 입출금 관리 start -->
 						<div class="mytab_con">
 							<div class="my_left">
