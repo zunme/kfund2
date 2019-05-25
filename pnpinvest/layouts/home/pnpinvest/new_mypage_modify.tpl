@@ -569,7 +569,7 @@ if (ereg('^[[:digit:]]{6}[1-6][[:digit:]]{6}$', $user['m_reginum'])) {
 						<!-- // 입출금 관리 end -->
 						<!-- 입출금 관리 start -->
             <style>
-            btn.disablebtn{
+            .btn.disablebtn{
               background: #00646a !important;
               border-color: #00646a !important;
             }
