@@ -149,7 +149,7 @@ if (ereg('^[[:digit:]]{6}[1-6][[:digit:]]{6}$', $user['m_reginum'])) {
 </style>
 <script>
  function chagetabtitle(txt) {
-   console.log(txt)
+   $("#my_tab_title").text(txt)
  }
 </script>
 
