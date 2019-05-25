@@ -568,12 +568,6 @@ if (ereg('^[[:digit:]]{6}[1-6][[:digit:]]{6}$', $user['m_reginum'])) {
 						</div>
 						<!-- // 입출금 관리 end -->
 						<!-- 입출금 관리 start -->
-            <style>
-.disablebtn{
-  background: #ccc;
-border-color: #ccc;
-}
-            </style>
             <script>
             function resonchange(){
               var val = $("#reson option:selected").val();
@@ -590,7 +584,7 @@ border-color: #ccc;
               var val = $("#reson option:selected").val();
 
               if( val=="") return;
-              else if ( val=="etc" &&  $("#resontxt")==''){
+              else if ( val=="etc" &&  $("#resontxt").val()==''){
                 alert("기타사유를 입력해주세요");return;
               }
               console.log("ok");
@@ -625,8 +619,7 @@ border-color: #ccc;
                   <option value="케이펀딩에 대한 신뢰도 낮음">케이펀딩에 대한 신뢰도 낮음</option>
                   <option value="etc">기타</option>
                 </select>
-                <textarea name="resontxt" id="resontxt" placeholder="기타 사유를 입력해주세요" style="display:none">
-                </textarea>
+                <textarea name="resontxt" id="resontxt" placeholder="기타 사유를 입력해주세요" style="display:none"></textarea>
                 <div>
 									<p class="tt">아래 사항을 꼼꼼히 읽어보신 후 회원 탈퇴를 진행해주세요.</p>
 									<ul class="list_dot">
