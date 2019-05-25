@@ -639,7 +639,7 @@ border-color:#ccc;
 								<div class="withdraw">
                 <div>
                   <div>
-                <select name="reson" id="reson" onChange="resonchange()">
+                <select name="reson" id="reson" onChange="resonchange()" style="width:100%">
                   <option value="">선택해주세요</option>
                   <option value="투자/대출계획 없음">투자/대출계획 없음</option>
                   <option value="투자상품 수익률 불만족">투자상품 수익률 불만족</option>
@@ -650,7 +650,7 @@ border-color:#ccc;
                   <option value="etc">기타</option>
                 </select>
               </div><div>
-                <textarea name="resontxt" id="resontxt" placeholder="기타 사유를 입력해주세요" style="display:none"></textarea>
+                <textarea name="resontxt" id="resontxt" placeholder="기타 사유를 입력해주세요" style="display:none;width:100%"></textarea>
               </div>
                 <div>
 									<p class="tt">아래 사항을 꼼꼼히 읽어보신 후 회원 탈퇴를 진행해주세요.</p>
