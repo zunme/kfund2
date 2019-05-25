@@ -578,6 +578,20 @@ if (ereg('^[[:digit:]]{6}[1-6][[:digit:]]{6}$', $user['m_reginum'])) {
 
 							<fieldset>
 								<div class="withdraw">
+                <div>
+                <select name="reson" id="reson">
+                  <option value="">선택해주세요</option>
+                  <option value="투자/대출계획 없음">투자/대출계획 없음</option>
+                  <option value="투자상품 수익률 불만족">투자상품 수익률 불만족</option>
+                  <option value="투자상품의 다양성 부족">투자상품의 다양성 부족</option>
+                  <option value="홈페이지의 편의성 제공 부족">홈페이지의 편의성 제공 부족</option>
+                  <option value="P2P투자에 대한 신뢰도 낮음">P2P투자에 대한 신뢰도 낮음</option>
+                  <option value="케이펀딩에 대한 신뢰도 낮음">케이펀딩에 대한 신뢰도 낮음</option>
+                  <option value="etc">기타</option>
+                </select>
+                <textarea name="resontxt" id="resontxt" placeholder="기타 사유를 입력해주세요" style="display:none">
+                </textarea>
+                <div>
 									<p class="tt">아래 사항을 꼼꼼히 읽어보신 후 회원 탈퇴를 진행해주세요.</p>
 									<ul class="list_dot">
 										<li>회원 탈퇴 후에는 서비스 이용이 불가합니다.</li>
