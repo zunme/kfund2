@@ -40,7 +40,7 @@ class Newhomeapi extends CI_Controller {
      insert into z_memdraw values( ? , ? , ? ) on duplicate key update reson = ? , resontxt = ?
     ";
     $this->db->query($sql , array($data['m_id'], $reson,$resontxt, $reson,$resontxt ) );
-    
+    echo json_encode(array("code"=>200, "msg"=>'ok'));
   }
   // ============================
   function checkmemid() {
