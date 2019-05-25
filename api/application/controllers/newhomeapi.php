@@ -32,6 +32,14 @@ class Newhomeapi extends CI_Controller {
 
   }
   function memdraw() {
+    $data['m_id'] = $this->user['info']['m_id'];
+    $reson = $this->input->post('reson', true);
+    $resontxt = $this->input->post('resontxt', true);
+
+    $sql = "
+     insert into z_memdraw values( ? , ? , ? ) on duplicate key update reson = ? , resontxt = ?
+    ";
+    $this->db->query($sql , array($data['m_id'], $reson,$resontxt, $reson,$resontxt ) );
     
   }
   // ============================
