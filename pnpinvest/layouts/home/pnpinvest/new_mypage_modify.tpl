@@ -662,7 +662,7 @@ border-color:#ccc;
 										<li>회원 정보 및 서비스 이용 기록은 탈퇴 후 즉시 삭제 되며, 삭제된 정보는 복구되지 않습니다.</li>
 									</ul>
 									<p class="radiobox radiobox3">
-										<input id="withdraw_agree" type="checkbox" name="agreement" value="OK">
+										<input id="withdraw_agree" type="checkbox" name="agreement" value="OK" onClick="resonchange()">
 
 										<label for="withdraw_agree">위 사항을 모두 확인했으며, 이에 동의합니다.</label>
 
