@@ -292,6 +292,19 @@ if( $baseinfo['mobileno'] !='') {
 							</ul>
 						</div>
 					</div>
+          <div>
+            <span class="title">필수서류</span>
+						<div class="con">
+              <input type="radio" name="m_joinpath" value="포털검색" data-etc='N'>포털검색
+              <input type="radio" name="m_joinpath" value="블로그,카페" data-etc='N'>블로그,카페
+              <input type="radio" name="m_joinpath" value="온라인배너광고" data-etc='N'>온라인배너광고
+              <input type="radio" name="m_joinpath" value="언론기사" data-etc='N'>언론기사
+              <input type="radio" name="m_joinpath" value="지인추천" data-etc='N'>지인추천
+              <input type="radio" name="m_joinpath" value="홍보물" data-etc='N'>홍보물
+              <input type="radio" name="m_joinpath" value="기타" data-etc='Y'>기타
+              <input type="text" name="m_joinpath_txt" value="" readonly>
+            </div>
+          </div>
 					<div>
 						<label class="title" for="join_rc">추천인</label>
 						<p class="con"><input class="w1" type="text" id="join_rc" name="m_referee"></p>
@@ -397,6 +410,11 @@ function checkmobile() {
 }
 function checkjoinform() {
   var confirmmessage='회원가입을 진행하시겠습니까?';
+  if( $('input[name="m_joinpath"]:checked').val()=='') {
+    alert("가입경로를 선택해주세요");return;
+  }
+  var etc = $('input[name="m_joinpath"]:checked').data('etc');
+  if(etc=='Y') $('input[name="m_joinpath"]:checked').val( $('input[name="m_joinpath_txt"]').val() );
 
   if( !$("input:radio[name=m_signpurpose]:checked").is(':checked') ){
     alert('회원유형(일반투자자/소득적격투자자/전문투자자/대출회원)을 선택해 주세요');
@@ -448,6 +466,8 @@ function checkjoinform() {
     return false;
   }
   */
+
+  return;
   $.ajax({
     url:"/api/index.php/newhomeapi/checkmemid",
    type : 'POST',
