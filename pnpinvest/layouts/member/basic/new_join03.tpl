@@ -484,7 +484,6 @@ function checkjoinform() {
   console.log( $('input[name="m_joinpath_txt"]').val() )
   console.log ( $('input:radio[name="m_joinpath"]:checked').val() );
   
-  return;
   $.ajax({
     url:"/api/index.php/newhomeapi/checkmemid",
    type : 'POST',
