@@ -421,12 +421,6 @@ $("document").ready( function () {
 function checkjoinform() {
   var confirmmessage='회원가입을 진행하시겠습니까?';
 
-  if( $('input:radio[name="m_joinpath"]:checked').val()=='' || $('input:radio[name="m_joinpath"]:checked').val()=== undefined ||$('input:radio[name="m_joinpath"]:checked').val()=='undefined') {
-    alert("가입경로를 선택해주세요");return;
-  }
-  var etc = $('input:radio[name="m_joinpath"]:checked').data('etc');
-  if(etc=='Y') $('input:radio[name="m_joinpath"]:checked').val( $('input[name="m_joinpath_txt"]').val() );
-  console.log ( $('input:radio[name="m_joinpath"]:checked').val() );
   if( !$("input:radio[name=m_signpurpose]:checked").is(':checked') ){
     alert('회원유형(일반투자자/소득적격투자자/전문투자자/대출회원)을 선택해 주세요');
     return false;
@@ -477,7 +471,19 @@ function checkjoinform() {
     return false;
   }
   */
-
+  if( $('input:radio[name="m_joinpath"]:checked').val()=='' || $('input:radio[name="m_joinpath"]:checked').val()=== undefined ||$('input:radio[name="m_joinpath"]:checked').val()=='undefined') {
+    alert("가입경로를 선택해주세요");return;
+  }
+  var etc = $('input:radio[name="m_joinpath"]:checked').data('etc');
+  if(etc=='Y') {
+    if ( $('input[name="m_joinpath_txt"]').val() =='' ){
+      alert("가입경로를 선택해주세요");return;
+    }
+    $('input:radio[name="m_joinpath"]:checked').val( $('input[name="m_joinpath_txt"]').val() );
+  }
+  console.log( $('input[name="m_joinpath_txt"]').val() )
+  console.log ( $('input:radio[name="m_joinpath"]:checked').val() );
+  
   return;
   $.ajax({
     url:"/api/index.php/newhomeapi/checkmemid",
