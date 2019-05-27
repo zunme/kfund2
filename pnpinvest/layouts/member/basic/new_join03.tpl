@@ -408,12 +408,23 @@ function checkmobile() {
    return false;
  }  else return true;
 }
+$("document").ready( function () {
+  $('input[name="m_joinpath"]').on("click", function () {
+    if( $('input[name="m_joinpath"]:checked').data('etc') =='Y'){
+      $('input[name="m_joinpath_txt"]').prop("readonly", false)
+    }else {
+        $('input[name="m_joinpath_txt"]').val('')
+        $('input[name="m_joinpath_txt"]').prop("readonly", true)
+    }
+  })
+})
 function checkjoinform() {
   var confirmmessage='회원가입을 진행하시겠습니까?';
-  if( $('input[name="m_joinpath"]:checked').val()=='') {
+  if( $('input[name="m_joinpath"]:checked').val()=='' || $('input[name="m_joinpath"]:checked').val()=='undefined') {
     alert("가입경로를 선택해주세요");return;
   }
   var etc = $('input[name="m_joinpath"]:checked').data('etc');
+  console.log("etc")
   if(etc=='Y') $('input[name="m_joinpath"]:checked').val( $('input[name="m_joinpath_txt"]').val() );
 
   if( !$("input:radio[name=m_signpurpose]:checked").is(':checked') ){
