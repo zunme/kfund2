@@ -479,11 +479,11 @@ function checkjoinform() {
     if ( $('input[name="m_joinpath_txt"]').val() =='' ){
       alert("가입경로를 선택해주세요");return;
     }
-    $('input:radio[name="m_joinpath"]:checked').val( $('input[name="m_joinpath_txt"]').val() );
+  //  $('input:radio[name="m_joinpath"]:checked').val( $('input[name="m_joinpath_txt"]').val() );
   }
   console.log( $('input[name="m_joinpath_txt"]').val() )
   console.log ( $('input:radio[name="m_joinpath"]:checked').val() );
-  
+
   $.ajax({
     url:"/api/index.php/newhomeapi/checkmemid",
    type : 'POST',

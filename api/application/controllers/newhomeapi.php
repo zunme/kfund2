@@ -166,7 +166,9 @@ class Newhomeapi extends CI_Controller {
                     ."&emailTp=PERSONAL&fullname=" . urlencode($savedata['m_name']) . "&nmLangCd=ko&phoneCntryCd=KOR&phoneNo=" . $savedata['m_hp'] . "&phoneTp=MOBILE";
 
     list($res, $data) = $this->getres($_method, $url, $ENCODE_PARAMS );
-
+var_dump($res);
+var_dump($data);
+return;
     if(!$res){
       $this->load->view('alert', array('msg'=>'회원가입 도중 오류가 발생하였습니다.', 'url'=>'/pnpinvest/?mode=join01') );
       return;
