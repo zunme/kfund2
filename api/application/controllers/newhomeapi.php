@@ -160,7 +160,7 @@ class Newhomeapi extends CI_Controller {
     $savedata['m_my_bankname']= '';
     $savedata['m_my_bankacc']= '';
     $savedata['m_newsagency']= '';
-
+var_dump($savedata);return;
     $url = "https://v5.paygate.net/v5a/member/createMember";
     $_method = "POST";
     $refId =$nonce = "PAul".time().rand(111,99);
