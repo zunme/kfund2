@@ -17,7 +17,7 @@ include(MARI_VIEW_PATH.'/Common_select_class.php');
 			{# lnb}<!--메인메뉴-->
 		</div><!-- /lnb_wrap -->
 	</div><!-- /left_container -->
-    
+
 	<div id="container">
 		<div class="title02">회원수정</div>
 <form name="member_form"  method="post" enctype="multipart/form-data">
@@ -95,17 +95,17 @@ include(MARI_VIEW_PATH.'/Common_select_class.php');
 									<th><span>주소</span></th>
 									<!--
 									<td>
-										<input type="text" name="m_zip1" class="frm_input" style="width:40px" id="post1" value='<?php echo $m_zip1;?>' <?php echo $config['c_req_addr']=='Y'?'required':'';?>>-<input type="text"  class="frm_input" name="m_zip2" value='<?php echo $m_zip2;?>' style="width:40px" id="post2"   required/> <a href="javascript:openDaumPostcode()"><img src="{MARI_HOMESKIN_URL}/img/postcode_btn.png" alt="우편번호찾기" /></a>										
+										<input type="text" name="m_zip1" class="frm_input" style="width:40px" id="post1" value='<?php echo $m_zip1;?>' <?php echo $config['c_req_addr']=='Y'?'required':'';?>>-<input type="text"  class="frm_input" name="m_zip2" value='<?php echo $m_zip2;?>' style="width:40px" id="post2"   required/> <a href="javascript:openDaumPostcode()"><img src="{MARI_HOMESKIN_URL}/img/postcode_btn.png" alt="우편번호찾기" /></a>
 										<p class="ml_01 mt10">
 											<input type="text" class="frm_input" name="m_addr1" id="addr1"   alt='주소'  value='<?=$mem[m_addr1]?>' size="29" required/>
 											<input type="text" class="frm_input" name="m_addr2" id="addr2"  alt='주소'  value='<?=$mem[m_addr2]?>' size="29" required/>
 										</p>
 									</td>
-									
+
 									<td>
 									<input type="text" class="frm_input" name="m_zip" id="zip" value="<?php echo $mem[m_zip]?>" readonly="readonly" class="frm_input" style="width:100px;"  placeholder="우편번호" <?php echo $config['c_req_addr']=='Y'?'required':'';?>/>&nbsp;
 									<img src="{MARI_HOMESKIN_URL}/img/btn_post.png"  align="absmiddle" style="cursor:pointer;" onclick="javascript:execDaumPostcode();" alt="우편번호찾기"><br/><br/>
-									
+
 									<p class="ml_01 mt10">
 									<input type="text" class="frm_input" name="m_addr1" id="addr1" value="<?=$mem[m_addr1]?>" class="frm_input" placeholder="도로명주소" size="29"/>
 									&nbsp;
@@ -116,7 +116,7 @@ include(MARI_VIEW_PATH.'/Common_select_class.php');
 									<td>
 									<input type="text" class="frm_input" name="m_zip" id="zip" value="<?php echo $mem[m_zip]?>" readonly="readonly" class="frm_input" style="width:100px;"  placeholder="우편번호" <?php echo $config['c_req_addr']=='Y'?'required':'';?>/>&nbsp;
 									<img src="{MARI_HOMESKIN_URL}/img/btn_post.png"  align="absmiddle" style="cursor:pointer;" onclick="javascript:execDaumPostcode();" alt="우편번호찾기"><br/><br/>
-									<span id="guide" style="color:#999"></span>	
+									<span id="guide" style="color:#999"></span>
 									<input type="text" class="frm_input" name="m_addr1" id="addr1" value="<?php echo $mem[m_addr1]?>" class="frm_input" placeholder="도로명주소" size="29"/>
 									&nbsp;
 									<input type="text" class="frm_input" name="m_addr2" id="addr2" value="<?php echo $mem[m_addr2]?>" class="frm_input" placeholder="지번주소"  size="29"/>
@@ -188,14 +188,20 @@ include(MARI_VIEW_PATH.'/Common_select_class.php');
 						</td -->
 						<th>가입경로</th>
 						<td colspan="3">
-							<input type="radio" name="m_joinpath" id="" value="검색포탈" <?php echo $mem['m_joinpath']=='검색포탈'?'checked':'';?>/> <label for="" class="sz1" >검색포탈</label>
-							<input type="radio" name="m_joinpath" id="" value="인터넷 기사" <?php echo $mem['m_joinpath']=='인터넷 기사'?'checked':'';?>/> <label for="" class="sz1">인터넷 기사</label>
-							<input type="radio" name="m_joinpath" id="" value="인터넷 광고" <?php echo $mem['m_joinpath']=='인터넷 광고'?'checked':'';?>/> <label for="" class="sz1">인터넷 광고</label>
-							<input type="radio" name="m_joinpath" id="" value="모바일 광고" <?php echo $mem['m_joinpath']=='모바일 광고'?'checked':'';?>/> <label for="" class="sz1">모바일 광고</label><br />
+							<?php
+							if ( $mem['m_joinpath']!='' && !in_array($mem['m_joinpath'], array('포털검색',"블로그,카페",'온라인배너광고','언론기사','지인추천','홍보믈') ) ) $isetc = true;
+							else $isetc = false;
+							?>
+							<input type="radio" name="m_joinpath" id="" value="검색포탈" <?php echo $mem['m_joinpath']=='포털검색'?'checked':'';?>/> <label for="" class="sz1" >포털검색</label>
+							<input type="radio" name="m_joinpath" id="" value="인터넷 기사" <?php echo $mem['m_joinpath']=="블로그,카페"?'checked':'';?>/> <label for="" class="sz1">블로그,카페</label>
+							<input type="radio" name="m_joinpath" id="" value="인터넷 광고" <?php echo $mem['m_joinpath']=='온라인배너광고'?'checked':'';?>/> <label for="" class="sz1">온라인배너광고</label>
+							<input type="radio" name="m_joinpath" id="" value="모바일 광고" <?php echo $mem['m_joinpath']=='언론기사'?'checked':'';?>/> <label for="" class="sz1">언론기사</label><br />
 							<input type="radio" name="m_joinpath" id="" value="지인추천" <?php echo $mem['m_joinpath']=='지인추천'?'checked':'';?>/> <label for="" class="sz1">지인추천</label>
-							<input type="radio" name="m_joinpath" id="" value="신문" <?php echo $mem['m_joinpath']=='신문'?'checked':'';?>/> <label for="" class="sz1">신문</label>
+
 							<input type="radio" name="m_joinpath" id="" value="홍보믈" <?php echo $mem['m_joinpath']=='홍보믈'?'checked':'';?>/> <label for="" class="sz1">홍보믈</label>
-							<input type="radio" name="m_joinpath" id="" value="기타" <?php echo $mem['m_joinpath']=='기타'?'checked':'';?>/> <label for="" class="sz1">기타</label>
+							<input type="radio" name="m_joinpath" id="" value="기타" <?php echo $isetc==true ?'checked':'';?>/> <label for="" class="sz1">기타</label>
+							<input type="text" value="<?php echo htmlspecialchars_decode($mem['m_joinpath'],ENT_COMPAT)?>">
+
 						</td>
 					</tr>
 					<tr>
@@ -255,7 +261,7 @@ include(MARI_VIEW_PATH.'/Common_select_class.php');
 						<td>
 						<input type="text" class="frm_input" name="m_with_zip" id="w_zip" value="<?php echo $mem[m_with_zip]?>" readonly="readonly" class="frm_input" style="width:100px;"  placeholder="우편번호" <?php echo $config['c_req_addr']=='Y'?'required':'';?>/>&nbsp;
 						<img src="{MARI_HOMESKIN_URL}/img/btn_post.png"  align="absmiddle" style="cursor:pointer;" onclick="javascript:execDaumPostcode_b();" alt="우편번호찾기"><br/><br/>
-						<span id="guide" style="color:#999"></span>	
+						<span id="guide" style="color:#999"></span>
 						<input type="text" class="frm_input" name="m_with_addr1" id="w_addr1" value="<?php echo $mem[m_with_addr1]?>" class="frm_input" placeholder="도로명주소" size="29"/>
 						&nbsp;
 						<input type="text" class="frm_input" name="m_with_addr2" id="w_addr2" value="<?php echo $mem[m_with_addr2]?>" class="frm_input" placeholder="지번주소"  size="29"/>
@@ -304,7 +310,7 @@ include(MARI_VIEW_PATH.'/Common_select_class.php');
                 document.getElementById('zip').value = data.zonecode; //5자리 새우편번호 사용
                 document.getElementById('addr1').value = fullRoadAddr;
                 document.getElementById('addr2').focus();
-                
+
                 if(data.autoRoadAddress) {
                     var expRoadAddr = data.autoRoadAddress + extraRoadAddr;
                     document.getElementById('guide').innerHTML = '(예상 도로명 주소 : ' + expRoadAddr + ')';
@@ -342,7 +348,7 @@ include(MARI_VIEW_PATH.'/Common_select_class.php');
                 document.getElementById('w_zip').value = data.zonecode; //5자리 새우편번호 사용
                 document.getElementById('w_addr1').value = fullRoadAddr;
                 document.getElementById('w_addr2').focus();
-                
+
                 if(data.autoRoadAddress) {
                     var expRoadAddr = data.autoRoadAddress + extraRoadAddr;
                     document.getElementById('guide').innerHTML = '(예상 도로명 주소 : ' + expRoadAddr + ')';
@@ -372,7 +378,7 @@ function Member_form_Ok(f)
 	if(!f.m_id.value){alert('\n아이디를 입력하여 주십시오.');f.m_id.focus();return false;}
 
 	var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
-			
+
 	if(exptext.test(f.m_id.value)==false){
 		//이메일 형식이 알파벳+숫자@알파벳+숫자.알파벳+숫자 형식이 아닐경우
 		alert("이메일 형식이 올바르지 않습니다.");
@@ -436,11 +442,11 @@ function Member_intercept_NO(f)
 	f.submit();
 }
 
-function cnj_comma(cnj_str) { 
+function cnj_comma(cnj_str) {
 		var t_align = "left"; // 텍스트 필드 정렬
 		var t_num = cnj_str.value.substring(0,1); // 첫글자 확인 변수
 		var num =  /^[/,/,0,1,2,3,4,5,6,7,8,9,/]/; // 숫자와 , 만 가능
-		var cnjValue = ""; 
+		var cnjValue = "";
 		var cnjValue2 = "";
 
 		if (!num.test(cnj_str.value)){
@@ -470,19 +476,19 @@ function cnj_comma(cnj_str) {
 
 		}
 
-		for(i=0; i<cnj_str.value.length; i++)      {   
-		if(cnj_str.value.charAt(cnj_str.value.length - i -1) != ",") { 
-		cnjValue2 = cnj_str.value.charAt(cnj_str.value.length - i -1) + cnjValue2; 
-		} 
+		for(i=0; i<cnj_str.value.length; i++)      {
+		if(cnj_str.value.charAt(cnj_str.value.length - i -1) != ",") {
+		cnjValue2 = cnj_str.value.charAt(cnj_str.value.length - i -1) + cnjValue2;
+		}
 		}
 
 		for(i=0; i<cnjValue2.length; i++)         {
 
-		if(i > 0 && (i%3)==0) { 
-		cnjValue = cnjValue2.charAt(cnjValue2.length - i -1) + "," + cnjValue; 
-		} else { 
-		cnjValue = cnjValue2.charAt(cnjValue2.length - i -1) + cnjValue; 
-		} 
+		if(i > 0 && (i%3)==0) {
+		cnjValue = cnjValue2.charAt(cnjValue2.length - i -1) + "," + cnjValue;
+		} else {
+		cnjValue = cnjValue2.charAt(cnjValue2.length - i -1) + cnjValue;
+		}
 		}
 		cnj_str.value = cnjValue;
 		cnj_str.style.textAlign = t_align;
@@ -493,15 +499,15 @@ function cnj_comma(cnj_str) {
 	//회원레벨 2레벨 선택시에만 사용가능
 	function getSelectValue(frm){
 		if(frm.m_level.options[frm.m_level.selectedIndex].value =="2"){
-			document.getElementById("pose_chk1").disabled = false; 
-			document.getElementById("pose_chk2").disabled = false; 
-			document.getElementById("pose_chk3").disabled = false; 
-			document.getElementById("pose_chk4").disabled = false; 
+			document.getElementById("pose_chk1").disabled = false;
+			document.getElementById("pose_chk2").disabled = false;
+			document.getElementById("pose_chk3").disabled = false;
+			document.getElementById("pose_chk4").disabled = false;
 		}if(frm.m_level.options[frm.m_level.selectedIndex].value !="2"){
-			document.getElementById("pose_chk1").disabled = true; 
-			document.getElementById("pose_chk2").disabled = true; 
-			document.getElementById("pose_chk3").disabled = true; 
-			document.getElementById("pose_chk4").disabled = true; 
+			document.getElementById("pose_chk1").disabled = true;
+			document.getElementById("pose_chk2").disabled = true;
+			document.getElementById("pose_chk3").disabled = true;
+			document.getElementById("pose_chk4").disabled = true;
 		}
 	}
 </script>
