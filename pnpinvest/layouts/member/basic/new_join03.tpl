@@ -301,7 +301,7 @@ if( $baseinfo['mobileno'] !='') {
               <input type="radio" name="m_joinpath" value="언론기사" data-etc='N'>언론기사
               <input type="radio" name="m_joinpath" value="지인추천" data-etc='N'>지인추천
               <input type="radio" name="m_joinpath" value="홍보물" data-etc='N'>홍보물
-              <input type="radio" name="m_joinpath" value="기타" data-etc='Y'>기타
+              <input type="radio" name="m_joinpath" value="etc" data-etc='Y'>기타
               <input type="text" name="m_joinpath_txt" value="" readonly>
             </div>
           </div>

@@ -154,6 +154,8 @@ class Newhomeapi extends CI_Controller {
 
     $savedata['m_companynum']= ($this->input->post('m_companynum') === false) ?'':$this->input->post('m_companynum');
     $savedata['m_company_name']= ($this->input->post('m_company_name') === false ) ?'':$this->input->post('m_company_name');
+    $savedata['m_joinpath'] == $this->input->post('m_joinpath',true);
+    if ( $savedata['m_joinpath']=='etc') $savedata['m_joinpath'] =  htmlspecialchars ($this->input->post('m_joinpath_txt',true),ENT_QUOTES);
     $savedata['m_my_bankcode']= '';
     $savedata['m_my_bankname']= '';
     $savedata['m_my_bankacc']= '';
@@ -166,9 +168,7 @@ class Newhomeapi extends CI_Controller {
                     ."&emailTp=PERSONAL&fullname=" . urlencode($savedata['m_name']) . "&nmLangCd=ko&phoneCntryCd=KOR&phoneNo=" . $savedata['m_hp'] . "&phoneTp=MOBILE";
 
     list($res, $data) = $this->getres($_method, $url, $ENCODE_PARAMS );
-var_dump($res);
-var_dump($data);
-return;
+
     if(!$res){
       $this->load->view('alert', array('msg'=>'회원가입 도중 오류가 발생하였습니다.', 'url'=>'/pnpinvest/?mode=join01') );
       return;
