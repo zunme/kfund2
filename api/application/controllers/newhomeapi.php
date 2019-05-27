@@ -154,7 +154,7 @@ class Newhomeapi extends CI_Controller {
 
     $savedata['m_companynum']= ($this->input->post('m_companynum') === false) ?'':$this->input->post('m_companynum');
     $savedata['m_company_name']= ($this->input->post('m_company_name') === false ) ?'':$this->input->post('m_company_name');
-    $savedata['m_joinpath'] == $this->input->post('m_joinpath',true);
+    $savedata['m_joinpath'] = $this->input->post('m_joinpath',true);
     if ( $savedata['m_joinpath']=='etc') $savedata['m_joinpath'] =  htmlspecialchars ($this->input->post('m_joinpath_txt',true),ENT_QUOTES);
     $savedata['m_my_bankcode']= '';
     $savedata['m_my_bankname']= '';
