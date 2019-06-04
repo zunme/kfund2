@@ -87,6 +87,8 @@ if (ereg('^[[:digit:]]{6}[1-6][[:digit:]]{6}$', $user['m_reginum'])) {
 <script src="/pnpinvest/js/jQuery-File-Upload/js/jquery.fileupload-validate.js"></script>
 
 <style>
+
+.form_wrap input[type=text], .form_wrap select{padding-right:30px;}
 .folder .tt {
     font-size: 18px;
     font-weight: 500;
@@ -578,9 +580,9 @@ border-color:#ccc;
             <script>
             function resonchange(){
               var val = $("#reson option:selected").val();
-              if( val=="etc") $("#resontxt").show();
+ if( val=="etc") $("#resontxt").show();
               else  $("#resontxt").hide();
-              
+
               if( val=="" ){
                 $("#resontxt").hide();
                 $("#drawmembtn").addClass("disablebtn");
@@ -590,6 +592,7 @@ border-color:#ccc;
                 return;
               }
               else $("#drawmembtn").removeClass("disablebtn")
+
             }
             function drawmem2() {
               //if(!$('#withdraw_agree').is(':checked')){alert('동의란에 체크를 해주시기 바립니다.'); return false;}
@@ -638,8 +641,8 @@ border-color:#ccc;
 							<fieldset>
 								<div class="withdraw">
                 <div>
-                  <div>
-                <select name="reson" id="reson" onChange="resonchange()">
+                  <div style="margin-bottom: 20px;">
+                <select name="reson" id="reson" onChange="resonchange()" >
                   <option value="">선택해주세요</option>
                   <option value="투자/대출계획 없음">투자/대출계획 없음</option>
                   <option value="투자상품 수익률 불만족">투자상품 수익률 불만족</option>
@@ -650,7 +653,7 @@ border-color:#ccc;
                   <option value="etc">기타</option>
                 </select>
               </div><div>
-                <textarea name="resontxt" id="resontxt" placeholder="기타 사유를 입력해주세요"></textarea>
+                <textarea name="resontxt" id="resontxt" placeholder="기타 사유를 입력해주세요 (최대 30자 이내)" style="display:none; margin-bottom: 20px; width:500px;" ></textarea>
               </div>
                 <div>
 									<p class="tt">아래 사항을 꼼꼼히 읽어보신 후 회원 탈퇴를 진행해주세요.</p>

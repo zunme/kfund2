@@ -525,25 +525,25 @@ z-index:1002;
 .z-popup-main{
   position:relative;
   float:left;
-  max-width:100vw;
+  max-width:50vw;
   border:1px solid #9c9c9c;
 }
 .z-popup-contents img{width:100%;}
 .z-popup-main .z-popup-closebt{
   content: '닫기';
       position: absolute;
-      top: 10px;
-      right: 10px;
+      top: 3px;
+      right: 3px;
       font-size: 16px;
       color: white;
       background-color: #69a;
-      padding: 3px 20px;
-      border: 1px solid #4f7684;
+      padding: 1px 10px 3px;
+      border: 0px solid #4f7684;
 }
 .z-popup-footer{
   background-color: black;
   color: white;
-  padding: 6px 20px;
+  padding: 0px 10px 2px;
   cursor:pointer;
   text-align:center;
 }
@@ -3050,6 +3050,8 @@ function graphdraw() {
 .main_join{background: #f5f5f5;}
 .graphheader{background: #f5f5f5;}
 .main_join .btn{margin: 10px auto;}
+.z-popup-footer{    font-size: 10px;}
+.z-popup-main .z-popup-closebt{top: 0px; right: 0px;font-size: 12px; padding: 0px 6px 1px;}
 }
 
 @media all and (max-width:465px) {

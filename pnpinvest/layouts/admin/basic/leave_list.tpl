@@ -56,6 +56,7 @@ include(MARI_VIEW_PATH.'/Common_select_class.php');
 					<col width="" />
 					<col width="" />
 					<col width="" />
+					<col width="" />
 				</colgroup>
 				<thead>
 					<tr>
@@ -68,6 +69,7 @@ include(MARI_VIEW_PATH.'/Common_select_class.php');
 						<th>가입일</th>
 						<th>회원등급</th>
 						<th>탈퇴일</th>
+						<th>탈퇴사유</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -90,6 +92,7 @@ include(MARI_VIEW_PATH.'/Common_select_class.php');
 						<td><?php echo substr($row['s_datetime'],0,10); ?></td>
 						<td><?php echo $lv['lv_name'] ?></td>
 						<td><?php echo substr($row['s_leave_date'],0,10); ?></td>
+						<td>일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십</td>
 					</tr>
     <?php
     }
