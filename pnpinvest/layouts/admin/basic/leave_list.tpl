@@ -92,7 +92,7 @@ include(MARI_VIEW_PATH.'/Common_select_class.php');
 						<td><?php echo substr($row['s_datetime'],0,10); ?></td>
 						<td><?php echo $lv['lv_name'] ?></td>
 						<td><?php echo substr($row['s_leave_date'],0,10); ?></td>
-						<td>일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십</td>
+						<td><?php echo $row['s_reason'];?></td>
 					</tr>
     <?php
     }
