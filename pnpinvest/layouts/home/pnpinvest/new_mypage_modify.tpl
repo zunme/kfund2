@@ -642,7 +642,7 @@ border-color:#ccc;
 								<div class="withdraw">
                 <div>
                   <div style="margin-bottom: 20px;">
-                <select name="reason" id="reson" onChange="resonchange()" >
+                <select name="s_reason" id="reson" onChange="resonchange()" >
                   <option value="">선택해주세요</option>
                   <option value="투자/대출계획 없음">투자/대출계획 없음</option>
                   <option value="투자상품 수익률 불만족">투자상품 수익률 불만족</option>
@@ -653,13 +653,7 @@ border-color:#ccc;
                   <!--<option value="etc">기타</option>-->
                 </select>
               </div><div>
-                <input type="hidden" name="reson" value="re1">
-                <input type="hidden" name="resontxt" value="re2">
-                <input type="hidden" name="s_reson" value="re3">
-                <input type="hidden" name="s_resontxt" value="re4">
-                <input type="hidden" name="s_reason" value="re5">
-                <input type="hidden" name="s_reasontxt" value="re6">
-                <textarea name="reasontxt" id="resontxt" placeholder="기타 사유를 입력해주세요 (최대 30자 이내)" style="display:none; margin-bottom: 20px; width:500px;" >투자/대출계획 없음</textarea>
+                <textarea name="reasontxt" id="resontxt" placeholder="기타 사유를 입력해주세요 (최대 30자 이내)" style="display:none; margin-bottom: 20px; width:500px;" ></textarea>
               </div>
                 <div>
 									<p class="tt">아래 사항을 꼼꼼히 읽어보신 후 회원 탈퇴를 진행해주세요.</p>
