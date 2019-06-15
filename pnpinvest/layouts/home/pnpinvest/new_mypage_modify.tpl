@@ -642,7 +642,7 @@ border-color:#ccc;
 								<div class="withdraw">
                 <div>
                   <div style="margin-bottom: 20px;">
-                <select name="reson" id="reson" onChange="resonchange()" >
+                <select name="reason" id="reson" onChange="resonchange()" >
                   <option value="">선택해주세요</option>
                   <option value="투자/대출계획 없음">투자/대출계획 없음</option>
                   <option value="투자상품 수익률 불만족">투자상품 수익률 불만족</option>
