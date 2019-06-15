@@ -178,8 +178,8 @@
             <td><?php echo $row['m_id']?></td>
             <td><?php echo $row['tel']?></td>
             <td><?php echo $row['status']?></td>
-            <td><?php echo $row['result_txt']?></td>
-            <td><?php echo $row['result_code']?></td>
+            <td><?php echo $row['result_text']?></td>
+            <td><?php echo $row['resultCode']?></td>
             <td><?php echo $row['errorText']?></td>
             <td><?php echo $row['regdate']?></td>
           </tr>
