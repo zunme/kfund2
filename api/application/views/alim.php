@@ -165,7 +165,7 @@
         <tr>
           <th>ID</th>
           <th>tel</th>
-          <th>emomey</th>
+          <th>금액</th>
           <th>status</th>
           <th>result_txt</th>
           <th>result_code</th>
@@ -175,12 +175,12 @@
       </thead>
       <tbody>
         <?php foreach($list as $row){
-          $tmp = json_decode( $row['data'], true);
+$tmp = json_decode(stripslashes($row['data']));
           ?>
           <tr>
             <td><?php echo $row['m_id']?></td>
             <td><?php echo $row['tel']?></td>
-            <td><?php echo $tmp['emoney']?></td>
+            <td><?php echo number_format($tmp->emoney)?></td>
             <td><?php echo $row['status']?></td>
             <td><?php echo $row['result_text']?></td>
             <td><?php echo $row['resultCode']?></td>
@@ -201,6 +201,6 @@
 </div>
 <script>
 $(document).ready(function() {
-  $(".table").dataTable({"order": [[ 6, "desc" ]]});
+  $(".table").dataTable({"order": [[ 7, "desc" ]]});
 });
 </script>
