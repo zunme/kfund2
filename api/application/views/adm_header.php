@@ -132,6 +132,7 @@
                 </ul>
                 <h3>ETC</h3>
                 <ul class="nav side-menu">
+                  <li><span href="/api/index.php/alimlist" class="triggerModal80 nullmenu">지급알림내역</span></li>
                   <li><span href="/api/index.php/investcheck" class="triggerModal80 nullmenu">가상투자</span></li>
                   <li><span href="/api/index.php/eventcheck" class="triggerModal80 nullmenu">eventcheck</span></li>
                   <li><span href="/api/index.php/consulting/admviewlist" class="triggerModal80 nullmenu">상담리스트</span></li>
