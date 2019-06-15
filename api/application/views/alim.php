@@ -165,6 +165,7 @@
         <tr>
           <th>ID</th>
           <th>tel</th>
+          <th>emomey</th>
           <th>status</th>
           <th>result_txt</th>
           <th>result_code</th>
@@ -173,10 +174,13 @@
         </tr>
       </thead>
       <tbody>
-        <?php foreach($list as $row){ ?>
+        <?php foreach($list as $row){
+          $tmp = json_decode( $row['data'], true);
+          ?>
           <tr>
             <td><?php echo $row['m_id']?></td>
             <td><?php echo $row['tel']?></td>
+            <td><?php echo $tmp['emoney']?></td>
             <td><?php echo $row['status']?></td>
             <td><?php echo $row['result_text']?></td>
             <td><?php echo $row['resultCode']?></td>
