@@ -858,6 +858,7 @@ margin-top: 5px;
 							<input type="radio" id="" name="i_look" value="C" <?php echo $iv['i_look']=='C'?'checked':'';?> /> <label for="">투자 마감</label>
 							<input type="radio" id="" name="i_look" value="D" <?php echo $iv['i_look']=='D'?'checked':'';?> /> <label for="">상환중</label>
 							<input type="radio" id="" name="i_look" value="F" <?php echo $iv['i_look']=='F'?'checked':'';?> /> <label for="">상환완료</label>
+							<input type="radio" id="" name="i_look" value="F" <?php echo $iv['i_look']=='F'?'checked':'';?> /> <label for="">연체중</label>
 						</td>
 					</tr>
 					<tr>

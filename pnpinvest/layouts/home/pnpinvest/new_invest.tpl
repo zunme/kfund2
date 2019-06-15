@@ -446,6 +446,7 @@ margin-top:15px;
             <option value="Y">투자중</option>
             <option value="D">이자상환</option>
             <option value="F">상환완료</option>
+            <option value="F">연체중</option>
           </select>
         </div>
 				<div class="sch_wrap">

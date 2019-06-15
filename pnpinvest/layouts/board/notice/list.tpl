@@ -6,6 +6,7 @@ include (getcwd().'/module/mode_bbs_list.php');
 ?>
 {# new_header}
 <style>
+.board table tbody tr.notice {  background-color: #bcc1ff;}
 	p.paging span{margin-right: 5px;}
 </style>
 <!-- /////////////////////////////// 본문 시작 /////////////////////////////// -->

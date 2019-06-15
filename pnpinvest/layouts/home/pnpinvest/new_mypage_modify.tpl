@@ -580,7 +580,7 @@ border-color:#ccc;
             <script>
             function resonchange(){
               var val = $("#reson option:selected").val();
- if( val=="etc") $("#resontxt").show();
+ if( val=="etc") $("#resontxt").hide();
               else  $("#resontxt").hide();
 
               if( val=="" ){
@@ -650,7 +650,7 @@ border-color:#ccc;
                   <option value="홈페이지의 편의성 제공 부족">홈페이지의 편의성 제공 부족</option>
                   <option value="P2P투자에 대한 신뢰도 낮음">P2P투자에 대한 신뢰도 낮음</option>
                   <option value="케이펀딩에 대한 신뢰도 낮음">케이펀딩에 대한 신뢰도 낮음</option>
-                  <option value="etc">기타</option>
+                  <!--<option value="etc">기타</option>-->
                 </select>
               </div><div>
                 <textarea name="resontxt" id="resontxt" placeholder="기타 사유를 입력해주세요 (최대 30자 이내)" style="display:none; margin-bottom: 20px; width:500px;" ></textarea>
