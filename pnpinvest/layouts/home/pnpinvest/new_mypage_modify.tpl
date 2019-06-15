@@ -653,6 +653,8 @@ border-color:#ccc;
                   <!--<option value="etc">기타</option>-->
                 </select>
               </div><div>
+                <input type="hidden" name="reson" value="re1">
+                <input type="hidden" name="resontxt" value="re2">
                 <textarea name="reasontxt" id="resontxt" placeholder="기타 사유를 입력해주세요 (최대 30자 이내)" style="display:none; margin-bottom: 20px; width:500px;" >투자/대출계획 없음</textarea>
               </div>
                 <div>
