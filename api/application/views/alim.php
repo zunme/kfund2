@@ -169,6 +169,7 @@
           <th>result_txt</th>
           <th>result_code</th>
           <th>errorText</th>
+          <th>일자</th>
         </tr>
       </thead>
       <tbody>
@@ -180,6 +181,7 @@
             <td><?php echo $row['result_txt']?></td>
             <td><?php echo $row['result_code']?></td>
             <td><?php echo $row['errorText']?></td>
+            <td><?php echo $row['regdate']?></td>
           </tr>
         <?php } ?>
       </tbody>
@@ -195,6 +197,6 @@
 </div>
 <script>
 $(document).ready(function() {
-  $(".table").dataTable();
+  $(".table").dataTable({"order": [[ 6, "desc" ]]});
 });
 </script>
