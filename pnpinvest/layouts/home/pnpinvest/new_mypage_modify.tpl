@@ -653,7 +653,7 @@ border-color:#ccc;
                   <!--<option value="etc">기타</option>-->
                 </select>
               </div><div>
-                <textarea name="resontxt" id="resontxt" placeholder="기타 사유를 입력해주세요 (최대 30자 이내)" style="display:none; margin-bottom: 20px; width:500px;" ></textarea>
+                <textarea name="reasontxt" id="resontxt" placeholder="기타 사유를 입력해주세요 (최대 30자 이내)" style="display:none; margin-bottom: 20px; width:500px;" >투자/대출계획 없음</textarea>
               </div>
                 <div>
 									<p class="tt">아래 사항을 꼼꼼히 읽어보신 후 회원 탈퇴를 진행해주세요.</p>
