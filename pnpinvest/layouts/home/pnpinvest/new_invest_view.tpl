@@ -16,7 +16,9 @@ if( !in_array( $loa['i_look'], array('N','Y','C') ) ){
     </script>
     <?php
     exit;
-  }else if ( $availview2 != 'true' ){
+  }
+  /*
+  else if ( $availview2 != 'true' ){
     ?>
     <script>
       //alert("모집된 상품은 투자에 참여하신 고객님만 열람하실 수 있습니다.")
@@ -25,6 +27,7 @@ if( !in_array( $loa['i_look'], array('N','Y','C') ) ){
     <?php
     exit;
   }
+  */
 }
 
 $startidx = 0; //신규로 보여줄 IDX시작
