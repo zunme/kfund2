@@ -459,10 +459,10 @@ margin-top:15px;
   <script>
   function fnviewalert ( al1, al2 ){
     if (al1 != 'true'){
-      alert("모집된 상품은 투자에 참여하신 고객님만 열람하실 수 있습니다.\n로그인 후 이용해주세요")
+      alert("로그인 후 이용해주세요")
       window.location.href = "https://www.kfunding.co.kr/pnpinvest/?mode=login"
     }
-    else alert("모집된 상품은 투자에 참여하신 고객님만 열람하실 수 있습니다.")
+    //else alert("모집된 상품은 투자에 참여하신 고객님만 열람하실 수 있습니다.")
   }
   </script>
 	<!-- 지난상품 리스트 -->
@@ -487,6 +487,7 @@ for ($i=0; $row=sql_fetch_array($result); $i++) {
                 $sql = "select ifnull(count(1),0) as cnt from  mari_invest where loan_id='".$row['i_id']."' and m_id='".$user['m_id']."' and i_pay_ment='Y' limit 1";
                 $availview2qry = sql_fetch($sql, false);
                 $availview2 = ( $availview2qry['cnt'] > 0) ? "true": "false";
+                $availview2 = "true";
               }else $availview2 = "false";
               //N 대기, Y 진행중, C 마감, D 이자, F 완료
                 switch( $row['i_look']){
@@ -509,13 +510,13 @@ for ($i=0; $row=sql_fetch_array($result); $i++) {
               <?php
                   break;
                   case ('D') :
-                  $availviewcheck = $availview2;
+                  $availviewcheck = $availview;
               ?>
                   <span class="item_con end" style="background-color: #c3ae01;border:none">이자상환</span>
               <?php
                   break;
                   default:
-                  $availviewcheck = $availview2;
+                  $availviewcheck = $availview;
               ?>
                   <span class="item_con end" style="background-color: #5f006f;border:none">상환완료</span>
               <?php

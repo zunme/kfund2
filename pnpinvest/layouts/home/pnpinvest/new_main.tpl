@@ -1162,10 +1162,10 @@ $("document").ready(function() {
   <script>
   function fnviewalert ( al1, al2 ){
     if (al1 != 'true'){
-      alert("모집된 상품은 투자에 참여하신 고객님만 열람하실 수 있습니다.\n로그인 후 이용해주세요")
+      alert("로그인 후 이용해주세요")
       window.location.href = "https://www.kfunding.co.kr/pnpinvest/?mode=login"
     }
-    else alert("모집된 상품은 투자에 참여하신 고객님만 열람하실 수 있습니다.")
+    //else alert("모집된 상품은 투자에 참여하신 고객님만 열람하실 수 있습니다.")
   }
   </script>
 
@@ -1218,13 +1218,13 @@ $("document").ready(function() {
                 <?php
                     break;
                     case ('D') :
-                      $availviewcheck = $availview2;
+                      $availviewcheck = $availview;
                 ?>
                     <span class="item_con end" style="background-color: #c3ae01;border:none">이자상환</span>
                 <?php
                     break;
                     default:
-                      $availviewcheck = $availview2;
+                      $availviewcheck = $availview;
                 ?>
                     <span class="item_con end" style="background-color: #5f006f;border:none">상환완료</span>
                 <?php
