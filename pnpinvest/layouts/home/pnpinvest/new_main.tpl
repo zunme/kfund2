@@ -1194,7 +1194,7 @@ $("document").ready(function() {
                 $sql = "select ifnull(count(1),0) as cnt from  mari_invest where loan_id='".$row['i_id']."' and m_id='".$user['m_id']."' and i_pay_ment='Y' limit 1";
                 $availview2qry = sql_fetch($sql, false);
                 $availview2 = ( $availview2qry['cnt'] > 0) ? "true": "false";
-                $availview2 = "true"
+                $availview2 = "true";
               }else $availview2 = "false";
 
                 //N 대기, Y 진행중, C 마감, D 이자, F 완료
