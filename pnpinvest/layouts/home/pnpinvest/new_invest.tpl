@@ -516,7 +516,7 @@ for ($i=0; $row=sql_fetch_array($result); $i++) {
               <?php
                   break;
                   default:
-                  $availviewcheck = $availview;
+                  $availviewcheck = "fale";
               ?>
                   <span class="item_con end" style="background-color: #5f006f;border:none">상환완료</span>
               <?php

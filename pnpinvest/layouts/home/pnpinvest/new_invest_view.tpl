@@ -1,6 +1,14 @@
 
 <?php
 include(MARI_VIEW_PATH.'/Common_select_class.php');
+if ($loa['i_look']=='F'){
+?>
+<script>
+location.replace( "https://www.kfunding.co.kr");
+</script>
+<?php
+exit;
+}
 $availview = isset($user['m_id']) ? "true":"false" ;
 if ( $availview ){
   $sql = "select ifnull(count(1),0) as cnt from  mari_invest where loan_id='".$loa['i_id']."' and m_id='".$user['m_id']."' and i_pay_ment='Y' limit 1";
