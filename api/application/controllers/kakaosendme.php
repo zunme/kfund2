@@ -132,7 +132,7 @@ class kakaosendme extends CI_Controller {
   function payin(){
     $this->load->driver('cache', array('adapter' => 'file'));
     $seyfert_last= $this->cache->get('seyfert_last') ;
-    if($seyfert_last=='' || $seyfert_last=null || (int)$seyfert_last < 8500) $seyfert_last = '8500';
+    if(!$seyfert_last || $seyfert_last=='' || $seyfert_last==null || (int)$seyfert_last < 8734) $seyfert_last = '8734';
     $rows = $this->db->where('s_id >', $seyfert_last)->where ('trnsctnTp', 'SEYFERT_PAYIN_VACCNT')->where ('trnsctnSt', 'SFRT_PAYIN_VACCNT_FINISHED')
     ->get('mari_seyfert_order')->result_array();
     $msg = "";
@@ -156,8 +156,8 @@ class kakaosendme extends CI_Controller {
       $this->notify($msg);
       echo "send msg ( last - ".$seyfert_last." )";
     } else echo "none data";
-    $this->cache->save('seyfert_last', $seyfert_last, 60000);
-    $this->cache->save('seyfert_time', date("Y-m-d H:i:s"), 60000);
+    $this->cache->save('seyfert_last', $seyfert_last, 90000);
+    $this->cache->save('seyfert_time', date("Y-m-d H:i:s"), 90000);
   }
   function loanprg(){
     $this->load->driver('cache', array('adapter' => 'file'));
