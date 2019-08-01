@@ -80,7 +80,7 @@
 <div style="padding:10px 20px; border:1px solid #cacaca;border-radius:8px;margin:10px;">
   <div class="row">
     <div class="col-xs-4">종합소득신고서<br>(사업자등록증)</div>
-    <div class="col-xs-2">
+    <div class="col-xs-2 viewbtndiv">
       <?php if( $info['m_declaration_01'] != '' ){ ?><a id="file1_view" class="btn" href="/pnpinvest/data/file/member/<?php echo $info['m_declaration_01']?>" target="_blank">열기</a>  <?php } else {?>
         <a id="file1_view" class="btn" href="javascript:;" target="_blank"></a>
       <?php } ?>
@@ -98,7 +98,7 @@
 
   <div class="row">
     <div class="col-xs-4">근로소득원천징수연수증<br>(사업자신분증)</div>
-    <div class="col-xs-2">
+    <div class="col-xs-2 viewbtndiv">
       <?php if( $info['m_declaration_02'] != '' ){ ?><a class="btn" href="/pnpinvest/data/file/member/<?php echo $info['m_declaration_02']?>" target="_blank">열기</a>  <?php } else {?>
         <a id="file2_view" class="btn" href="javascript:;" target="_blank"></a>
       <?php } ?>
@@ -114,7 +114,7 @@
 
   <div class="row">
     <div class="col-xs-4">전문업자확인증<br>(법인통장)</div>
-    <div class="col-xs-2">
+    <div class="col-xs-2 viewbtndiv">
       <?php if( $info['m_evidence'] != '' ){ ?><a class="btn" href="/pnpinvest/data/file/member/<?php echo $info['m_evidence']?>" target="_blank">열기</a>  <?php } else { ?>
         <a id="file3_view" class="btn" href="javascript:;" target="_blank"></a>
       <?php } ?>
@@ -130,7 +130,7 @@
 
   <div class="row">
     <div class="col-xs-4">대부업자등록증<br>&nbsp;</div>
-    <div class="col-xs-2">
+    <div class="col-xs-2 viewbtndiv">
       <?php if( $info['m_bill'] != '' ){ ?><a class="btn" href="/pnpinvest/data/file/member/<?php echo $info['m_bill']?>" target="_blank">열기</a>  <?php } else {?>
         <a id="file4_view" class="btn" href="javascript:;" target="_blank"></a>
       <?php } ?>
@@ -169,7 +169,6 @@
 function del( ln ){
   var mid = "<?php echo $info['m_id']?>";
   var ftype = $(ln).data('ftype');
-
   if( confirm("파일을 삭제하시겠습니까?\n삭제후에는 복구가 불가능 합니다.")){
     $.ajax({
        type : "POST",
@@ -179,6 +178,8 @@ function del( ln ){
        success : function(result) {
          if(result.code==200){
           alert ( result.msg );
+          $(ln).parent().parent().children('div:nth-child(2)').html('');
+          $(ln).parent().empty();
          }else {
            alert ( result.msg );
          }

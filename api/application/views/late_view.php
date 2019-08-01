@@ -23,7 +23,7 @@
 			<div class="title ft">투자후기</div>
 		</div>
 	</div>
-	<div class="main">
+	<div class="main ft">
 		<div class="container">
 			<div class="text">
             <?php $data['late_title']?>

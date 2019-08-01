@@ -33,6 +33,7 @@
 <script>
 function ValidateEmail(mail)
 {
+return (true)
   console.log(mail);
  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
   {

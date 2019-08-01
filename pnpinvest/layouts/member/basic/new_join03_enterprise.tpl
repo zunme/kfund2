@@ -163,6 +163,9 @@ if( $_POST['join_agree_01'] !='Y' || $_POST['join_agree_01'] !='Y'){
 									</ul>
 								</li>
 							</ul>
+							<ul>
+								<li style="margin-top:10px; margin-left:20px;">회원가입 후, 증빙서류를 <u><a href="help@kfunding.co.kr">help@kfunding.co.kr</a></u>으로 전달해 주시면 투자한도를 변경해 드립니다.</li>
+							</ul>
 						</div>
 					</div>
 					<div>

@@ -209,7 +209,7 @@ public function ilmangitable() {
       $sql = "
       SELECT
  회원등급, 이름, 아이디, 번호, 유효자금, (ifnull(mxt.maximum,0) - 유효자금) 남은한도
-, 누적, 이머니, 가입, 최종접속일
+, 누적, 이머니, 가입, 최종접속일, 가입경로, 추천인 
 ,(SELECT s_date from mari_seyfert_order WHERE m_id = 아이디  and trnsctnTp='SEYFERT_PAYIN_VACCNT' AND trnsctnSt='SFRT_PAYIN_VACCNT_FINISHED' ORDER BY s_id LIMIT 1) 최초입금일
 ,(SELECT CONCAT('[',s_bnkCd,'] ', s_accntNo) FROM mari_seyfert a WHERE a.m_id = 아이디 AND a.s_memuse='Y' LIMIT 1) 가상계좌
 , CONCAT('[',m_my_bankcode,']', ' ', m_my_bankacc) 출금계좌
@@ -234,6 +234,8 @@ select
       ,a.m_emoney 이머니
       ,a.m_datetime 가입
       ,a.m_today_login 최종접속일
+      , a.m_joinpath as 가입경로 
+      , a.m_referee as 추천인
      ,if( a.m_verifyaccountuse ='Y' , a.m_my_bankcode , '') AS 	m_my_bankcode
 	, if( a.m_verifyaccountuse ='Y' , a.m_my_bankacc , '') as  m_my_bankacc
      FROM  mari_member a
@@ -307,6 +309,8 @@ $objPHPExcel->setActiveSheetIndex(0)
             ->setCellValue('K'.$i, '최초입금일')
             ->setCellValue('L'.$i, '가상계좌')
             ->setCellValue('M'.$i, '출금계좌')
+ ->setCellValue('N'.$i, '추천인')
+ ->setCellValue('O'.$i, '가입경로')
             ;
 foreach($rows as $idx=>$row) {
 $i = $idx+2;
@@ -324,6 +328,8 @@ $objPHPExcel->setActiveSheetIndex(0)
             ->setCellValue('K'.$i, $row['최초입금일'])
             ->setCellValue('L'.$i, $row['가상계좌'])
             ->setCellValue('M'.$i, $row['출금계좌'])
+->setCellValue('N'.$i, $row['추천인'])
+->setCellValue('O'.$i, $row['가입경로'])
             ;
 }
 // Rename worksheet

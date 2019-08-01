@@ -47,6 +47,7 @@ ol, ul, li{margin:0; padding:0; list-style:none;}
 
 /* 투자후기 열 */
 .row{margin-right: -15px; margin-left: -15px; clear:both;}
+.row>.row{margin-right: 0px; margin-left:0px; clear:both;}
 
 /* 투자후기 틀 */
 .card{
@@ -100,13 +101,13 @@ ol, ul, li{margin:0; padding:0; list-style:none;}
 .pagination{display: inline-block; padding-left: 0; margin: 20px 0;}
 .pagination > li{display: inline; padding:2px;}
 .pagination > li > a{
-	padding: 0px 3px;
-	margin: 0 3px;
+	/* padding: 0px 3px; */
+	margin: 0 4.5px;
 	line-height: 22px;
-	color: #999999;
+	color: #ccc;
     font-weight: 500;
-	font-size: 14px;
-	vertical-align: bottom;
+	/* font-size: 14px; */
+	/* vertical-align: bottom; */
 	}
 .pagination .arrow > a{font-size:10px;}
 .pagination .circle{
@@ -125,6 +126,8 @@ ol, ul, li{margin:0; padding:0; list-style:none;}
 	color:#fff;
     font-size: 18px;
 	text-align: center;
+	margin-left:-40px;
+	margin-right:-40px;
 	}
 .black_bg .join{
 	width: 50%;
@@ -142,6 +145,7 @@ ol, ul, li{margin:0; padding:0; list-style:none;}
 .black_bg .icon{margin-bottom:15px;}
 
 .black_bg .black_btn{
+	
 	padding: 10px 0;
 	margin: 20px 0;
 	text-align: center;
@@ -163,7 +167,7 @@ ol, ul, li{margin:0; padding:0; list-style:none;}
 	}
 	
 /* 맨 하단 흰 배경 */
-.subscribe-line{padding: 30px 0; margin-bottom:80px;}
+.subscribe-line{padding: 30px 0;}
 
 @media all and (min-width: 1200px){
 .main {width: 1000px; margin: -150px auto 0px;}
@@ -174,6 +178,7 @@ ol, ul, li{margin:0; padding:0; list-style:none;}
 .row{margin-right: -25px; margin-left: -25px;}
 .card-body .card-category{margin-bottom: 15px;}
 .card-body .card-title{margin-bottom: 45px;}
+.black_bg{margin-left:-5.5%; margin-right:-5.5%;}
 }	
 @media all and (max-width: 700px){
 .main {width: 90%; margin: -100px auto 0px;}

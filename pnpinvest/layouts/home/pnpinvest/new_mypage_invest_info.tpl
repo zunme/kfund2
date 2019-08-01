@@ -163,19 +163,19 @@ $sanghwan_total = sql_fetch($sql, false);
 							</div>
 						</div>
 						<div class="my_condition">
-							<h4>입찰현황 <span class="pc">현재 입찰현황을 확인하실 수 있습니다.</span></h4>
+							<h4>투자현황 <span class="pc">현재 투자현황을 확인하실 수 있습니다.</span></h4>
 							<table class="table_green">
-								<caption>입찰현황</caption>
+								<caption>투자현황</caption>
 								<thead>
 									<thead>
 										<tr>
 											<th class="filter">일자<button type="button" class="btn_filter">필터링</button></th>
 											<th class="filter">제목<button type="button" class="btn_filter">필터링</button></th>
 											<th>진행현황</th>
-											<th>이자율</th>
+											<th>수익률</th>
 											<th>상환기간</th>
-											<th class="filter">입찰액<button type="button" class="btn_filter">필터링</button></th>
-											<th>상태</th>
+											<th class="filter">투자액<button type="button" class="btn_filter">필터링</button></th>
+											<th>상환내역</th>
 											<th class="pc">권리증서</th>
 										</tr>
 									</thead>
@@ -239,11 +239,11 @@ $sanghwan_total = sql_fetch($sql, false);
                     <td><?php echo unit($row['i_pay']) ?>만원</td>
                     <td class="m_last">
                       <a href="javascript:void(0);"  onclick2="Calculation<?php echo $i; ?>()" onclick="view_calc(<?php echo $i; ?>)">
-                        확인
+                        <input type="button" value="보기"/>
                       </a>
                     </td>
                     <td class="pc">
-                      <a href="{MARI_HOME_URL}/?mode=invest_receipt&loan_id=<?php echo $row[loan_id]?>&i_pay=<?php echo $row[i_pay]?>" onclick="window.open(this.href, '','width=1022, height=1300, resizable=no, scrollbars=yes, status=no'); return false">권리증서</a>
+                      <a href="{MARI_HOME_URL}/?mode=invest_receipt&loan_id=<?php echo $row[loan_id]?>&i_pay=<?php echo $row[i_pay]?>" onclick="window.open(this.href, '','width=1022, height=1300, resizable=no, scrollbars=yes, status=no'); return false"><input type="button" value="권리증서"/></a>
                     </td>
                   </tr>
                 </form>

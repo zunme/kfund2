@@ -57,11 +57,11 @@ class  Admmember extends Adm {
     }
   }
   function trashfile() {
-    $field = $this->input->post('ind');
+    $field = $this->input->post('ftype');
     if ( !in_array($field, array('m_declaration_01','m_declaration_02','m_bill','m_evidence') ) ){
       $this->json( array("code"=>500,"error"=>"서류구분".$field."에 오류가 발생하였습니다.") );
     }
-    $mid = $this->input->post('mid');
+    $mid = $this->input->post('m_id');
     $meminfo = $this->db->get_where('mari_member', array('m_id'=> $mid) )->row_array();
     if(!isset($meminfo['m_id']) ){
       $this->json(array("code"=>500,"error"=>"아이디를 찾을 수 없습니다.") );

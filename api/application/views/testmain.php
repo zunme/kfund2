@@ -2927,7 +2927,9 @@ background-position: center;
  .owl-theme .owl-nav [class*=owl-] {
     background: none;
     padding:0;
-    margin:0;
+    margin-top:-60px;
+	margin-left:-10px;
+	margin-right:-10px;
  }
  .owl-item .card.item{
      width:100% !important;
@@ -2964,6 +2966,7 @@ background-position: center;
 .owl-theme .owl-dots .owl-dot span {
     margin: 2px;
 }
+.card .card-image .colored-shadow{display:none;}
  </style>
  <script>
  $("document").ready( function() {
@@ -2989,25 +2992,31 @@ background-position: center;
     })
 })
  </script>
+ <div class="container safeguideplan" id="safeguideplandiv" style="padding-top:50px; padding-bottom:0">
+ <div class="safeguideplan-head">
+        투자후기
+      </div>
+	  </div>
  <div class="container ft">
+ 
 	<!--span class="left"><a href="#" onclick="return false"><img src="/img/left_arr_off.png" alt="이전"></a></span-->
 	<div class="owl-carousel owl-theme">
 		<div class="card item">
 			<div class="border" style="cursor: pointer;">
-				<div class="card-image">
-					<img src="/img/1.png">
+				<div class="card-image" style="margin-left:0px; margin-right:0px;">
+					<img src="/img/1.png" style="width:100%; height:auto; border-top-left-radius:5px; border-top-right-radius:5px; border-bottom-left-radius:0px; border-bottom-right-radius:0px; box-shadow:none;">
 				</div>
 				<div class="card-body ">
-					<div class="card-category">투자후기</div>
-					<div class="card-title">이자수익 15만원!! 이걸로 기저귀 대량 득템!!</div>
-					<div class="card-btn"><a>자세히보기</a></div>
+					<div class="card-category" style="font-size: 15px;">투자후기</div>
+					<div class="card-title" style="font-size: 16px;">이자수익 15만원!! 이걸로 기저귀 대량 득템!!</div>
+					<div class="card-btn"><a style="background-color: rgb(0, 138, 130); font-size: 16px; padding: 6px 20px;">자세히보기</a></div>
 				</div>
 			</div>
 		</div>
 		<div class="card item">
 			<div class="border" style="cursor: pointer;">
-				<div class="card-image">
-					<img src="/img/2.png">
+				<div class="card-image" style="margin-left:0px; margin-right:0px;">
+					<img src="/img/2.png" style="width:100%; height:auto; border-top-left-radius:5px; border-top-right-radius:5px; border-bottom-left-radius:0px; border-bottom-right-radius:0px; box-shadow:none;">
 				</div>
 				<div class="card-body">
 					<div class="card-category" style="font-size: 15px;">투자후기</div>
@@ -3018,8 +3027,8 @@ background-position: center;
 		</div>
 		<div class="card item">
 			<div class="border" style="cursor: pointer;">
-				<div class="card-image">
-					<img src="/img/3.png">
+				<div class="card-image" style="margin-left:0px; margin-right:0px;">
+					<img src="/img/3.png" style="width:100%; height:auto; border-top-left-radius:5px; border-top-right-radius:5px; border-bottom-left-radius:0px; border-bottom-right-radius:0px; box-shadow:none;">
 				</div>
 				<div class="card-body">
 					<div class="card-category" style="font-size: 15px;">투자후기</div>
@@ -3030,8 +3039,8 @@ background-position: center;
 		</div>
         <div class="card item">
 			<div class="border" style="cursor: pointer;">
-				<div class="card-image">
-					<img src="/img/3.png">
+				<div class="card-image" style="margin-left:0px; margin-right:0px;">
+					<img src="/img/3.png" style="width:100%; height:auto; border-top-left-radius:5px; border-top-right-radius:5px; border-bottom-left-radius:0px; border-bottom-right-radius:0px; box-shadow:none;">
 				</div>
 				<div class="card-body">
 					<div class="card-category" style="font-size: 15px;">투자후기</div>
@@ -3042,8 +3051,8 @@ background-position: center;
 		</div>
         <div class="card item">
 			<div class="border" style="cursor: pointer;">
-				<div class="card-image">
-					<img src="/img/3.png">
+				<div class="card-image" style="margin-left:0px; margin-right:0px;">
+					<img src="/img/3.png" style="width:100%; height:auto; border-top-left-radius:5px; border-top-right-radius:5px; border-bottom-left-radius:0px; border-bottom-right-radius:0px; box-shadow:none;">
 				</div>
 				<div class="card-body">
 					<div class="card-category" style="font-size: 15px;">투자후기</div>
@@ -3055,8 +3064,8 @@ background-position: center;
 
         <div class="card item">
             <div class="border" style="cursor: pointer;">
-                <div class="card-image">
-                    <img src="/img/4.png">
+                <div class="card-image" style="margin-left:0px; margin-right:0px;">
+                    <img src="/img/4.png" style="width:100%; height:auto; border-top-left-radius:5px; border-top-right-radius:5px; border-bottom-left-radius:0px; border-bottom-right-radius:0px; box-shadow:none;">
                 </div>
                 <div class="card-body">
                     <div class="card-category" style="color: rgb(255, 255, 255); font-size: 15px;">&nbsp;</div>

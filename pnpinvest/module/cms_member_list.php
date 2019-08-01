@@ -47,7 +47,7 @@ if( $isnotauthed=='Y'){
     $cnt_cut         = sql_fetch($sql);
     $intercept_count = $cnt_cut['cnt'];
     $sql             = " select * $sql_common $sql_search $sql_level $sql_order limit $from_record, $rows ";
-    
+
     $result          = sql_query($sql);
     $colspan         = 16;
     $sql             = "select count(*) as cnt from mari_member";

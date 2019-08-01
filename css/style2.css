@@ -18,6 +18,7 @@ ol, ul, li{margin:0; padding:0; list-style:none;}
 	margin-bottom: 25px;
 	width: 33.33333333%;
 	float:left;
+	box-shadow:none;
 	}
 .card .border{
 	margin: 8px;

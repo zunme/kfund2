@@ -6515,7 +6515,7 @@ SMS 예약발송리스트
 		if ($stx) {
 			$sql_search .= " and ( ";
 
-					$sql_search .= " ($sfl like '$stx%') ";
+					$sql_search .= " ($sfl like '%$stx%') ";
 
 			$sql_search .= " ) ";
 		}

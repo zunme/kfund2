@@ -28,8 +28,8 @@ include(MARI_VIEW_PATH.'/Common_select_class.php');
 		<input type="hidden" name="cms" value="invest_list">
 			<label for="" class="sound_only">검색대상</label>
 			<select name="sfl">
-				<option value="m_name"<?php echo get_selected($_GET['sfl'], "m_name"); ?>>이름</option>
-				<option value="m_id"<?php echo get_selected($_GET['sfl'], "m_id"); ?>>회원아이디</option>
+				<option value="user_name"<?php echo ($_GET['sfl']== "user_name")? ' selected':'' ?>>이름</option>
+				<option value="i_subject"<?php echo ($_GET['sfl']== "i_subject")? ' selected':'' ?>>제목</option>
 			</select>
 			<label for="" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label>
 			<input type="text"  name="stx" value="<?php echo $stx ?>" id="" required="" class="required frm_input">
@@ -108,7 +108,7 @@ include(MARI_VIEW_PATH.'/Common_select_class.php');
 			<input type="submit" name="add_bt" value="선택취소" class="cancle_btn" style="font-size:0px;"  onclick="document.pressed=this.value" />
 		</div>
 		<div class="paging">
-<!--패이징--><?php echo get_paging($config['c_write_pages'], $page, $total_page, '?cms='.$cms.''.$qstr.'&amp;page='); ?>
+<!--패이징--><?php echo get_paging($config['c_write_pages'], $page, $total_page, '?cms='.$cms.''.$qstr.'&sfl='.$sfl.'&stx='.$stx.'&amp;page='); ?>
 		</div><!-- /paging -->
 		</div>
 

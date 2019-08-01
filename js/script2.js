@@ -11,6 +11,7 @@ $(function(){
 			});
 		/* $('.bgc',this).css('backgroundColor','#008a82'); */
 		$('.card-title1',this).css('fontColor','#fff');
+		$('.card-image>img',this).css('borderTopLeftRadius','5px');
 	});
 	$('.card').mouseout(function(){
 		$('.card-category',this).css('fontSize','15px');
@@ -20,7 +21,8 @@ $(function(){
 			});
 		/* $('.bgc',this).css('backgroundColor','#fff'); */	
 		$('.card-title1',this).css('fontColor','#008a82');
-	})
+		$('.card-image>img',this).css('borderTopLeftRadius','5px');
+	});
 	
 	
 });
