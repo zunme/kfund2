@@ -13,6 +13,7 @@ class Cast extends CI_Controller {
     }else $this->index();
   }
   function view() {
+    $this->db->select("cast_idx,loan_id,notice,isview,cast_title,cast_contents,regdate,REPLACE ( cast_img, 'http://kfunding' , 'https://www.kfunding') cast_img, REPLACE ( cast_body, 'http://kfunding' , 'https://www.kfunding') cast_body", false);
     $row = $this->db->get_where('z_cast', array('isview'=>'Y','cast_idx'=>(int)$this->input->get('idx') ))->row_array();
     if( !isset($row['cast_idx'])) {
       $this->load->view('cast_view', array('data'=>array('cast_title'=>"없는 페이지 입니다." , 'cast_body'=>'') ));
@@ -44,9 +45,9 @@ class Cast extends CI_Controller {
     if ($page == 0 ) $config['num_links'] = 4;
     else if( $page < 3) $config['num_links'] = 5 - $page ;
     
-    $top = $this->db->query("select * from z_cast where isview='Y' and notice='Y' limit 1")->row_array();
+    $top = $this->db->query("SELECT cast_idx,loan_id,notice,isview,cast_title,cast_contents,regdate,REPLACE ( cast_img, 'http://kfunding' , 'https://www.kfunding') cast_img, REPLACE ( cast_body, 'http://kfunding' , 'https://www.kfunding') cast_body FROM z_cast where isview='Y' and notice='Y' limit 1")->row_array();
     if(!isset($top['cast_idx'] )){
-      $top = $this->db->query("select * from z_cast where isview='Y' order by cast_idx desc limit 1")->row_array();
+      $top = $this->db->query("select cast_idx,loan_id,notice,isview,cast_title,cast_contents,regdate,REPLACE ( cast_img, 'http://kfunding' , 'https://www.kfunding') cast_img, REPLACE ( cast_body, 'http://kfunding' , 'https://www.kfunding') cast_body from z_cast where isview='Y' order by cast_idx desc limit 1")->row_array();
     }
 
     $where['isview'] ='Y';$where['notice'] ='N';
@@ -58,13 +59,13 @@ class Cast extends CI_Controller {
       $where['loan_id'] ='0';
         break;
     }
-
+    $this->db->select("cast_idx,loan_id,notice,isview,cast_title,cast_contents,regdate,REPLACE ( cast_img, 'http://kfunding' , 'https://www.kfunding') cast_img, REPLACE ( cast_body, 'http://kfunding' , 'https://www.kfunding') cast_body". false);
     $this->db->where($where);
     if( $search != false ){
       $this->db->like ('cast_title' , $search );
     }
     $config['total_rows'] =  $this->db->count_all_results('z_cast') ;
-
+$this->db->select("cast_idx,loan_id,notice,isview,cast_title,cast_contents,regdate,REPLACE ( cast_img, 'http://kfunding' , 'https://www.kfunding') cast_img, REPLACE ( cast_body, 'http://kfunding' , 'https://www.kfunding') cast_body", false);
     $this->db->where($where);
     if( $search != false ){
       $this->db->like ('cast_title' , $search );

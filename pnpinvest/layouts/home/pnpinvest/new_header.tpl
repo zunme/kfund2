@@ -776,38 +776,38 @@ li.dropdown a i.far
 </style>
             <li class="dropdown">
               <a href="javascript:" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="material-icons">how_to_reg</i> 마이페이지
+                <!--<i class="material-icons">how_to_reg</i>--> 마이페이지
                 <b class="caret"></b>
               </a>
               <ul class="dropdown-menu dropdown-with-icons">
                 <li>
                   <a href="/pnpinvest/?mode=mypageinfo">
-                    <i class="material-icons">how_to_reg</i> 개인정보
+                    <!--<i class="material-icons">how_to_reg</i>--> 개인정보
                   </a>
                 </li>
                 <li>
                   <a href="/pnpinvest/?mode=mypage_certification">
-                    <i class="fas fa-user-shield"></i> 인증센터
+                    <!--<i class="fas fa-user-shield"></i>--> 인증센터
                   </a>
                 </li>
                 <li>
                   <a href="/pnpinvest/?mode=mypage_confirm_center">
-                    <i class="fas fa-file-invoice-dollar" style="margin-left: 6px;margin-right: 18px;"></i> 입출금관리
+                    <!--<i class="fas fa-file-invoice-dollar" style="margin-left: 6px;margin-right: 18px;"></i>--> 입출금관리
                   </a>
                 </li>
                 <li>
                   <a href="/pnpinvest/?mode=mypage_invest_info">
-                    <i class="fas fa-won-sign"></i> 투자정보
+                    <!--<i class="fas fa-won-sign"></i>--> 투자정보
                   </a>
                 </li>
                 <li>
                   <a href="/pnpinvest/?mode=mypage_calculate_schedule">
-                    <i class="far fa-calendar-alt"></i> 투자상환스케줄
+                    <!--<i class="far fa-calendar-alt"></i>--> 투자상환스케줄
                   </a>
                 </li>
                 <li>
                   <a href="/pnpinvest/?mode=mypage_modify">
-                    <i class="fas fa-user-cog"></i> 회원정보수정
+                    <!--<i class="fas fa-user-cog"></i>--> 회원정보수정
                   </a>
                 </li>
 
@@ -819,7 +819,7 @@ li.dropdown a i.far
 
             <li class="nav_split_margin">
               <a href="{MARI_HOME_URL}/?mode=logout">
-                <i class="material-icons">exit_to_app</i> 로그아웃
+                <!--<i class="material-icons">exit_to_app</i>--> 로그아웃
               </a>
             </li>
 

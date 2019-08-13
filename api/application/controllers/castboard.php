@@ -23,6 +23,7 @@ class Castboard extends CI_Controller {
   function paper() {
     $data = array();
     if($this->input->get('castid') > 0 ){
+	$this->db->select("cast_idx,loan_id,notice,isview,cast_title,cast_contents,regdate,REPLACE ( cast_img, 'http://kfunding' , 'https://www.kfunding') cast_img, REPLACE ( cast_body, 'http://kfunding' , 'https://www.kfunding') cast_body", false);
       $data = $this->db->get_where('z_cast', array('cast_idx'=>$this->input->get('castid')) )->row_array();
     }
     $sql="
@@ -57,7 +58,7 @@ class Castboard extends CI_Controller {
       $data = array('upload_data' => $this->upload->data());
     //var_dump("/pnpinvest/data/cast/".$data['upload_data']["file_name"]);
       //echo json_encode( array('image'=>"http://kfunding.co.kr/pnpinvest/data/cast/".$data['upload_data']['file_name']));
-      echo "http://kfunding.co.kr/pnpinvest/data/cast/".$data['upload_data']['file_name'];
+      echo "https://www.kfunding.co.kr/pnpinvest/data/cast/".$data['upload_data']['file_name'];
     }
   }
   function write() {
