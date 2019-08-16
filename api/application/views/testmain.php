@@ -3004,11 +3004,14 @@ background-position: center;
 		<div class="card item">
 			<div class="border" style="cursor: pointer;">
 				<div class="card-image" style="margin-left:0px; margin-right:0px;">
-					<img src="/img/1.png" style="width:100%; height:auto; border-top-left-radius:5px; border-top-right-radius:5px; border-bottom-left-radius:0px; border-bottom-right-radius:0px; box-shadow:none;">
+					<img src="/img/2.png" style="width:100%; height:auto; border-top-left-radius:5px; border-top-right-radius:5px; border-bottom-left-radius:0px; border-bottom-right-radius:0px; box-shadow:none;">
 				</div>
-				<div class="card-body ">
-					<div class="card-category" style="font-size: 15px;">투자후기</div>
-					<div class="card-title" style="font-size: 16px;">이자수익 15만원!! 이걸로 기저귀 대량 득템!!</div>
+				<div class="card-body">
+					<div class="card-category" style="font-size: 16px;">인터뷰</div>
+					<div class="card-name">- 홍길동님 (19. 08.16)</div>
+					<div class="card-title" style="font-size: 17px;">매월 10일, 월급을 한 번 더 받는 기분!</div>
+					<div class="card-contents">대기업 N사에 25년째 근무하고 있는 이 시대의 평범한 직장인이자, 가정에서는 원미 아빠로 화목하게 지내고 있는 51세 공호규라고 합니다.
+노후에 돈에 구애받지 않기 위해 재테크를 부지런히 하고 있습니다.</div>
 					<div class="card-btn"><a style="background-color: rgb(0, 138, 130); font-size: 16px; padding: 6px 20px;">자세히보기</a></div>
 				</div>
 			</div>
@@ -3019,8 +3022,11 @@ background-position: center;
 					<img src="/img/2.png" style="width:100%; height:auto; border-top-left-radius:5px; border-top-right-radius:5px; border-bottom-left-radius:0px; border-bottom-right-radius:0px; box-shadow:none;">
 				</div>
 				<div class="card-body">
-					<div class="card-category" style="font-size: 15px;">투자후기</div>
-					<div class="card-title" style="font-size: 16px;">케이펀딩은 투자자 보호를 위해 차주를 까다롭게 고릅니다!!!</div>
+					<div class="card-category" style="font-size: 16px;">인터뷰</div>
+					<div class="card-name">- 홍길동님 (19. 08.16)</div>
+					<div class="card-title" style="font-size: 17px;">매월 10일, 월급을 한 번 더 받는 기분!</div>
+					<div class="card-contents">대기업 N사에 25년째 근무하고 있는 이 시대의 평범한 직장인이자, 가정에서는 원미 아빠로 화목하게 지내고 있는 51세 공호규라고 합니다.
+노후에 돈에 구애받지 않기 위해 재테크를 부지런히 하고 있습니다.</div>
 					<div class="card-btn"><a style="background-color: rgb(0, 138, 130); font-size: 16px; padding: 6px 20px;">자세히보기</a></div>
 				</div>
 			</div>
@@ -3028,11 +3034,14 @@ background-position: center;
 		<div class="card item">
 			<div class="border" style="cursor: pointer;">
 				<div class="card-image" style="margin-left:0px; margin-right:0px;">
-					<img src="/img/3.png" style="width:100%; height:auto; border-top-left-radius:5px; border-top-right-radius:5px; border-bottom-left-radius:0px; border-bottom-right-radius:0px; box-shadow:none;">
+					<img src="/img/2.png" style="width:100%; height:auto; border-top-left-radius:5px; border-top-right-radius:5px; border-bottom-left-radius:0px; border-bottom-right-radius:0px; box-shadow:none;">
 				</div>
 				<div class="card-body">
-					<div class="card-category" style="font-size: 15px;">투자후기</div>
-					<div class="card-title" style="font-size: 16px;">기대이상으로 일찍 돌아와준 두 상품</div>
+					<div class="card-category" style="font-size: 16px;">인터뷰</div>
+					<div class="card-name">- 홍길동님 (19. 08.16)</div>
+					<div class="card-title" style="font-size: 17px;">매월 10일, 월급을 한 번 더 받는 기분!</div>
+					<div class="card-contents">대기업 N사에 25년째 근무하고 있는 이 시대의 평범한 직장인이자, 가정에서는 원미 아빠로 화목하게 지내고 있는 51세 공호규라고 합니다.
+노후에 돈에 구애받지 않기 위해 재테크를 부지런히 하고 있습니다.</div>
 					<div class="card-btn"><a style="background-color: rgb(0, 138, 130); font-size: 16px; padding: 6px 20px;">자세히보기</a></div>
 				</div>
 			</div>
@@ -3040,11 +3049,14 @@ background-position: center;
         <div class="card item">
 			<div class="border" style="cursor: pointer;">
 				<div class="card-image" style="margin-left:0px; margin-right:0px;">
-					<img src="/img/3.png" style="width:100%; height:auto; border-top-left-radius:5px; border-top-right-radius:5px; border-bottom-left-radius:0px; border-bottom-right-radius:0px; box-shadow:none;">
+					<img src="/img/2.png" style="width:100%; height:auto; border-top-left-radius:5px; border-top-right-radius:5px; border-bottom-left-radius:0px; border-bottom-right-radius:0px; box-shadow:none;">
 				</div>
 				<div class="card-body">
-					<div class="card-category" style="font-size: 15px;">투자후기</div>
-					<div class="card-title" style="font-size: 16px;">기대이상으로 일찍 돌아와준 두 상품</div>
+					<div class="card-category" style="font-size: 16px;">인터뷰</div>
+					<div class="card-name">- 홍길동님 (19. 08.16)</div>
+					<div class="card-title" style="font-size: 17px;">매월 10일, 월급을 한 번 더 받는 기분!</div>
+					<div class="card-contents">대기업 N사에 25년째 근무하고 있는 이 시대의 평범한 직장인이자, 가정에서는 원미 아빠로 화목하게 지내고 있는 51세 공호규라고 합니다.
+노후에 돈에 구애받지 않기 위해 재테크를 부지런히 하고 있습니다.</div>
 					<div class="card-btn"><a style="background-color: rgb(0, 138, 130); font-size: 16px; padding: 6px 20px;">자세히보기</a></div>
 				</div>
 			</div>
@@ -3052,28 +3064,34 @@ background-position: center;
         <div class="card item">
 			<div class="border" style="cursor: pointer;">
 				<div class="card-image" style="margin-left:0px; margin-right:0px;">
-					<img src="/img/3.png" style="width:100%; height:auto; border-top-left-radius:5px; border-top-right-radius:5px; border-bottom-left-radius:0px; border-bottom-right-radius:0px; box-shadow:none;">
+					<img src="/img/2.png" style="width:100%; height:auto; border-top-left-radius:5px; border-top-right-radius:5px; border-bottom-left-radius:0px; border-bottom-right-radius:0px; box-shadow:none;">
 				</div>
 				<div class="card-body">
-					<div class="card-category" style="font-size: 15px;">투자후기</div>
-					<div class="card-title" style="font-size: 16px;">기대이상으로 일찍 돌아와준 두 상품</div>
+					<div class="card-category" style="font-size: 16px;">인터뷰</div>
+					<div class="card-name">- 홍길동님 (19. 08.16)</div>
+					<div class="card-title" style="font-size: 17px;">매월 10일, 월급을 한 번 더 받는 기분!</div>
+					<div class="card-contents">대기업 N사에 25년째 근무하고 있는 이 시대의 평범한 직장인이자, 가정에서는 원미 아빠로 화목하게 지내고 있는 51세 공호규라고 합니다.
+노후에 돈에 구애받지 않기 위해 재테크를 부지런히 하고 있습니다.</div>
 					<div class="card-btn"><a style="background-color: rgb(0, 138, 130); font-size: 16px; padding: 6px 20px;">자세히보기</a></div>
 				</div>
 			</div>
 		</div>
 
         <div class="card item">
-            <div class="border" style="cursor: pointer;">
-                <div class="card-image" style="margin-left:0px; margin-right:0px;">
-                    <img src="/img/4.png" style="width:100%; height:auto; border-top-left-radius:5px; border-top-right-radius:5px; border-bottom-left-radius:0px; border-bottom-right-radius:0px; box-shadow:none;">
-                </div>
-                <div class="card-body">
-                    <div class="card-category" style="color: rgb(255, 255, 255); font-size: 15px;">&nbsp;</div>
-                    <div class="card-title" style="color: rgb(255, 255, 255); font-size: 16px;">&nbsp;</div>
-                    <div class="card-btn"><a style="background-color: rgb(0, 138, 130); font-size: 16px; padding: 6px 20px;" href="/api/late">바로가기</a></div>
-                </div>
-            </div>
-        </div>
+			<div class="border" style="cursor: pointer;">
+				<div class="card-image" style="margin-left:0px; margin-right:0px;">
+					<img src="/img/2.png" style="width:100%; height:auto; border-top-left-radius:5px; border-top-right-radius:5px; border-bottom-left-radius:0px; border-bottom-right-radius:0px; box-shadow:none;">
+				</div>
+				<div class="card-body">
+					<div class="card-category" style="font-size: 16px;">인터뷰</div>
+					<div class="card-name">- 홍길동님 (19. 08.16)</div>
+					<div class="card-title" style="font-size: 17px;">매월 10일, 월급을 한 번 더 받는 기분!</div>
+					<div class="card-contents">대기업 N사에 25년째 근무하고 있는 이 시대의 평범한 직장인이자, 가정에서는 원미 아빠로 화목하게 지내고 있는 51세 공호규라고 합니다.
+노후에 돈에 구애받지 않기 위해 재테크를 부지런히 하고 있습니다.</div>
+					<div class="card-btn"><a style="background-color: rgb(0, 138, 130); font-size: 16px; padding: 6px 20px;">자세히보기</a></div>
+				</div>
+			</div>
+		</div>
 	</div>
 	<!--span class="right"><a href="#" onclick="return false"><img src="/img/right_arr.png" alt="다음"></a></span-->	
 	<!--div class="control_panel">

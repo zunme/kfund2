@@ -171,7 +171,7 @@ footer ul li a  {
   </div>
   <div>
     <a class="btn btn-primary" href="javascript:;" onclick="save()">저장하기</a>
-    <a class="btn btn-success float-right clear-both" href="/api/late">목록으로 가기</a>
+    <a class="btn btn-success float-right clear-both" href="/api/late/board">목록으로 가기</a>
   </div>
 </form>
 

@@ -138,6 +138,7 @@
                   <li><span href="/api/index.php/consulting/admviewlist" class="triggerModal80 nullmenu">상담리스트</span></li>
                   <li><span href="/api/index.php/design/main" class="triggerModal80 nullmenu">안심케어</span></li>
                   <li><span href="/api/index.php/consulting/toplist" class="triggerModal80 nullmenu">top list</span></li>
+                  <li><a href="https://www.kfunding.co.kr/api/late/board" class="nullmenu" target="_blank">투자후기</></li>
                 </ul>
               </div>
 

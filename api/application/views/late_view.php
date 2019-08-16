@@ -23,11 +23,14 @@
 			<div class="title ft">투자후기</div>
 		</div>
 	</div>
-	<div class="main ft">
+	<div class="main">
 		<div class="container">
+			<div class="late_container_header_wrap">
+				<div class="late_container_header_title"><?php echo $data['late_title']?></div>
+				<div class="late_container_header_date"><?php echo $data['regdate']?></div>
+			</div>
 			<div class="text">
-            <?php $data['late_title']?>
-            <?php echo $data['late_body']?>
+            	<?php echo $data['late_body']?>
 			</div>
 			<div class="btn"><a href="/api/late/<?php echo $page?>">목록</a></div>
 		</div>

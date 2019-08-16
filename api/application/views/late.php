@@ -29,6 +29,14 @@
 			<i class="material-icons">create</i>
 			<p>케이펀딩 회원님들의 소중한 투자후기입니다.</p>
 			</div>
+
+                <!-- <div class="search_row">
+                    <form action="/api/late" method="GET">
+                        <input type="text" name="search" value="<?php echo (!$search)?'':$search?>" class="search_input">
+                        <button class="search_btn">검색</button>
+                    </form>
+                </div> -->
+
 <?php 
  $row_open=false;
 foreach( $list as $idx=>$row) { ?>
@@ -43,8 +51,11 @@ foreach( $list as $idx=>$row) { ?>
 							<img src="<?php echo ( $row['late_img'] ) ?>">
 						</div>
 						<div class="card-body ">
-							<div class="card-category">투자후기</div>
+							<div class="card-category">인터뷰</div>
+							<div class="card-name">- 홍길동님 (19. 08.16)</div>
 							<div class="card-title"><?php echo ( $row['late_title'] ) ?></div>
+							<div class="card-content">대기업 N사에 25년째 근무하고 있는 이 시대의 평범한 직장인이자, 가정에서는 원미 아빠로 화목하게 지내고 있는 51세 공호규라고 합니다.
+노후에 돈에 구애받지 않기 위해 재테크를 부지런히 하고 있습니다.</div>
 							<div class="card-btn"><a href="/api/late/view/?idx=<?php echo ( $row['late_idx'] ) ?>&page=<?php echo $page?>">자세히보기</a></div>
 						</div>
 					</div>
