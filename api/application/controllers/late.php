@@ -93,6 +93,10 @@ class Late extends CI_Controller {
     $this->form_validation->set_rules('latetitle', '제목', 'trim|required|xss_clean');
     $this->form_validation->set_rules('late_body', '내용', 'trim|required');
 
+    $this->form_validation->set_rules('detail', '내용', 'trim|required|xss_clean');
+    $this->form_validation->set_rules('writer', '내용', 'trim|required');
+    $this->form_validation->set_rules('viewdate', '내용', 'trim|required');
+
     $this->form_validation->set_message('required', '%s은(는) 필수입니다.');
 
     $this->form_validation->set_error_delimiters('', '');
@@ -113,6 +117,9 @@ class Late extends CI_Controller {
         , "late_img" => $img
         , "late_contents"=>$contetnts
         , "late_body"=>$this->input->post("late_body")
+        , "detail"=>$this->input->post("detail")
+        , "writer"=>$this->input->post("writer")
+        , "viewdate"=>$this->input->post("viewdate")
     ) ;
 
     if( $this->input->post('lateid') > 0  ){

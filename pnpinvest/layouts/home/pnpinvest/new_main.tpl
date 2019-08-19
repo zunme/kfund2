@@ -1698,6 +1698,152 @@ chat_bubble
 </i>&nbsp;카카오톡 친구추가</a>
 		</div>
 	</div>
+
+
+
+
+
+<?php if ( isset( $newguide ) ) { ?>
+<!--  new late -->
+ <link rel="stylesheet" href="/css/style2.css"/>
+ <link rel="stylesheet" href="https://cdn.boomcdn.com/libs/owl-carousel/2.3.4/assets/owl.carousel.min.css"/>
+ <link rel="stylesheet" href=" https://cdn.boomcdn.com/libs/owl-carousel/2.3.4/assets/owl.theme.default.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
+
+<style>
+ .owl-theme .owl-nav [class*=owl-]:hover {
+    background: none !important;
+ }
+ .owl-theme .owl-nav [class*=owl-] {
+    background: none;
+    padding:0;
+    margin-top:-60px;
+	margin-left:-10px;
+	margin-right:-10px;
+ }
+ .owl-item .card.item{
+     width:100% !important;
+ }
+ .owl-theme .owl-dots, .owl-theme .owl-nav {
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+    display:block;
+    position: relative;
+}
+.owl-theme .owl-dots .owl-dot span {
+    width: 10px;
+    height: 10px;
+    margin: 5px 7px;
+    background: #D6D6D6;
+    display: block;
+    -webkit-backface-visibility: visible;
+    transition: opacity .2s ease;
+    border-radius: 30px;
+}
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background: #869791;
+}
+.owl-next-st {
+    position: absolute;
+    top: -196px;
+    right: -44px;
+}
+.owl-prev-st {
+    position: absolute;
+    top: -196px;
+    left: -44px;
+}
+.owl-theme .owl-dots .owl-dot span {
+    margin: 2px;
+}
+.card .card-image .colored-shadow{display:none;}
+ </style>
+ <script>
+ $("document").ready( function() {
+    $('.owl-carousel').owlCarousel({
+        loop:true,
+        autoplay:true,
+        center:false,
+        rewind:true,
+        margin:10,
+        nav:true,
+        responsive: {
+            0: {
+                items: 1,
+                slideBy: 1
+            },
+            600: {
+                items: 3,
+                slideBy: 3
+            }
+        },
+        navText: ["<img src='/img/left_arr.png'>","<img src='/img/right_arr.png'>"],
+        navClass: ['owl-prev-st', 'owl-next-st'],
+    })
+})
+ </script>
+ <div class="container safeguideplan" id="safeguideplandiv" style="padding-top:50px; padding-bottom:0">
+ <div class="safeguideplan-head">
+        투자후기
+      </div>
+	  </div>
+ <div class="container ft">
+ 
+	<!--span class="left"><a href="#" onclick="return false"><img src="/img/left_arr_off.png" alt="이전"></a></span-->
+	<div class="owl-carousel owl-theme">
+
+  <?php 
+   $late_sql = "select * from z_late where isview='Y' order by viewdate desc, late_idx desc limit 5";
+   $result_late = sql_query($late_sql, false);
+
+  for ($i=0; $row=sql_fetch_array($result_late); $i++) { ?>
+		
+    <div class="card item">
+			<div class="border" style="cursor: pointer;">
+				<div class="card-image" style="margin-left:0px; margin-right:0px;">
+					<img src="/img/2.png" style="width:100%; height:auto; border-top-left-radius:5px; border-top-right-radius:5px; border-bottom-left-radius:0px; border-bottom-right-radius:0px; box-shadow:none;">
+				</div>
+				<div class="card-body">
+					<div class="card-category" style="font-size: 16px;">인터뷰</div>
+					<div class="card-name"><?php if($row['writer'] !='' ) echo ( "- ".$row['writer']."님" )?> <?php echo ($row['viewdate']=='') ? '':"( ".$row['viewdate']." )"?></div>
+					<div class="card-title" style="font-size: 17px;"><?php echo ( $row['late_title'] ) ?></div>
+					<div class="card-contents"><?php echo nl2br( $row['detail'] ) ?></div>
+					<div class="card-btn"><a style="background-color: rgb(0, 138, 130); font-size: 16px; padding: 6px 20px;" href="/api/late/view/?idx=<?php echo ( $row['late_idx'] ) ?>&page=<?php echo $page?>">자세히보기</a></div>
+				</div>
+			</div>
+		</div>
+
+  <?php } ?>
+		
+  <div class="card" item>
+				<div class="border" style="cursor: pointer;">
+					<div class="card-image">
+						<img src="img/4.png">
+					</div>
+					<div class="card-body">
+						<div class="card-category" style="color: rgb(255, 255, 255); font-size: 15px;">&nbsp;</div>
+						<div class="card-title" style="color: rgb(255, 255, 255); font-size: 16px;">&nbsp;</div>
+						<div class="card-btn"><a style="background-color: rgb(0, 138, 130); font-size: 16px; padding: 6px 20px;" href="/api/late/">바로가기</a></div>
+					</div>
+				</div>
+			</div>
+
+
+
+	</div>
+	<!--span class="right"><a href="#" onclick="return false"><img src="/img/right_arr.png" alt="다음"></a></span-->	
+	<!--div class="control_panel">
+		<div class="control_button"></div>
+		<div class="control_button"></div>
+		<div class="control_button"></div>
+	</div-->
+		
+</div>
+
+
+<!-- / new late -->
+<?php } else { ?>
+
   <!-- guide -->
   <?php
   $box_wrap = 390;
@@ -1981,6 +2127,9 @@ background-position: center;
   </a>
   </div>
   <!-- / guide -->
+<?php } ?>
+
+  
 	<!-- Profits -->
 	<!--div class="main_section profits">
 		<div class="container">

@@ -52,10 +52,9 @@ foreach( $list as $idx=>$row) { ?>
 						</div>
 						<div class="card-body ">
 							<div class="card-category">인터뷰</div>
-							<div class="card-name">- 홍길동님 (19. 08.16)</div>
+							<div class="card-name"><?php if($row['writer'] !='' ) echo ( "- ".$row['writer']."님" )?> <?php echo ($row['viewdate']=='') ? '':"( ".$row['viewdate']." )"?></div>
 							<div class="card-title"><?php echo ( $row['late_title'] ) ?></div>
-							<div class="card-content">대기업 N사에 25년째 근무하고 있는 이 시대의 평범한 직장인이자, 가정에서는 원미 아빠로 화목하게 지내고 있는 51세 공호규라고 합니다.
-노후에 돈에 구애받지 않기 위해 재테크를 부지런히 하고 있습니다.</div>
+							<div class="card-content"><?php echo nl2br($row['detail'])?></div>
 							<div class="card-btn"><a href="/api/late/view/?idx=<?php echo ( $row['late_idx'] ) ?>&page=<?php echo $page?>">자세히보기</a></div>
 						</div>
 					</div>

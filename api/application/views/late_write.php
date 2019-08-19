@@ -392,7 +392,7 @@ function save() {
         success : function(result) {
           if(result.code=='200'){
             alert("저장하였습니다.");
-            location.replace("/api/late")
+            location.replace("/api/late/board")
           }else {
             alert( result.msg.escapeSpecialChars() );
           }

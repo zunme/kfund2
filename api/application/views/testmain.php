@@ -3103,8 +3103,6 @@ background-position: center;
 </div>
 
 
-
-
   <!-- / guide -->
 	<!-- Profits -->
 	<!--div class="main_section profits">

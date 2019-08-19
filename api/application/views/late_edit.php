@@ -163,15 +163,21 @@ footer ul li a  {
     <label for="exampleInputEmail1">제목</label>
     <input type="text" class="form-control" id="casttitle" name="latetitle" placeholder="제목을 입력하세요" value="<?php echo (isset($data['late_title']) ) ? $data['late_title'] : '' ?>">
   <span class="material-input"></span><span class="material-input"></span></div>
-  
-  
+  <div class="row">
+    <div class="col-xs-6"><span style="margin-right:15px;">이름</span> <input type="text" name="writer" value="<?php echo (isset($data['writer']) ) ? $data['writer'] : '' ?>"></div>
+    <div class="col-xs-6"><span style="margin-right:15px;">작성일</span> <input type="text" name="viewdate" value="<?php echo (isset($data['viewdate']) ) ? $data['viewdate'] : '' ?>"></div>
+  </div>
+  <div class="form-group">
+    <div>요약</div>
+    <textarea id="exampleInputDetail" name="detail" style="    width: 100%; height: 90px;"><?php echo (isset($data['detail']) ) ? $data['detail'] : '' ?></textarea>
+  </div>
   <div class="form-group">
     <label for="exampleInputEmail1">내용</label>
     <textarea id="summernote2" name="late_body"><?php echo (isset($data['late_body']) ) ? $data['late_body'] : '' ?></textarea>
   </div>
   <div>
     <a class="btn btn-primary" href="javascript:;" onclick="save()">저장하기</a>
-    <a class="btn btn-success float-right clear-both" href="/api/late">목록으로 가기</a>
+    <a class="btn btn-success float-right clear-both" href="/api/late/board">목록으로 가기</a>
   </div>
 </form>
 
@@ -392,7 +398,7 @@ function save() {
         success : function(result) {
           if(result.code=='200'){
             alert("저장하였습니다.");
-            location.replace("/api/late")
+            location.replace("/api/late/board")
           }else {
             alert( result.msg.escapeSpecialChars() );
           }
