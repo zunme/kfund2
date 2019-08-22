@@ -1154,9 +1154,6 @@ $("document").ready(function() {
 });
 </script>
 
-
-
-
     </div>
   </div>
   <script>
@@ -1717,9 +1714,9 @@ chat_bubble
  .owl-theme .owl-nav [class*=owl-] {
     background: none;
     padding:0;
-    margin-top:-60px;
-	margin-left:-10px;
-	margin-right:-10px;
+    margin-top:-80px;
+	margin-left:0px;
+	margin-right:0px;
  }
  .owl-item .card.item{
      width:100% !important;
@@ -1800,8 +1797,8 @@ chat_bubble
 		
     <div class="card item">
 			<div class="border" style="cursor: pointer;">
-				<div class="card-image" style="margin-left:0px; margin-right:0px;">
-					<img src="/img/2.png" style="width:100%; height:auto; border-top-left-radius:5px; border-top-right-radius:5px; border-bottom-left-radius:0px; border-bottom-right-radius:0px; box-shadow:none;">
+				<div class="card-image" style="margin-left:0px; margin-right:0px; height:180px;">
+					<img src="/img/2.png" style="width:100%; height:auto; border-top-left-radius:5px; border-top-right-radius:5px; border-bottom-left-radius:0px; border-bottom-right-radius:0px; box-shadow:none; ">
 				</div>
 				<div class="card-body">
 					<div class="card-category" style="font-size: 16px;">인터뷰</div>
@@ -1815,15 +1812,17 @@ chat_bubble
 
   <?php } ?>
 		
-  <div class="card" item>
-				<div class="border" style="cursor: pointer;">
-					<div class="card-image">
-						<img src="img/4.png">
+  <div class="card item" style="margin-top:-5px;">
+				<div class="border" style="cursor: pointer; background-color: rgb(0, 138, 130);">
+					<div class="card-image1" style="margin-left:0px; margin-right:0px; height:255px; overflow:hidde; border-top-left-radius: 5px; border-top-right-radius: 5px;">
+						<img style="width:100%; height:auto; box-shadow:none;">
 					</div>
-					<div class="card-body">
-						<div class="card-category" style="color: rgb(255, 255, 255); font-size: 15px;">&nbsp;</div>
-						<div class="card-title" style="color: rgb(255, 255, 255); font-size: 16px;">&nbsp;</div>
-						<div class="card-btn"><a style="background-color: rgb(0, 138, 130); font-size: 16px; padding: 6px 20px;" href="/api/late/">바로가기</a></div>
+					<div class="card-body" style="background-color: #008a82; border-bottom-left-radius:5px; border-bottom-right-radius:5px;">
+						<div class="card-category" style="color: rgb(255, 255, 255); font-size: 16px;">&nbsp;</div>
+						<div class="card-name" style="color: rgb(255, 255, 255); font-size: 13px;">&nbsp;</div>
+						<div class="card-title card-title1" style="color: rgb(255, 255, 255); font-size: 17px;">&nbsp;</div>
+						<!--<div class="card-contents" style="color: rgb(255, 255, 255); font-size: 14px; height:55px;">&nbsp;<br>&nbsp;<br>&nbsp;</div>-->
+						<div class="card-btn1" style="padding:0 0 10px; margin:30px 0 0; text-align:center;"><a style="background-color: rgb(0, 138, 130); font-size: 16px; padding: 6px 20px; color:#fff; margin:0 auto; text-align:center;" href="/api/late/">바로가기&nbsp;&#9654;</a></div>
 					</div>
 				</div>
 			</div>
@@ -1840,6 +1839,81 @@ chat_bubble
 		
 </div>
 
+<script>
+$(function(){
+	var a=$(this);
+	var card=a.find('.card .border');
+	card.css('cursor','pointer');	
+	
+	card.mouseover(function(){
+		$('.card-image',this).css('height','190px');
+		$('.owl-item.cloned .card-image',this).css('height','190px');
+		$('.card-image1',this).css('height','265px');
+		$('.card-category',this).css('fontSize','16px');
+		$('.card-title',this).css('fontSize','17px');
+		$('.card-btn>a',this).css({
+			backgroundColor:"#006978",fontSize:"17px", padding:"6px 20px 7px"
+			});
+		$('.card-btn1>a',this).css({backgroundColor:"#008a82",fontSize:"17px"});
+		/* $('.bgc',this).css('backgroundColor','#008a82'); */
+		$('.card-title1',this).css('fontColor','#fff');
+		$('.card-image>img',this).css('borderTopLeftRadius','5px');
+	});
+	$('.card').mouseout(function(){
+		$('.card-image',this).css('height','180px');
+		$('.owl-item.cloned .card-image',this).css('height','180px');
+		$('.card-image1',this).css('height','255px');
+		$('.card-category',this).css('fontSize','15px');
+		$('.card-title',this).css('fontSize','16px');
+		$('.card-btn>a',this).css({
+			backgroundColor:"#008a82",fontSize:"16px", padding:"6px 20px"
+			});
+		$('.card-btn1>a',this).css({backgroundColor:"#008a82",fontSize:"16px"});
+		/* $('.bgc',this).css('backgroundColor','#fff'); */	
+		$('.card-title1',this).css('fontColor','#008a82');
+		$('.card-image>img',this).css('borderTopLeftRadius','5px');
+	});
+	
+	
+});
+
+</script>
+<style>
+.card-image1{background-image:url(img/4.png); background-position: center center;
+    background-size: cover;}
+@media all and (max-width: 1060px){
+.card-body .card-contents{margin-top: -10px;}
+.card-image1{background-image:url(img/5.png); background-position: center center;
+    background-size: cover;}
+}
+@media all and (max-width: 900px){
+.card-body .card-contents{margin-top: -30px;}
+.card-body .card-category{float:none; margin-top: -16px;}
+.card-body .card-name{float:left; margin-top: -6px;}
+.card-title.card-title1{margin-bottom: -4px;}
+}
+@media all and (max-width: 900px){
+.card-image1{background-image:url(img/6.png); background-position: center center;
+    background-size: cover;}
+}
+@media all and (max-width: 800px){
+.card-body .card-category{float:none; margin-top: -26px;}
+}
+@media all and (max-width: 750px){
+.card-image1{background-image:url(img/7.png); background-position: center center;
+    background-size: cover;}
+}
+@media all and (max-width: 700px){
+.card-image1{background-image:url(img/7.png); background-position: center center;
+    background-size: cover;}
+	.card-body .card-contents{margin-top: 0px;}
+.card-title.card-title1{    margin-bottom: 52px;}
+}
+@media all and (max-width: 599px){
+.card-body .card-category{margin-top: 10px;}
+.card-title.card-title1{margin-bottom:0;}
+}
+</style>
 
 <!-- / new late -->
 <?php } else { ?>

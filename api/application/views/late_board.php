@@ -25,6 +25,7 @@
                         <th class="">EDIT</th>
                         <th>제목</th>
                         <th class="hidden-xs hidden-sm">일자</th>
+                        <th>삭제</th>
                     </tr>
                     </thead>
                 <tbody id="CASTLISTBODY">
@@ -40,12 +41,29 @@
                             <td>
                                 <a href="/api/late/view/?idx=<?php echo $row['late_idx']?>" target='_blank'><?php echo $row['late_title']?></a>
                             </td>
-                            <td><?php echo $row['regdate']?></td>
+                            <td><?php echo $row['viewdate']?></td>
+                            <td><span onclick="dellate(this, <?php echo $row['late_idx']?>)">삭제</span></td>
                         </tr>
                     <?php } ?>
                 </tbody>
         </div>
 <script>
+function dellate(ln, idx){
+    $.ajax({
+            url : "/api/index.php/late/del",
+            data : {idx:idx},
+            type : "POST",
+            dataType: 'json',
+            success : function (result){
+                if( result.code==200){
+                    $(ln).closest("tr").remove();
+                }else alert( result.msg)
+            },
+            error : function (jqXHR, textStatus, errorThrown) {
+                console.log(textStatus + " " + errorThrown);
+            }
+        });
+}
 function changeView(ln){
     var isview = $(ln).data('isview')=='Y' ? 'N' : 'Y';
     if (confirm("상태를 변경하시겠습니까?")){

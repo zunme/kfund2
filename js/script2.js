@@ -4,6 +4,7 @@ $(function(){
 	card.css('cursor','pointer');	
 	
 	card.mouseover(function(){
+		$('.card-image',this).css('height','190px');
 		$('.card-category',this).css('fontSize','16px');
 		$('.card-title',this).css('fontSize','17px');
 		$('.card-btn>a',this).css({
@@ -14,6 +15,7 @@ $(function(){
 		$('.card-image>img',this).css('borderTopLeftRadius','5px');
 	});
 	$('.card').mouseout(function(){
+		$('.card-image',this).css('height','180px');
 		$('.card-category',this).css('fontSize','15px');
 		$('.card-title',this).css('fontSize','16px');
 		$('.card-btn>a',this).css({

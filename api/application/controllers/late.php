@@ -13,9 +13,16 @@ class Late extends CI_Controller {
     }
     session_write_close();
 
-    if(in_array($method, array('view','write','writedoc','edit','test','board','changeview') ) ) {
+    if(in_array($method, array('view','write','writedoc','edit','test','board','changeview','del') ) ) {
         $this->{$method}();
     }else $this->index();
+  }
+  function del() {
+    if( $this->islogin() ){
+      $idx = $this->input->post('idx');
+      $this->db->where('late_idx', $idx)->delete('z_late');
+      echo json_encode( array("code"=>200));
+    } else echo json_encode( array("code"=>500, "msg"=>"로그인 후 사용해주세요"));
   }
   function islogin() {
     if(isset($_COOKIE['api'])){
@@ -223,7 +230,7 @@ class Late extends CI_Controller {
         </script>
         <?php
     }  
-    $list = $this->db->order_by('late_idx desc')->get('z_late')->result_array();
+    $list = $this->db->order_by('viewdate desc')->get('z_late')->result_array();
     $this->load->view('late_board', array("data"=>$list));
   }
 }
