@@ -1,7 +1,4 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-class Alim extends CI_Controller {
-  function index() {
-    $data['list'] = $this->db->query("select * from z_alimitok where code='J0001' order by regdate desc")->result_array();
-    $this->load->view('alim',$data)
-  }
-}
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+?>
