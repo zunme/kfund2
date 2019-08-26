@@ -1798,7 +1798,7 @@ chat_bubble
     <div class="card item">
 			<div class="border" style="cursor: pointer;">
 				<div class="card-image" style="margin-left:0px; margin-right:0px; height:180px;">
-					<img src="/img/2.png" style="width:100%; height:auto; border-top-left-radius:5px; border-top-right-radius:5px; border-bottom-left-radius:0px; border-bottom-right-radius:0px; box-shadow:none; ">
+					<img src="<?php echo ( $row['late_img'] ) ?>" style="width:100%; height:auto; border-top-left-radius:5px; border-top-right-radius:5px; border-bottom-left-radius:0px; border-bottom-right-radius:0px; box-shadow:none; ">
 				</div>
 				<div class="card-body">
 					<div class="card-category" style="font-size: 16px;">인터뷰</div>
