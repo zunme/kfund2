@@ -1,7 +1,7 @@
 <?php
 function sendkakao($msgarr) {
 		$loginpassw = "guest:guest";
-		$url = "http://61.74.110.184/api/exchanges/%2f/amq.default/publish";
+		$url = "http://211.48.94.163/api/exchanges/%2f/amq.default/publish";
     if( !is_array($msgarr)) return false;
 		$msg = addslashes(json_encode($msgarr));
 		$data = array(

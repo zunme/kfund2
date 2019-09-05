@@ -470,6 +470,15 @@ if (ereg('^[[:digit:]]{6}[1-6][[:digit:]]{6}$', $user['m_reginum'])) {
 												</p>
 											</div>
 										</li>
+										<li>
+											<div class="input_wrap">
+												<span class="tt">추천인</span>
+												<p class="radiobox radiobox3" style="padding-top: 6px; ">
+													<input id="mreferee" value="<?php echo $user['m_referee']?>" type="text" class="input t1" title="추천인" placeholder="" style="height:38px;" >
+												</p>
+												<a href="javascript:;" class="btn my_gr btn-lite-green" style="background-color: #028d9a;border-color: #028d9a; margin-top:5px;" onClick="mrefereechange()">추천인 변경하기</a>
+											</div>
+										</li>
 
                     								</form>
 									</ul>
@@ -578,6 +587,23 @@ border-color:#ccc;
 </style>
 
             <script>
+            function mrefereechange() {
+                var m_referee = $("#mreferee").val();
+
+                    $.ajax({
+                         type : "POST",
+                         dataType : "json",
+                         url : "/api/index.php/newhomeapi/mrefereechange",
+                         data : {m_referee:m_referee},
+                         success : function(result) {
+                           if( result.code==200) alert("변경되었습니다")
+                           else alert(result.msg)
+                         },
+                         error : function(e) {
+                                alert('서버 연결 도중 에러가 났습니다. 다시 시도해 주십시오.');
+                         }
+                  });
+            }
             function resonchange(){
               var val = $("#reson option:selected").val();
  if( val=="etc") $("#resontxt").hide();

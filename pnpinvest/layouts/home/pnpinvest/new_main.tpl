@@ -1338,6 +1338,9 @@ $("document").ready(function() {
 				</tbody>
 			</table>
 <!--
+<?php 
+    $yeonchae = ( (isset($allpay['yeonchaeyul'])&& $allpay['yeonchaeyul']!='') ? $allpay['yeonchaeyul'] : 0 ) + ((isset($allpay['budoyul'])&& $allpay['budoyul']!='') ? $allpay['budoyul'] : 0 );
+?>
 			<table class="number_con2">
 				<caption>연체율과 부도율</caption>
 				<colgroup>
@@ -1364,7 +1367,7 @@ $("document").ready(function() {
       <div>
         <span>연체율</span>
          <i class="far fa-question-circle" data-toggle="hide_tooltip" data-placement="bottom" title="<b>연체율이란</b><br>현재 미상환된 대출 잔액 중 연체중인 건의 잔여원금의 비중<br>(연체:상환일로 부터 30일 이상 상환이  지연되는 현상)"></i>
-         <span style="padding-left:20px;"><?php echo (isset($allpay['yeonchaeyul'])&& $allpay['yeonchaeyul']!='') ? $allpay['yeonchaeyul'] : 0 ?>%</span>
+         <span style="padding-left:20px;"><?php echo (isset($yeonchae)&& $yeonchae!='') ? $yeonchae : 0 ?>%</span>
       </div>
     </div>
 	</div>
@@ -1798,7 +1801,7 @@ chat_bubble
     <div class="card item">
 			<div class="border" style="cursor: pointer;">
 				<div class="card-image" style="margin-left:0px; margin-right:0px; height:180px;">
-					<img src="<?php echo ( $row['late_img'] ) ?>" style="width:100%; height:auto; border-top-left-radius:5px; border-top-right-radius:5px; border-bottom-left-radius:0px; border-bottom-right-radius:0px; box-shadow:none; ">
+					<img src="<?php echo ( $row['late_img'] ) ?>" style="width:auto; height:100%; border-top-left-radius:5px; border-top-right-radius:5px; border-bottom-left-radius:0px; border-bottom-right-radius:0px; box-shadow:none; ">
 				</div>
 				<div class="card-body">
 					<div class="card-category" style="font-size: 16px;">인터뷰</div>
@@ -1888,7 +1891,7 @@ $(function(){
 }
 @media all and (max-width: 900px){
 .card-body .card-contents{margin-top: -30px;}
-.card-body .card-category{float:none; margin-top: -16px;}
+.card-body .card-category{float:none; margin-top:0;}
 .card-body .card-name{float:left; margin-top: -6px;}
 .card-title.card-title1{margin-bottom: -4px;}
 }
@@ -1897,7 +1900,7 @@ $(function(){
     background-size: cover;}
 }
 @media all and (max-width: 800px){
-.card-body .card-category{float:none; margin-top: -26px;}
+.card-body .card-category{float:none; margin-top: 0px;}
 }
 @media all and (max-width: 750px){
 .card-image1{background-image:url(img/7.png); background-position: center center;

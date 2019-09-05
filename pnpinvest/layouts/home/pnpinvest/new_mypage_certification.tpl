@@ -184,8 +184,8 @@ function createvirtual_loan() {
 								<ul class="list_dot">
 									<li>투자의 원리금 수취용 계좌 정보(본인 명의 필수)를 입력해 주세요.</li>
 									<li>은행 전산 점검시간인 23:30~01:00 사이에는 이용제한이 있을수 있습니다.</li>
-									<li>계좌검증 시 최대 5분 정도 소요될 수 있으며, SMS로 4자리의 숫자를 회신 후<br>처리안내 SMS 수신과 동시에 정상적으로 출금 하실 수 있습니다.</li>
-									
+									<li>계좌검증 시 최대 5분 정도 소요될 수 있으며, SMS로 4자리의 숫자를 회신 후 처리완료 SMS 수신과 동시에 정상적으로 출금 하실 수 있습니다.</li>
+									<li>출금계좌 변경할 경우 은행명 클릭후 변경 은행 선택하면 "계좌변경하기" 버튼이 활성화되어 변경할 수 있습니다.</li>
 									<p>&nbsp;</p>
 								</ul>
 							</li>
@@ -239,8 +239,8 @@ function createvirtual_loan() {
                     <a class="btn my_bl" id="change_account_bt" href="javascript:;" onclick="change_account()" style="margin-bottom: 10px;width: 80%;display:none;">계좌변경하기</a>
                   </div>
                   <div id="confirmdiv">
-    								<a class="btn my_bl fl" onClick="verifyaccnt('ARS')">ARS 계좌검증</a>
-    								<a class="btn my_gr fr" onClick="verifyaccnt('SMS')">SMS 계좌검증</a>
+    								<!-- <a class="btn my_bl fl" onClick="verifyaccnt('ARS')">ARS 계좌검증</a>-->
+    								<a class="btn my_gr fr" onClick="verifyaccnt('SMS')" style="width:80%; margin-right:35px;">SMS 계좌검증</a>
                   </div>
                   <?php } else { ?>
                     <div class="clearfix" style="width:100%;text-align:center">

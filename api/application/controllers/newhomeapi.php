@@ -31,6 +31,14 @@ class Newhomeapi extends CI_Controller {
   function index(){
 
   }
+  function mrefereechange() {
+    $m_referee = $this->input->post('m_referee');
+
+    if( $this->islogin){
+        $this->db->where('m_id', $this->user['info']['m_id'])->set('m_referee',$m_referee )->update('mari_member');
+        echo json_encode(array("code"=>200));
+    }else echo json_encode(array("code"=>500, "msg"=>"로그인 후 사용해주세요"));
+  }
   function memdraw() {
     $data['m_id'] = $this->user['info']['m_id'];
     $reson = $this->input->post('reson', true);

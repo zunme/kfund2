@@ -56,13 +56,13 @@ $loan_id = "207";
 }
   /* refid 취소 */
 public function cancelusingref() {
-  exit;
+exit;
   $this->seyfertinfo = $config = $this->db->query(" select * from mari_config ")->row_array();
   $url = "https://v5.paygate.net/v5/transaction/seyfertTransferPending/cancel";
   $_method = "POST";
   $nonce      = "C" . time() . rand(111, 999);
   $refid      = "CR" . time() . rand(111, 999);
-  $tid='TZRG9i';
+  $tid='T1J80J2';
 
   $info = $this->db->query('select * from mari_seyfert_order where s_tid = ? and s_payuse="Y" ' , array($tid))->row_array();
   if(!isset($info['s_tid'] ) ) {echo "TID: ".$tid. "데이터를 찾을 수 없습니다.";return;}

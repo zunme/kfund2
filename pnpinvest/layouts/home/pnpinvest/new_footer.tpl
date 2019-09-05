@@ -231,7 +231,7 @@
 
 		<div class="row lastdesc" style="text-align: left;text-indent:-8px;">
 			<div style="display:inline-block;margin:0 auto;text-align:left;  position: relative;padding-left: 15px;float:left;padding-right:10px;">
-				<p><i class="far fa-comment"></i> 대출금리 연 19.9%이내 (연체금리 연 24% 이내) 플랫폼 이용료 외 기타 부대비용은 없습니다.</p>
+				<p><i class="far fa-comment"></i> 대출금리 연 19%이내 (연체금리 : 약정이율 +3%) 플랫폼 이용료 외 기타 부대비용은 없습니다.</p>
 				<p><i class="far fa-comment"></i> 중개수수료를 요구하거나 받는 행위는 불법입니다. 과도한 빚은 당신에게 큰 불행을 안겨줄 수 있습니다.</p>
 				<p><i class="far fa-comment"></i> 대출 시 귀하의 신용등급이 하락할 수 있습니다.</p>
 				<p><i class="far fa-comment"></i> 채무의 조기상환수수료율 등 조기상환조건 없습니다. 중개수수료를 요구하거나 받는 행위는 불법 입니다.</p>

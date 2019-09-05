@@ -132,7 +132,7 @@ class kakaosendme extends CI_Controller {
   function payin(){
     $this->load->driver('cache', array('adapter' => 'file'));
     $seyfert_last= $this->cache->get('seyfert_last') ;
-    if(!$seyfert_last || $seyfert_last=='' || $seyfert_last==null || (int)$seyfert_last < 8734) $seyfert_last = '8734';
+    if(!$seyfert_last || $seyfert_last=='' || $seyfert_last==null || (int)$seyfert_last < 13768) $seyfert_last = '13768';
     $rows = $this->db->where('s_id >', $seyfert_last)->where ('trnsctnTp', 'SEYFERT_PAYIN_VACCNT')->where ('trnsctnSt', 'SFRT_PAYIN_VACCNT_FINISHED')
     ->get('mari_seyfert_order')->result_array();
     $msg = "";
