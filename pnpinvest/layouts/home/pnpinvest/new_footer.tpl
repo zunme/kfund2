@@ -206,7 +206,7 @@
 			<div class="newcol second">
 				<div>(주) 케이펀딩</div>
 				<div>대표이사 김현철</div>
-				<div>주소 : 서울 강남구 테헤란로 86길 14 윤천빌딩 5층</div>
+				<div>주소 : 서울 강남구 영동대로 342 덕유빌딩 3층</div>
 				<div class="splitdiv last">
 					<div>Tel.02-552-1772</div>
 					<div class="splitline">|</div>
@@ -217,7 +217,7 @@
 			<div class="newcol desc2">
 				<div>(주) 케이크라우드대부</div>
 				<div>대표이사 김현철</div>
-				<div>주소 : 서울 강남구 테헤란로 86길 14 윤천빌딩 5층</div>
+				<div>주소 : 서울 강남구 영동대로 342 덕유빌딩 3층</div>
 				<div class="splitdiv last">
 					<div>Tel.02-552-1772</div>
 					<div class="splitline">|</div>

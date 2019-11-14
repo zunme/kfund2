@@ -182,7 +182,7 @@ class jungsantable extends CI_Controller {
       if( $row['i_look'] =='F'){
         //상환완료
         $sql = "select
-b.i_subject as subject, loan_id, a.o_count,a.o_paytype, date_format(a.o_collectiondate, '%Y-%m-%d') repay_date , '완료' as `status` , a.o_ln_money_to, a.remaining_amount, a.wongum, a.inv, a.Delinquency, (a.inv + a.Delinquency) as invtotal, a.susuryo, a.o_withholding, a.p_emoney
+b.i_subject as subject, loan_id, a.o_count,a.o_paytype, date_format(a.o_collectiondate, '%Y-%m-%d') repay_date , '완료' as `status` , a.o_ln_money_to, a.remaining_amount, a.wongum, a.inv, a.Delinquency, (a.inv ) as invtotal, a.susuryo, a.o_withholding, a.p_emoney
 from view_jungsan a
 join mari_loan b on a.loan_id = b.i_id
 where a.loan_id =? and a.sale_id = ? order by a.o_count";
@@ -239,6 +239,8 @@ where a.loan_id =? and a.sale_id = ? order by a.o_count";
         $prepare[] = $row;
       }
     }
+    //echo json_encode( $timetable );exit;
+    //var_dump( array($timetable,$prepare,$loanlist) );
     return( array($timetable,$prepare,$loanlist) );
   }
   protected function json( $data = '' ){

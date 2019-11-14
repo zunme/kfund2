@@ -330,7 +330,7 @@ margin-top:15px;
                 <li class="sm_5">
                   <dl>
                     <dt>모집금액</dt>
-                    <dd><?php echo change_pay($row['payed'])?>/<?php echo change_pay($row['i_loan_pay'])?></dd>
+                    <dd style="width:80px;"><?php echo change_pay($row['payed'])?>/<?php echo change_pay($row['i_loan_pay'])?></dd>
                   </dl>
                 </li>
               </ul>
@@ -570,7 +570,7 @@ for ($i=0; $row=sql_fetch_array($result); $i++) {
 								<li class="sm_5">
 									<dl>
 										<dt>모집금액</dt>
-										<dd><?php echo change_pay($row['payed'])?>/<?php echo change_pay($row['i_loan_pay'])?></dd>
+										<dd style="width:80px;"><?php echo change_pay($row['payed'])?>/<?php echo change_pay($row['i_loan_pay'])?></dd>
 									</dl>
 								</li>
 							</ul>
@@ -782,7 +782,7 @@ function paginate($item_per_page, $current_page, $total_records, $total_pages, $
 .product .item .item_con {position:absolute;z-index: 10;top:8px;right:8px;border-radius: 5px;font-size: 16px;width:120px;height:36px;line-height: 32px;text-align: center;}
 .product .item h4 {margin-top:8px;}
 .product .summary {width:98%; line-height: 30px; margin: 30px auto 31px; text-align: left;}
-.product .summary .sm_1 {margin-bottom:22px; min-width: 39%;}
+.product .summary .sm_1 {margin-bottom:34px; min-width: 39%;}
 .product .summary .sm_3 { min-width: 39%;}
 .product .item_progress .ib {width:12%;}
 .product .item_progress > div {width:87%;}
@@ -791,11 +791,12 @@ function paginate($item_per_page, $current_page, $total_records, $total_pages, $
 
 .product.gallery > li {padding:0 0 30px;}
 .product.gallery .info1 .img_wrap {height:100%; width:100%; transition: .3 ease-out;}
-.product.gallery .item .item_con {position:absolute;z-index: 10;top:5px;right:5px;border-radius: 5px;font-size: 14px;width:90px;height:30px;line-height: 10px;text-align: center;}
+.product.gallery .item .item_con {position:absolute;z-index: 10; top:5px; right:5px; border-radius: 5px;font-size: 14px;width:90px;height:30px;line-height: 10px;text-align: center;}
 .product.gallery .summary {width:130%;overflow: hidden;line-height: 30px; margin: 0 auto 20px; text-align: left;}
-.product.gallery .summary > li {display:inline-block;padding-left: 40px;background-position:left center;background-repeat: no-repeat;line-height: 22px;}
+.product.gallery .summary > li {display:inline-block; padding-left: 40px; background-position:left center;background-repeat: no-repeat;line-height: 22px;}
+.product.gallery .summary .sm_5 {margin-top:-20px;}
 .product.gallery .item_progress .ib {width:16%;}
-.product.gallery .item_progress > div {display:inline-inline-block;width:82%;}
+.product.gallery .item_progress > div {display:inline-inline-block; width:82%;}
 
 
 .prc1{font-size:16px; width:100px; height:40px; margin-left:150px; padding-left:3px; }
@@ -896,7 +897,7 @@ function paginate($item_per_page, $current_page, $total_records, $total_pages, $
 .product .summary {width:98%; line-height: 30px; margin: 7px auto 7px; text-align: left;}
 }
 @media all and (max-width:750px) {
-.product .summary .sm_1 {margin-bottom:10px;}
+.product .summary .sm_1 {margin-bottom:30px;}
 .product .item_progress .ib {width:15%;}
 .product .item_progress > div {width:84%;}
 .product .summary {width:98%; line-height: 30px; margin: 8px auto 8px; text-align: left;}
@@ -963,7 +964,7 @@ function paginate($item_per_page, $current_page, $total_records, $total_pages, $
 @media all and (max-width:400px) {
 .product > li {padding:0; margin-bottom:20px;}
 .product .summary {width:98%; line-height: 30px; margin: 5px auto 15px; text-align: left;}
-.product .summary .sm_1 {margin-bottom:15px;}
+.product .summary .sm_1 {margin-bottom:30px;}
 .product .item {position:relative;background-color: #fff;border:1px solid #cecece; padding:10px; overflow:hidden; transition:0.2s ease-out;}
 .product .info1 .img_wrap{width:100%;height:100%;}
 .product .item .item_con {position:absolute;z-index: 10;top:5px;right:5px;border-radius: 5px;font-size: 16px;width:120px;height:36px;line-height: 34px;text-align: center;}

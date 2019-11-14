@@ -56,24 +56,23 @@ $loan_id = "207";
 }
   /* refid 취소 */
 public function cancelusingref() {
-exit;
   $this->seyfertinfo = $config = $this->db->query(" select * from mari_config ")->row_array();
   $url = "https://v5.paygate.net/v5/transaction/seyfertTransferPending/cancel";
   $_method = "POST";
   $nonce      = "C" . time() . rand(111, 999);
   $refid      = "CR" . time() . rand(111, 999);
-  $tid='T1J80J2';
+  $tid='T1LE55U';
+
+
 
   $info = $this->db->query('select * from mari_seyfert_order where s_tid = ? and s_payuse="Y" ' , array($tid))->row_array();
   if(!isset($info['s_tid'] ) ) {echo "TID: ".$tid. "데이터를 찾을 수 없습니다.";return;}
 
   $meminfo = $this->db->query('select * from mari_member where m_id = ? ', array($info['m_id']) )->row_array();
   $cont = $info['s_subject']."취소";
-
   $ENCODE_PARAMS   = "&_method=POST&desc=desc&_lang=ko&reqMemGuid=" . $config['c_reqMemGuid']
                     . "&nonce=" . $nonce . "&title=" . urlencode($cont) . "&refId=" . $info['s_refId']
                     . "&authType=SMS_MO&timeout=30&parentTid=".$tid;
-
   list($res, $data) = $this->getres($_method, $url, $ENCODE_PARAMS );
   if(isset($data['data']['tid']) ){
       $result1 =  $this->db->set('s_payuse','N')->set('o_funding_cancel','Y')->where ('s_tid', $tid)->update('mari_seyfert_order');

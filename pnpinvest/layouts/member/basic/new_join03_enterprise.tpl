@@ -16,6 +16,9 @@ if( $_POST['join_agree_01'] !='Y' || $_POST['join_agree_01'] !='Y'){
 ?>
 {#new_header}
 <!-- /////////////////////////////// 본문 시작 /////////////////////////////// -->
+<style>
+.form_wrap .address .btn{line-height:18px;}
+</style>
 <div id="container" class="sub">
 	<!-- Sub title -->
 	<h2 class="subtitle t3"><span class="motion" data-animation="flash">회원가입</span></h2>

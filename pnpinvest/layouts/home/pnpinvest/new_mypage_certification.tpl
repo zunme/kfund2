@@ -164,6 +164,9 @@ function createvirtual_loan() {
                 <div id="90daydiv">
   								<button class="btn" id="preauthbtn" onclick="preauthstatus(true)">90일 선인증</button>
                 </div>
+                <!--<div id="90daydiv">
+  								<button class="btn" id="preauthbtn" onclick="preauthstatus(true)" style="margin-top:10px; background-color:#00646a; border-radius:0px; padding-top:10px; padding-bottom:10px;">가상계좌 해지</button>
+                </div>-->
 							</li>
 							<li class="non_bd">
 								<p>※ 투자자 분들께서는 <span class="t_rd">투자자 가상계좌생성</span>을 해주셔야 하며, <br>

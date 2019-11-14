@@ -5,9 +5,38 @@ include(MARI_VIEW_PATH.'/Common_select_class.php');
 include (getcwd().'/module/mode_bbs_list.php');
 ?>
 {# new_header}
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&amp;display=swap" rel="stylesheet">
 <style>
-.board table tbody tr.notice {  background-color: #bcc1ff;}
+.board h3{letter-spacing: -1.2px; font-family: 'Noto Sans KR', sans-serif; font-weight:600; font-size: 22px;}
+.board table tbody tr.notice {  background-color: #f5f5f5; color:#00656a; font-weight:600;}
 	p.paging span{margin-right: 5px;}
+
+.board table {border-top: 5px solid #00656a; line-height: 50px; font-family: 'Noto Sans KR', sans-serif;}
+.board table thead{border-left:0; border-bottom: 1px solid #00656a; color:#00656a; font-weight:600;}
+.board table thead span{margin:0; border:0;background-color: #fff}
+.board table thead th{border-right:0;}
+.board table tbody tr{border-bottom:1px solid #ccc; border-left:0; border-top:0; border:right:0;}
+.board table tbody tr td{border-right:0;}
+.board table tbody tr td a{line-height: 18px;}
+.board .board_sch .txt_sch input[type="text"]{border-bottom:0; font-family: 'Noto Sans KR', sans-serif; padding-top:3px; padding-left:5px; letter-spacing: -1.2px;}
+.board table tbody tr td a:visited{text-decoration:none;}
+.board table tbody tr td a:hover{text-decoration:none; color:#232323;}
+.paging span{width:35px; height:35px; line-height: 35px; border:0;}
+.paging span a{width:35px; height:35px; line-height: 35px;}
+.paging span.on{background-color: #00656a;}
+.paging span.prev{padding-left:6px;}
+	@media (max-width: 1000px){
+		.board .container{margin-top:80px;}
+	}
+		@media (max-width: 600px){
+			.board h3{font-size: 18px; font-weight:600; display:inline; float:left; margin-top:6px;}
+			.board .board_sch .txt_sch{width:50%}
+		}
+@media (max-width: 600px){
+	.board .board_sch .txt_sch{width:35%}
+	.board .container{margin-top:60px;}
+}
 </style>
 <!-- /////////////////////////////// 본문 시작 /////////////////////////////// -->
 <div id="container" class="sub">
@@ -26,21 +55,21 @@ include (getcwd().'/module/mode_bbs_list.php');
 						<option>제목순</option>
 					</select>
 				</div-->
-				<div class="board_sch">
-					<p class="txt_sch"><input type="text" placeholder="<?php echo $bbs_config["bo_subject"]?> 검색" name="searchtxt" value="<?php echo htmlspecialchars ($_GET['searchtxt'],ENT_QUOTES )?>"></p>
-					<button class="btn_sch" type="submit">검색</button>
-				</div>
+
 			</form>
 			<h3>케이펀딩 <?php echo $bbs_config["bo_subject"]?></h3>
-
+			<div class="board_sch">
+				<p class="txt_sch"><input type="text" placeholder="<?php echo $bbs_config["bo_subject"]?> 검색" name="searchtxt" value="<?php echo htmlspecialchars ($_GET['searchtxt'],ENT_QUOTES )?>"></p>
+				<button class="btn_sch" type="submit">검색</button>
+			</div>
 			<!-- 게시판 테이블 -->
 			<table>
 				<caption>케이펀딩 공지사항</caption>
 				<colgroup>
-					<col class="no" style="width:8%;">
+					<col class="no" style="width:10%;">
 					<col>
 					<col class="pc" style="width:10%;">
-					<col class="pc" style="width:10%;">
+					<col class="pc" style="width:12%;">
 
 				</colgroup>
 				<thead>

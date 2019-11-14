@@ -3,6 +3,12 @@ include(MARI_VIEW_PATH.'/Common_select_class.php');
 ?>
 {# new_header}
 <!-- /////////////////////////////// 본문 시작 /////////////////////////////// -->
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&amp;display=swap" rel="stylesheet">
+<style>
+.btn_wrap .btn{border-radius:0px; width:280px;}
+.btn.f4{height:56px; font-size:22px; line-height:40px;}
+</style>
 <div id="container" class="sub">
 	<!-- Sub title -->
 	<h2 class="subtitle t3"><span class="motion" data-animation="flash">회원가입</span></h2>

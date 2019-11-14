@@ -213,6 +213,7 @@ public function ilmangitable() {
 ,(SELECT s_date from mari_seyfert_order WHERE m_id = 아이디  and trnsctnTp='SEYFERT_PAYIN_VACCNT' AND trnsctnSt='SFRT_PAYIN_VACCNT_FINISHED' ORDER BY s_id LIMIT 1) 최초입금일
 ,(SELECT CONCAT('[',s_bnkCd,'] ', s_accntNo) FROM mari_seyfert a WHERE a.m_id = 아이디 AND a.s_memuse='Y' LIMIT 1) 가상계좌
 , CONCAT('[',m_my_bankcode,']', ' ', m_my_bankacc) 출금계좌
+,SMS
 FROM (
 select
      a.m_no
@@ -237,7 +238,8 @@ select
       , a.m_joinpath as 가입경로 
       , a.m_referee as 추천인
      ,if( a.m_verifyaccountuse ='Y' , a.m_my_bankcode , '') AS 	m_my_bankcode
-	, if( a.m_verifyaccountuse ='Y' , a.m_my_bankacc , '') as  m_my_bankacc
+    , if( a.m_verifyaccountuse ='Y' , a.m_my_bankacc , '') as  m_my_bankacc
+    , if( a.m_sms = '1' , 'Y','N') as SMS
      FROM  mari_member a
      LEFT JOIN
      (
@@ -311,6 +313,7 @@ $objPHPExcel->setActiveSheetIndex(0)
             ->setCellValue('M'.$i, '출금계좌')
  ->setCellValue('N'.$i, '추천인')
  ->setCellValue('O'.$i, '가입경로')
+ ->setCellValue('P'.$i, 'SMS')
             ;
 foreach($rows as $idx=>$row) {
 $i = $idx+2;
@@ -330,6 +333,7 @@ $objPHPExcel->setActiveSheetIndex(0)
             ->setCellValue('M'.$i, $row['출금계좌'])
 ->setCellValue('N'.$i, $row['추천인'])
 ->setCellValue('O'.$i, $row['가입경로'])
+->setCellValue('P'.$i, $row['SMS'])
             ;
 }
 // Rename worksheet

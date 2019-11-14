@@ -73,6 +73,7 @@
 
 
 <style>
+*{border-left-color:rgba(255, 255, 255, 0); box-decoration-break: clone;}
   body{
     overflow-x: hidden;
   }
@@ -336,6 +337,43 @@ font-family: 'Do Hyeon', sans-serif;
   }
   .container2 .main-raised:last-child {
       margin: -80px 5px 30px;
+  }
+
+
+
+
+  @media (max-width: 500px) {
+  .safety_split_box .safety_split_box_head img { width: 100%; margin-left:0; padding:0 25px;}
+  .safety_split_box .safety_split_box_sub_mo {width:100%;
+  text-align:center;
+  margin-bottom:40px;
+  font-size:15px;
+  font-weight:400;
+  margin-top:40px;
+  letter-spacing: -0.065em;}
+  .safety_split_box .safety_split_box_sub_pc {display:none;}
+  .now_planbtn span {font-size:40px;}
+  .care-title span{font-size: 18px; width:220px; padding:4px;}
+  .row1 .safe-mo{ display:block; width: 100%; margin-left:0; padding:0 25px;}
+  .row1 .safe-pc{display:none;}
+  .operation_pc{display:none;}
+  .operation_mo img{display:block; width: 100%; margin-left:0; padding:0 8px; margin-top:-20px;}
+  .pboxline1 img{width: 100%; margin-left:10px; padding:0 25px 0; }
+  .row1 .safe-after-1{width: 100%; margin-left:0;}
+  .row1 .safe-after-2{width: 100%; margin-left:0;}
+  .row1 .safe-after-2-mo{display:block; width: 100%; margin-left:0; padding:0}
+  .row1 .safe-after-2-pc{display:none;}
+  .header-sub-pc{display:none;}
+  .header-sub-mo{display:block; position : absolute; margin:210px auto 0;
+  text-align: center; font-size:15px; width:100%; color:#fff;}
+.pboxline2-pc{display:none;}
+.pboxline2-pc2{display:none;}
+.pboxline2-mo2{display:block;}
+.pboxline2-mo2 img{padding:0 10px; width:100%; margin-top:20px; margin-bottom:20px;}
+.yellow-text {display:none;}
+#pageheader .header-img img{width:60%; margin-top:50px;}
+.safety_split_box_head.t2 img{margin-top:-30px;}
+
   }
   @-webkit-keyframes subtitle_bg {
     0% {
@@ -801,7 +839,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#996e8fa0', e
 }
 .page-header.header-small {
     height: 30vh;
-    min-height: 240px;
+    min-height: 432px;
 }
 
 </style>
@@ -824,9 +862,41 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#996e8fa0', e
     margin-top: 130px;
     width: 100%;
     text-align: center;
-    font-size: 30px;
+    font-size: 38px;
     z-index: 30;
-    color:#cacaca;
+    color:#fff;
+}
+#pageheader .header-sub-pc{
+  position : absolute;
+  margin:210px auto 0;
+  text-align: center;
+  font-size:14px;
+  width:100%;
+  color:#fff;
+}
+#pageheader .header-img{
+  position: absolute;
+    margin: 276px auto 0;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+    left: 15px;
+}
+#pageheader .header-bg1{
+  position: absolute;
+    margin: 303px auto 0;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+    left: -370px;
+}
+#pageheader .header-bg2{
+  position: absolute;
+    margin: 311px auto 0;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+    left: 370px;
 }
 .safety_split_box{
       padding: 80px 0;
@@ -838,8 +908,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#996e8fa0', e
 .safety_split_box .safety_split_box_head{
   font-size: 23px;
   text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 20px;
+      margin-top:40px;
       font-weight: 600;
+      margin-left:30px;
 }
 .safety_split_box .safety_split_box_head i{
   font-size: 26px;
@@ -852,14 +924,23 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#996e8fa0', e
 color: #326ba8;
 font-weight: 600;
 }
+.safety_split_box .safety_split_box_sub_pc{
+  width:100%;
+  text-align:center;
+  margin-bottom:60px;
+  font-size:20px;
+  font-weight:400;
+  margin-top:40px;
+  letter-spacing: -0.065em;
+}
 .center{
   text-align: center;
 }
 .bg_color1:nth-child(odd){
-  background-color: #f1f1f1;;
+  background-color: #fff;;
 }
 .bg_color1:nth-child(even){
-  background-color: #FFF;;
+  background-color: #f1f1f1;;
 }
 .safety_split_in_box{
   min-height:50px;
@@ -887,6 +968,10 @@ font-weight: 600;
 }
 
 .pboxline2{
+  font-size: 16px;
+  font-weight: 400;
+}
+.pboxline2-pc{
   font-size: 16px;
   font-weight: 400;
 }
@@ -950,20 +1035,36 @@ font-weight: 600;
     margin-bottom:60px;
   }
 }
-
 .now_planbtn{
+    font-size: 18px;ㅑㅑ2
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 56px;
+    font-weight: 600;
+    color: #184b77;
+    display:block;
+    margin:10px auto 5px;
+    -webkit-box-reflect:below -13px -webkit-gradient(linear, 0 20%, 0 100%, from(rgba(255,255,255,0)), to(rgba(255,255,255,0.15)));
+}
+.now_planbtn:hover{
+  color: #184b77;
+  cursor:default;
+}
+.now_planbtn1{
     font-size: 18px;
     text-align: center;
     letter-spacing: 3px;
     padding: 8px 16px;
-    margin-bottom: 10px;
     font-weight: 300;
-    background-color: #00838f;
+    background-color: #184b77;
     box-shadow: 0 2px 2px 0 rgba(102, 153, 170, 0.14), 0 3px 1px -2px rgba(102, 153, 170, 0.2), 0 1px 5px 0 rgba(102, 153, 170, 0.2);
-    margin-top: 30px;
+    display:block;
+    margin:36px auto 10px;
+    width:300px;
 }
-.now_planbtn:hover{
-  background-color: #00838f;
+.now_planbtn1:hover{
+  background-color: #184b77;
 }
 .safety_2box{
   padding: 0px 40px;
@@ -1016,13 +1117,13 @@ transform: translateX(-50%) rotate(45deg);
   -webkit-transform: translateX(-50%) rotate(45deg);
 transform: translateX(-50%) rotate(45deg);
   z-index:1;
-  background-color: white;
+  background-color: #f1f1f1;
 }
 .safety_split_box:nth-child(odd):after{
-    background-color: #f1f1f1;
+    background-color: #fff;
 }
 .safety_split_box:nth-child(even):after{
-    background-color: white;
+    background-color: #f1f1f1;
 }
 </style>
 
@@ -1089,6 +1190,21 @@ left: 50px;
     right: 30px;
     top: 20px;
 }
+@media (max-width: 750px){
+.row1 .safe-pc{width:100%;}
+.row1 .safe-after-1{width:100%;}
+.row1 .safe-after-2-pc{width:100%;}
+.operation_pc img{width:100%;}
+}
+@media (min-width: 501px){
+.row1 .safe-mo{display:none;}
+.safety_split_box_sub_mo{display:none;}
+.safe-after-2-mo {display:none;}
+.header-sub-mo{display:none;}
+
+.operation_mo{display:none;}
+.pboxline2-mo2{display:none;}
+}
 
 </style>
 
@@ -1099,52 +1215,51 @@ left: 50px;
   <div class="header-title">
     안심케어
   </div>
+  <div class="header-sub-pc">케이펀딩 안심케어 프로그램으로 고객님의 소중한 자산을 책임지고 보호하도록 하겠습니다.</div>
+  <div class="header-sub-mo">케이펀딩 안심케어 프로그램으로<br>고객님의 소중한 자산을<br>책임지고 보호하도록 하겠습니다.</div>
+  <div class="header-img"><img src="/pnpinvest/img/k_safeguide_1.png"></div>
+  <div class="header-bg1"><img src="/pnpinvest/img/k_safeguide_2.png"></div>
+  <div class="header-bg2"><img src="/pnpinvest/img/k_safeguide_3.png"></div>
 </div>
 
 
 <div class="safety_split_box bg_color1 ss-style-doublediagonal.">
   <div class="container">
-    <div class="safety_split_box_head"><i class="fas fa-shield-alt"></i> 안심케어 <span>S</span>TART</div>
-    <div class="row">
-      <div class="col-md-4 center">
-        <div class="safety_split_in_box">
-          <div class="pboxline1">
-          <span class="newtitlespan">Plan 01</span> </div>
-          <div class="pboxline2">케이펀딩 출자금</div>
-          <div class="pboxline3">최초 적립금</div>
-          <div class="pboxline4">50,000,000원</div>
-        </div>
-        <div class="next-arrow"><i class="fas fa-plus"></i></div>
-      </div>
-      <div class="col-md-4 center">
-        <div class="safety_split_in_box">
-                              <div class="pboxline1">
-                              	<span class="newtitlespan">Plan 02</span> </div>
-               	 <div class="pboxline2">투자자 플랫폼 이용료</div>
-               	 <div class="pboxline3">플랫폼 수수료</div>
-               	 <div class="pboxline4">월 0.1% 적립</div>
+    <div class="safety_split_box_head"><img src="/pnpinvest/img/k_safeguide_title_1.png"></div>
+    <div class="safety_split_box_sub_pc"><span>현재 P2P대출은 대출자의 채무불이행시 투자자가 모든 손실을 입는 구조 입니다.<br>
+안심케어는 P2P투자의 특성상 발생 가능한 Risk를 최소화 합니다.</span></div>
+<div class="safety_split_box_sub_mo"><span>현재 P2P대출은 대출자의 채무불이행시 투자자가<br>모든 손실을 입는 구조 입니다.<br>
+안심케어는 P2P투자의 특성상 발생 가능한<br>Risk를 최소화 합니다.</span></div>
+<div class="row1" style="text-align:center;">
+  <img class="safe-pc" style="border:0;" src="/pnpinvest/img/k_safeguide_title_1_img1.png">
+  <img class="safe-mo" style="border:0;" src="/pnpinvest/img/k_safeguide_title_1_img1_m.png">
+  </div>
 
-      </div>
-        <div class="next-arrow"><i class="fas fa-plus"></i></div>
-      </div>
-      <div class="col-md-4 center">
-        <div class="safety_split_in_box">
-                              <div class="pboxline1">
-                              	<span class="newtitlespan">Plan 03</span> </div>
-               	 <div class="pboxline2">케이펀딩 추가적립</div>
-               	 <div class="pboxline3">펀딩금액의</div>
-               	 <div class="pboxline4">0.3% 적립</div>
-
-      </div>
-      </div>
     </div>
+
         <div class="center">
+          <div class="care-title" style="margin-top: 50px;
+    font-size: 22px;
+    font-weight: 400;
+    background: #184b77;
+    width: 280px;
+    margin: 80px auto 15px;
+    border-radius: 100px;
+    color: white;
+    letter-spacing: -0.065em;
+    padding: 8px;"><span>실시간 안심케어 적립금</span></div>
+
           <?php
             $sql = "select * from z_main_design where idx=1 limit 1";
             $main_design = sql_fetch($sql);
           ?>
-      <a class="btn now_planbtn modal-link-" href="javascript:;" data-title="Safety Guide Plan" data-url2="/api/safetyguide" data-img="/pnpinvest/data/safetyplan/a0f0fc2eadda657e66d16cbaa87681d3.jpg" >
-        현재 : <?php echo number_format($main_design['nowplan']) ?>원 <i class="fab fa-superpowers"></i></a>
+      <a class="now_planbtn modal-link-" href="javascript:;" data-title="Safety Guide Plan" data-url2="/api/safetyguide" data-img="/pnpinvest/data/safetyplan/a0f0fc2eadda657e66d16cbaa87681d3.jpg" >
+        <span><?php echo number_format($main_design['nowplan']) ?>원<span><!--<i class="fab fa-superpowers"></i>
+        --></a>
+                  <!--<div style="font-weight:400;"></div>-->
+        <!--<a class="btn now_planbtn1 modal-link-" style="##3b68a8" href="http://www.kfunding.co.kr/pnpinvest/img/safeplan.jpg" target="_blank">
+          잔액증명서</a>-->
+
     </div>
   </div>
 </div>
@@ -1154,9 +1269,12 @@ left: 50px;
 
 <div class="safety_split_box bg_color1 triangletop">
   <div class="container">
-  <div class="safety_split_box_head"><i class="material-icons">security</i> 안심케어 <span>T</span>ARGET</div>
-    <div class="row">
-      <div class="col-md-4 center">
+  <div class="safety_split_box_head t2"><img src="/pnpinvest/img/k_safeguide_title_2.png" style="padding:0 35px;"></div>
+    <div class="row1" style="text-align:center; margin-top:93px;">
+        <img class="safe-pc" style="border:0;" src="/pnpinvest/img/k_safeguide_title_2_img1.png">
+        <img class="safe-mo" style="border:0; padding:0; margin-top:-25px;" src="/pnpinvest/img/k_safeguide_title_2_img1_m.png">
+        </div>
+    <!--  <div class="col-md-4 center">
         <div class="safety_split_in_box">
                               <div class="pboxline1">
                               	<span class="newtitlespan">대상상품</span> </div>
@@ -1179,7 +1297,7 @@ left: 50px;
                               	<span class="newtitlespan">대상금액</span> </div>
                <p class="small_title">대상한도금액내에서<br>투자자의 투자금액 비율</p><p>(투자금Ⅹ대상한도금/대출금)</p>
       </div>
-      </div>
+    </div>-->
     </div>
   </div>
 </div>
@@ -1187,39 +1305,13 @@ left: 50px;
 
 <div class="safety_split_box bg_color1 trianglebottom">
   <div class="container">
-    <div class="safety_split_box_head"><i class="fas fa-user-shield"></i> 안심케어 <span>A</span>FTER</div>
-    <div class="row">
-      <div class="col-md-offset-3 col-md-6 col-xs-12">
-        <div class="round-box pboxline1">
-          <p class="pboxline2">플랜 가동후</p>케이펀딩에서 5천만원의 최소 적립금 보충
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-4 center safety_2box">
-        <div class="col-caption">예시)</div>
-        <div class="safety_split_box2">
-          <p class="inbox_head">예) 적립액 2천만원 남은 경우</p>
-        </div>
-        <div class="next-arrow">
-          <i class="fas fa-plus  hidden-sm hidden-xs"></i><!-- fa-angle-right -->
-          <i class="fas  fa-plus hidden-lg hidden-md"></i><!-- fa-angle-down -->
-        </div>
-      </div>
-      <div class="col-md-4 center safety_2box">
-        <div class="safety_split_box2">
-          <p class="inbox_head">케이펀딩에서 3천만원 출자</p>
-        </div>
-        <div class="next-arrow">
-          <i class="fas fa-angle-double-right hidden-sm hidden-xs"></i>
-          <i class="fas fa-angle-double-down hidden-lg hidden-md"></i>
-        </div>
-      </div>
-      <div class="col-md-4 center safety_2box">
-        <div class="safety_split_box2">
-          <p class="inbox_head">최소 5천만원의 적립금 확충</p>
-        </div>
-      </div>
+    <div class="safety_split_box_head t2"><img src="/pnpinvest/img/k_safeguide_title_3.png" style="padding:0 40px;"></div>
+
+    <div class="row1" style="text-align:center; margin-top:60px;">
+        <img class="safe-after-1" src="/pnpinvest/img/k_safeguide_title_3_img1.png"></div>
+        <div class="row1" style="text-align:center; margin-top:40px;">
+          <img class="safe-after-2-pc" src="/pnpinvest/img/k_safeguide_title_3_img2.png">
+          <img class="safe-after-2-mo" src="/pnpinvest/img/k_safeguide_title_3_img2_m.png">
 
   </div>
 
@@ -1247,29 +1339,54 @@ left: 50px;
 </div>
 <style>
 #bigTriangleColor path {
-    fill: #f1f1f1;
-    stroke: #f1f1f1;
+    fill: #fff;
+    stroke: #fff;
     stroke-width: 2;
 }
 .triangletop:before{
-  background-color: #f1f1f1;
+  background-color: #fff;
+}
+@media (min-width: 501px){
+.pboxline1{padding-bottom:30px; margin-top:30px;}
+.operation_mo{display:none;}
 }
 </style>
-<div style="background-color:#396a9e">
+<div style="background-color:#4476b4">
   <svg id="bigTriangleColor" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="30" viewBox="0 0 100 102" preserveAspectRatio="none">
             <path d="M0 0 L50 100 L100 0 Z"></path>
           </svg>
 </div>
-<div class="main_join t2" style="background-color: #396a9e;">
+<div class="main_join t2" style="background-color: #4476b4;">
 		<div class="container">
 		 <div class="pboxline1">
-                              	<span>케이펀딩 안심케어 운영</span> </div>
-               	 <div class="pboxline2">케이펀딩의 적립 금액은 투자 상품이 마감 뒤 확인 가능합니다.<br>
-				적립금은 회사 운영 계좌와 완전히 분리되며, 적립금의 납입과 원금 손실 보전을 위한 용도 외에는 입출금은 일어나지 않습니다.
-        <br><span style="font-size: 20px;color: red;"><i class="fas fa-asterisk"></i> 추후 케이펀딩에서 출자금과 한도금액등을 확대할 예정입니다.</span>
-      </div>
+                              	<img src="/pnpinvest/img/k_safeguide_title_4.png"> </div>
+<div style="
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 0 auto;">
+<div class="pboxline2-pc" style="margin-bottom: 20px; font-size:20px; letter-spacing: -0.05em;">안심케어 프로그램 발동 이후 추가 원리금 회수시 투자자 원리금 배당순서</div>
 
-			<a class="btn  w200 hvr-bounce-to-top2" style="    background-color: #eceff1;color: #326ba8;" href="/pnpinvest/?mode=invest">투자상품 보러가기</a>
+</div>
+<div class="operation_pc" style="text-align:center;">
+        <img src="/pnpinvest/img/k_safeguide_title_4_img1.png">
+</div>
+<div class="operation_mo" style="text-align:center;">
+        <img src="/pnpinvest/img/k_safeguide_title_4_img1_m.png">
+</div>
+</div>
+               	 <!--<div class="pboxline2-pc2" style="margin-top:30px; font-size: 18px; letter-spacing: -0.05em;">케이펀딩의 적립 금액은 투자 상품이 마감 뒤 확인 가능합니다.<br>
+				적립금은 회사 운영 계좌와 완전히 분리되며, 적립금의 납입과 원금 손실 보전을 위한 용도 외에는 입출금은 일어나지 않습니다.
+        </div>-->
+        <div class="pboxline2-mo2" ><img src="/pnpinvest/img/k_safeguide_title_4_img2_m.png">
+</div>
+
+      <div class="yellow-text" style="margin-top:40px;"><span style="font-size: 22px;
+    color: #fff100;
+    margin-top: 10px;
+    font-weight: 400;"><i class="fas fa-asterisk"></i> 추후 케이펀딩에서 출자금과 한도금액등을 확대할 예정입니다.</span></div>
+
+
+			<a class="btn  w200 hvr-bounce-to-top2" style="    background-color: #eceff1;color: #326ba8; font-size:18px;" href="/pnpinvest/?mode=invest">투자상품 보러가기</a>
 		</div>
 	</div>
 
@@ -1396,12 +1513,20 @@ left: 50px;
 	.newcol.desc2{
 		margin-left: 204px;
 	}
+  #pageheader .header-bg1{
+    display:none;
+  }
+  #pageheader .header-bg2{
+    display:none;
+  }
+
 }
 @media (max-width: 780px){
 	.p2plogo{
 		margin-top: 40px;
 	}
 }
+
 	@media (max-width: 611px){
 		.footer_time{padding-left:10px;font-size: 16px;}
 		.newfooter .row{
@@ -1480,7 +1605,7 @@ left: 50px;
 			<div class="newcol second">
 				<div>(주) 케이펀딩</div>
 				<div>대표이사 김현철</div>
-				<div>주소 : 서울 강남구 테헤란로 86길 14 윤천빌딩 5층</div>
+				<div>주소 : 서울 강남구 영동대로 342 덕유빌딩 3층</div>
 				<div class="splitdiv last">
 					<div>Tel.02-552-1772</div>
 					<div class="splitline">|</div>
@@ -1491,7 +1616,7 @@ left: 50px;
 			<div class="newcol desc2">
 				<div>(주) 케이크라우드대부</div>
 				<div>대표이사 김현철</div>
-				<div>주소 : 서울 강남구 테헤란로 86길 14 윤천빌딩 5층</div>
+				<div>주소 : 서울 강남구 영동대로 342 덕유빌딩 3층</div>
 				<div class="splitdiv last">
 					<div>Tel.02-552-1772</div>
 					<div class="splitline">|</div>

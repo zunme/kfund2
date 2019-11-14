@@ -1143,7 +1143,7 @@ $("document").ready( function() {
       <p class="notice_head_p">본 투자상품은 원금이 보장되지 않습니다.</p>
       <p class="notice_body_p"> 모든 투자상품은 현행 법률 상 ‘유사수신행위의 규제에 관한 법률’에 의거하여 원금과 수익을 보장할 수 없습니다. 또한 차입자가 원금의 전부 또는 일부를 상환하지 못할 경우 발생하게 되는 투자금 손실 등 투자위험은 투자자가 부담하게 됩니다. </p>
       <p class="notice_foot_p">나 <span><?php echo $user['m_name']?></span> 은 상기 내용을 확인하였으며 그 내용에 <input type="text" id="agreenotice" name="agreenotice" placeholder="동의함" onkeyup="checkagreenotice()">
-        <br>(투자를 진행하기 위해서는 입력란에  동의함  을 적어주세요)
+        <br>(투자를 진행하기 위해서는 입력란에  <font color="#FF0000"><strong>동의함</strong></font>  을 적어주세요)
     </div>
     <div style="text-align:center;margin-top:10px;">
     <a href="javascript:;" id="agree_notice_btn" class="btn btn-rose" style="display:none" onClick="Inset_form_Ok2(document.inset_form);">확인</a>
