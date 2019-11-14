@@ -102,7 +102,8 @@ $sql ="
 select  floor(sum( b.i_pay)/10)*10 into @totalwithvpay
 from mari_loan a
 join mari_invest b on a.i_id = b.loan_id
-where a.i_view='Y' and b.i_pay > 0 and a.i_id > $startloan
+WHERE (a.i_view='Y' OR a.i_id = 39) and b.i_pay > 0 AND b.i_pay_ment='Y' and a.i_id > $startloan
+AND a.i_id != 113
 ";
 sql_query($sql, false);
 $sql = "
@@ -1338,7 +1339,7 @@ $("document").ready(function() {
 				</tbody>
 			</table>
 <!--
-<?php 
+<?php
     $yeonchae = ( (isset($allpay['yeonchaeyul'])&& $allpay['yeonchaeyul']!='') ? $allpay['yeonchaeyul'] : 0 ) + ((isset($allpay['budoyul'])&& $allpay['budoyul']!='') ? $allpay['budoyul'] : 0 );
 ?>
 			<table class="number_con2">
@@ -1788,16 +1789,16 @@ chat_bubble
       </div>
 	  </div>
  <div class="container ft">
- 
+
 	<!--span class="left"><a href="#" onclick="return false"><img src="/img/left_arr_off.png" alt="이전"></a></span-->
 	<div class="owl-carousel owl-theme">
 
-  <?php 
+  <?php
    $late_sql = "select * from z_late where isview='Y' order by viewdate desc, late_idx desc limit 5";
    $result_late = sql_query($late_sql, false);
 
   for ($i=0; $row=sql_fetch_array($result_late); $i++) { ?>
-		
+
     <div class="card item">
 			<div class="border" style="cursor: pointer;">
 				<div class="card-image" style="margin-left:0px; margin-right:0px; height:180px;">
@@ -1814,7 +1815,7 @@ chat_bubble
 		</div>
 
   <?php } ?>
-		
+
   <div class="card item" style="margin-top:-5px;">
 				<div class="border" style="cursor: pointer; background-color: rgb(0, 138, 130);">
 					<div class="card-image1" style="margin-left:0px; margin-right:0px; height:255px; overflow:hidde; border-top-left-radius: 5px; border-top-right-radius: 5px;">
@@ -1833,21 +1834,21 @@ chat_bubble
 
 
 	</div>
-	<!--span class="right"><a href="#" onclick="return false"><img src="/img/right_arr.png" alt="다음"></a></span-->	
+	<!--span class="right"><a href="#" onclick="return false"><img src="/img/right_arr.png" alt="다음"></a></span-->
 	<!--div class="control_panel">
 		<div class="control_button"></div>
 		<div class="control_button"></div>
 		<div class="control_button"></div>
 	</div-->
-		
+
 </div>
 
 <script>
 $(function(){
 	var a=$(this);
 	var card=a.find('.card .border');
-	card.css('cursor','pointer');	
-	
+	card.css('cursor','pointer');
+
 	card.mouseover(function(){
 		$('.card-image',this).css('height','190px');
 		$('.owl-item.cloned .card-image',this).css('height','190px');
@@ -1872,12 +1873,12 @@ $(function(){
 			backgroundColor:"#008a82",fontSize:"16px", padding:"6px 20px"
 			});
 		$('.card-btn1>a',this).css({backgroundColor:"#008a82",fontSize:"16px"});
-		/* $('.bgc',this).css('backgroundColor','#fff'); */	
+		/* $('.bgc',this).css('backgroundColor','#fff'); */
 		$('.card-title1',this).css('fontColor','#008a82');
 		$('.card-image>img',this).css('borderTopLeftRadius','5px');
 	});
-	
-	
+
+
 });
 
 </script>
@@ -2206,7 +2207,7 @@ background-position: center;
   <!-- / guide -->
 <?php } ?>
 
-  
+
 	<!-- Profits -->
 	<!--div class="main_section profits">
 		<div class="container">
@@ -2591,7 +2592,7 @@ font-weight: 400;
 include_once (getcwd().'/module/basic.php');
 list($isauthed, $authedmsghead,$authedmsgbody) = isauthed($user);
 $isregnum = isregnum($user);
-if ( !$isauthed || !$isregnum ){
+if ( (!$isauthed || !$isregnum) && $user['m_signpurpose'] !='L' ){
 ?>
 <style>
 .izModal-content-inbox{
@@ -3319,9 +3320,9 @@ function graphdraw() {
 @media all and (max-width:400px) {
 /* main */
 .main_product .item {padding:0 0 10px;}
-.main_product .summary {width:52%;}
+.main_product .summary {width:32%;}
 .main_product .donut {width:44%;margin-top:-68%;margin-right:5%;}
-.main_product .event {width:54%;margin-right:1;margin-top:-68px; }
+.main_product .event {width:34%;margin-right:1;margin-top:-68px; }
 .main_product .summary > li {background-size:28px;padding-left:35px;line-height:20px;}
 /*.main_product .donut_txt span {margin-top:20px;}*/
 .main_product .donut_txt strong {font-size:30px;}
